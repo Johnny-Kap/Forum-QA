@@ -20,9 +20,9 @@
                 <div class="col-lg-5 mx-auto">
                     <div class="form-action-wrapper py-5">
                         <div class="form-group">
-                            <h3 class="fs-22 pb-3 fw-bold">Log in to Disilab</h3>
+                            <h3 class="fs-22 pb-3 fw-bold">Connectez-vous à Forum Q&A</h3>
                             <div class="divider"><span></span></div>
-                            <p class="pt-3">Enter your email address and login to your account.</p>
+                            <p class="pt-3">Entrez votre adresse e-mail et connectez-vous à votre compte.</p>
                         </div>
                         <div class="form-group">
                             <label class="fs-14 text-black fw-medium lh-18">Email</label>
@@ -34,7 +34,7 @@
                             @enderror
                         </div><!-- end form-group -->
                         <div class="form-group">
-                            <label class="fs-14 text-black fw-medium lh-18">Password</label>
+                            <label class="fs-14 text-black fw-medium lh-18">Mot de passe</label>
                             <div class="input-group">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                 @error('password')
@@ -59,20 +59,20 @@
                         <div class="form-group d-flex align-items-center justify-content-between">
                             <div class="custom-control custom-checkbox fs-14">
                                 <input type="checkbox" class="custom-control-input" id="rememberMe" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                <label class="custom-control-label custom--control-label" for="rememberMe">Remember me!</label>
+                                <label class="custom-control-label custom--control-label" for="rememberMe">Se souvenir de moi!</label>
                             </div>
                             @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}" class="btn-text fs-14 hover-underline fw-regular">Forgot Password?</a>
+                            <a href="{{ route('password.request') }}" class="btn-text fs-14 hover-underline fw-regular">Mot de passe oublié?</a>
                             @endif
                         </div><!-- end form-group -->
                         <div class="form-group">
-                            <button id="send-message-btn" class="btn theme-btn w-100" type="submit">Log in <i class="la la-arrow-right icon ml-1"></i></button>
+                            <button id="send-message-btn" class="btn theme-btn w-100" type="submit">Connexion <i class="la la-arrow-right icon ml-1"></i></button>
                         </div><!-- end form-group -->
                     </div><!-- end form-action-wrapper -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->
         </form>
-        <p class="text-black text-center fs-15">Don't have an account? <a href="{{route('register')}}" class="text-color hover-underline">Sign up</a></p>
+        <p class="text-black text-center fs-15">Vous n'avez pas de compte ? <a href="{{route('register')}}" class="text-color hover-underline">S'enroler</a></p>
     </div><!-- end container -->
 </section>
 <!--======================================

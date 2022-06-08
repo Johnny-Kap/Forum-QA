@@ -10,37 +10,37 @@
         <div class="row">
             <div class="col-lg-3 responsive-column-half">
                 <div class="footer-item">
-                    <h3 class="fs-18 fw-bold pb-2 text-white">Company</h3>
+                    <h3 class="fs-18 fw-bold pb-2 text-white">compagnie</h3>
                     <ul class="generic-list-item generic-list-item-hover-underline pt-3 generic-list-item-white">
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">A propos</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="advertising.html">Advertising</a></li>
+                        <li><a href="careers.html">Carrières</a></li>
+                        <li><a href="advertising.html">Publicité</a></li>
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 responsive-column-half">
                 <div class="footer-item">
-                    <h3 class="fs-18 fw-bold pb-2 text-white">Legal Stuff</h3>
+                    <h3 class="fs-18 fw-bold pb-2 text-white">Trucs juridiques</h3>
                     <ul class="generic-list-item generic-list-item-hover-underline pt-3 generic-list-item-white">
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                        <li><a href="terms-and-conditions.html">Terms of Service</a></li>
-                        <li><a href="privacy-policy.html">Cookie Policy</a></li>
+                        <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
+                        <li><a href="terms-and-conditions.html">Conditions d'utilisation</a></li>
+                        <li><a href="privacy-policy.html">Politique relative aux cookies</a></li>
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 responsive-column-half">
                 <div class="footer-item">
-                    <h3 class="fs-18 fw-bold pb-2 text-white">Help</h3>
+                    <h3 class="fs-18 fw-bold pb-2 text-white">Aide</h3>
                     <ul class="generic-list-item generic-list-item-hover-underline pt-3 generic-list-item-white">
-                        <li><a href="faq.html">Knowledge Base</a></li>
+                        <li><a href="faq.html">Base de connaissances</a></li>
                         <li><a href="contact.html">Support</a></li>
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->
             <div class="col-lg-3 responsive-column-half">
                 <div class="footer-item">
-                    <h3 class="fs-18 fw-bold pb-2 text-white">Connect with us</h3>
+                    <h3 class="fs-18 fw-bold pb-2 text-white">Connecte-toi avec nous</h3>
                     <ul class="generic-list-item generic-list-item-hover-underline pt-3 generic-list-item-white">
                         <li><a href="#"><i class="la la-facebook mr-1"></i> Facebook</a></li>
                         <li><a href="#"><i class="la la-twitter mr-1"></i> Twitter</a></li>

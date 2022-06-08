@@ -18,12 +18,12 @@
                 <div class="col-lg-5 mx-auto">
                     <div class="form-action-wrapper py-5">
                         <div class="form-group">
-                            <h3 class="fs-22 pb-3 fw-bold">Join the Disilab Community</h3>
+                            <h3 class="fs-22 pb-3 fw-bold">Rejoignez la communauté Forum Q&A</h3>
                             <div class="divider"><span></span></div>
-                            <p class="pt-3">Give us some of your information to get free access to Disilab.</p>
+                            <p class="pt-3">Donnez-nous certaines de vos informations pour accéder gratuitement à Forum Q&A.</p>
                         </div>
                         <div class="form-group">
-                            <label class="fs-14 text-black fw-medium lh-18">Display name</label>
+                            <label class="fs-14 text-black fw-medium lh-18">Nom</label>
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Entrer votre nom" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                             @error('name')
@@ -43,7 +43,7 @@
                             @enderror
                         </div><!-- end form-group -->
                         <div class="form-group">
-                            <label class="fs-14 text-black fw-medium lh-18">Password</label>
+                            <label class="fs-14 text-black fw-medium lh-18">Mot de passe</label>
                             <div class="input-group mb-1">
                                 <input id="password" type="password" placeholder="Entrer votre mot de passe" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
@@ -65,10 +65,10 @@
                                     </button>
                                 </div>
                             </div>
-                            <p class="fs-13 lh-18">Passwords must contain at least eight characters, including at least 1 letter and 1 number.</p>
+                            <p class="fs-13 lh-18">Les mots de passe doivent contenir au moins huit caractères, dont au moins 1 lettre et 1 chiffre.</p>
                         </div><!-- end form-group -->
                         <div class="form-group">
-                            <label class="fs-14 text-black fw-medium lh-18">Confirm password</label>
+                            <label class="fs-14 text-black fw-medium lh-18">Confirmez le mot de passe</label>
                             <div class="input-group mb-1">
                                 <input id="password-confirm" type="password" placeholder="Confirmer votre mot de passe" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 <div class="input-group-append">
@@ -86,14 +86,14 @@
                             </div>
                         </div><!-- end form-group -->
                         <div class="form-group">
-                            <button id="send-message-btn" class="btn theme-btn w-100" type="submit">Sign up <i class="la la-arrow-right icon ml-1"></i></button>
+                            <button id="send-message-btn" class="btn theme-btn w-100" type="submit">S'inscrire <i class="la la-arrow-right icon ml-1"></i></button>
                         </div><!-- end form-group -->
-                        <p class="fs-13 lh-18 pb-3">By clicking “Sign up”, you agree to our <a href="terms-and-conditions.html" class="text-color hover-underline">terms of conditions</a>, <a href="privacy-policy.html" class="text-color hover-underline">privacy policy</a></p>
+                        <p class="fs-13 lh-18 pb-3">En cliquant sur "S'inscrire", vous acceptez nos <a href="terms-and-conditions.html" class="text-color hover-underline">conditions générales</a>, <a href="privacy-policy.html" class="text-color hover-underline">politique de confidentialité</a></p>
                     </div><!-- end form-action-wrapper -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->
         </form>
-        <p class="text-black text-center fs-15">Already have an account? <a href="{{route('login')}}" class="text-color hover-underline">Log in</a></p>
+        <p class="text-black text-center fs-15">Vous avez déjà un compte? <a href="{{route('login')}}" class="text-color hover-underline">Se connecter</a></p>
     </div><!-- end container -->
     <div class="position-absolute top-0 left-0 w-100 h-100 z-index-n1">
         <svg class="w-100 h-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

@@ -22,73 +22,18 @@
                         <nav class="menu-bar mr-auto">
                             <ul>
                                 <li>
-                                    <a href="#">Home </a>
+                                    <a href="{{ url('/') }}">Accueil </a>
                                 </li>
-                                <li class="is-mega-menu">
-                                    <a href="#">pages <i class="la la-angle-down fs-11"></i></a>
-                                    <div class="dropdown-menu-item mega-menu">
-                                        <ul class="row">
-                                            <li class="col-lg-3">
-                                                <a href="user-profile.html">user profile</a>
-                                                <a href="notifications.html">Notifications</a>
-                                                <a href="referrals.html">Referrals</a>
-                                                <a href="setting.html">settings</a>
-                                                <a href="ask-question.html">ask question</a>
-                                                <a href="question-details.html">question details</a>
-                                                <a href="about.html">about</a>
-                                                <a href="revisions.html">revisions</a>
-                                                <a href="category.html">category</a>
-                                                <a href="companies.html">companies</a>
-                                                <a href="company-details.html">company details</a>
-                                            </li>
-                                            <li class="col-lg-3">
-                                                <a href="careers.html">careers</a>
-                                                <a href="career-details.html">career details</a>
-                                                <a href="contact.html">contact</a>
-                                                <a href="faq.html">FAQs</a>
-                                                <a href="pricing-table.html">pricing tables</a>
-                                                <a href="error.html">page 404</a>
-                                                <a href="terms-and-conditions.html">Terms & conditions</a>
-                                                <a href="privacy-policy.html">privacy policy</a>
-                                                <a href="cart.html">cart</a>
-                                                <a href="talent.html">talent</a>
-                                                <a href="advertising.html">advertising</a>
-                                            </li>
-                                            <li class="col-lg-3">
-                                                <a href="free-demo.html">free demo</a>
-                                                <a href="checkout.html">checkout</a>
-                                                <a href="wishlist.html">wishlist</a>
-                                                <a href="login.html">login</a>
-                                                <a href="login-2.html">login 2</a>
-                                                <a href="signup.html">sign up</a>
-                                                <a href="signup-2.html">sign up 2</a>
-                                                <a href="recover-password.html">recover password</a>
-                                                <a href="questions-layout-2.html">questions layout 2 <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="questions-full-width.html">questions full-width <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="questions-left-sidebar.html">questions left sidebar <span class="badge bg-warning text-white">New</span></a>
-                                            </li>
-                                            <li class="col-lg-3">
-                                                <a href="questions-right-sidebar.html">questions right sidebar <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="user-list.html">user list <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="category-list.html">category list <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="tags-list.html">tags list <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="add-post.html">add post <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="badges-list.html">Badges list <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="job-list.html">job list <span class="badge bg-warning text-white">New</span></a>
-                                                <a href="error-2.html">page 404 2 <span class="badge bg-warning text-white">New</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
+                          
                                 <li>
                                     <a href="#">Questions <i class="la la-angle-down fs-11"></i></a>
                                     <ul class="dropdown-menu-item">
-                                        <li><a href="index.html">Voir les questions</a></li>
+                                        <li><a href="{{ route('questions') }}">Voir les questions</a></li>
                                         <li><a href="home-2.html">Poser une question</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="{{ route('about') }}">About</a>
+                                    <a href="{{ route('about') }}">A propos</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('contact') }}">Contact</a>
@@ -97,7 +42,7 @@
                         </nav><!-- end main-menu -->
                         <form method="post" class="mr-4">
                             <div class="form-group mb-0">
-                                <input class="form-control form--control form--control-bg-gray" type="text" name="search" placeholder="Type your search words...">
+                                <input class="form-control form--control form--control-bg-gray" type="text" name="search" placeholder="Entrer votre recherche...">
                                 <button class="form-btn" type="button"><i class="la la-search"></i></button>
                             </div>
                         </form>
@@ -108,11 +53,11 @@
                         @guest
                         <div class="nav-right-button">
                             @if (Route::has('login'))
-                            <a href="{{ route('login') }}" class="btn theme-btn theme-btn-outline mr-2"><i class="la la-sign-in mr-1"></i> Login</a>
+                            <a href="{{ route('login') }}" class="btn theme-btn theme-btn-outline mr-2"><i class="la la-sign-in mr-1"></i> Se connecter</a>
                             @endif
 
                             @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn theme-btn"><i class="la la-user mr-1"></i> Sign up</a>
+                            <a href="{{ route('register') }}" class="btn theme-btn"><i class="la la-user mr-1"></i> S'enroler</a>
                             @endif
                         </div>
                         @else

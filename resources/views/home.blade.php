@@ -17,11 +17,11 @@
         <div class="row">
             <div class="col-lg-7 mr-auto">
                 <div class="hero-content">
-                    <h2 class="section-title fs-50 pb-3 text-white lh-65">Join the world's biggest Industry focused network, while staying anonymous!</h2>
-                    <p class="lh-26 text-white">An industry focused platform that allows people to answer and ask questions </p>
+                    <h2 class="section-title fs-50 pb-3 text-white lh-65">Rejoignez le plus grand réseau mondial axé sur l'industrie, tout en restant anonyme!</h2>
+                    <p class="lh-26 text-white">Une plate-forme axée sur l'industrie qui permet aux gens de répondre et de poser des questions </p>
                     <div class="hero-btn-box pt-30px">
-                        <a href="#for-developers" class="btn theme-btn mr-2 page-scroll">For Employees <i class="la la-angle-down icon ml-1"></i></a>
-                        <a href="#for-businesses" class="btn theme-btn bg-3 page-scroll">For Companies <i class="la la-angle-down icon ml-1"></i></a><br><br>
+                        <a href="#for-developers" class="btn theme-btn mr-2 page-scroll">Pour les personnes <i class="la la-angle-down icon ml-1"></i></a>
+                        <a href="#for-businesses" class="btn theme-btn bg-3 page-scroll">Pour les entreprises <i class="la la-angle-down icon ml-1"></i></a><br><br>
                     </div>
                 </div><!-- end hero-content -->
             </div><!-- end col-lg-6 -->
@@ -51,7 +51,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">1000+</h5>
-                            <p class="lh-20">Monthly visitors to our network</p>
+                            <p class="lh-20">Visiteurs mensuels de notre réseau</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -59,7 +59,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">300+</h5>
-                            <p class="lh-20">Questions asked to-date on the platform</p>
+                            <p class="lh-20">Questions posées à ce jour sur la plateforme</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -67,7 +67,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">20 minutes</h5>
-                            <p class="lh-20">Average time between new questions</p>
+                            <p class="lh-20">Délai moyen entre les nouvelles questions</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -75,7 +75,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">400+ </h5>
-                            <p class="lh-20">Members got help on the platform</p>
+                            <p class="lh-20">Les membres ont obtenu de l'aide sur la plateforme</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -83,7 +83,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">1000+</h5>
-                            <p class="lh-20">Customer companies on the platform</p>
+                            <p class="lh-20">Entreprises clientes sur la plateforme</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -108,13 +108,13 @@
     <span class="stroke-shape stroke-shape-6"></span>
     <div class="container">
         <div class="hero-content text-center pb-5">
-            <h2 class="section-title pb-3 theme-font-2 fs-40">The Social Q&A Community</h2>
-            <p class="section-desc">The question and answer site designed to help people, to help each other: <br>
-                To ask, to learn, to share, to grow.
+            <h2 class="section-title pb-3 theme-font-2 fs-40">La communauté Q&A sur les réseaux sociaux</h2>
+            <p class="section-desc">Le site de questions/réponses conçu pour aider les gens, pour s'entraider : <br>
+            Demander, apprendre, partager, grandir.
             </p>
             <div class="hero-btn-box py-4">
-                <a href="{{route('register')}}" class="btn theme-btn mr-2">Join the community</a>
-                <a href="ask-question.html" class="btn theme-btn theme-btn-outline">Ask a Question</a>
+                <a href="{{route('register')}}" class="btn theme-btn mr-2">Joindre la communauté</a>
+                <a href="ask-question.html" class="btn theme-btn theme-btn-outline">Poser une question</a>
             </div>
         </div><!-- end hero-content -->
         <div class="row">
@@ -152,8 +152,8 @@
                     <path d="M210,274H64c-5.522,0-10-4.477-10-10s4.478-10,10-10h146c5.522,0,10,4.477,10,10S215.523,274,210,274z" />
                 </svg>
                 <div class="media-body">
-                    <h5 class="fs-18 mb-1 theme-font-2 fw-bold">Ask Questions</h5>
-                    <p class="fs-15 lh-20">Get the right answers. Fast</p>
+                    <h5 class="fs-18 mb-1 theme-font-2 fw-bold">Poser les questions</h5>
+                    <p class="fs-15 lh-20">Obtenez les bonnes réponses. Vite</p>
                 </div>
             </div><!-- end media -->
             <div class="col-lg-4 media align-items-center pb-30px responsive-column-half">
@@ -196,8 +196,8 @@
                     </g>
                 </svg>
                 <div class="media-body">
-                    <h5 class="fs-18 mb-1 theme-font-2 fw-bold">Answer Questions</h5>
-                    <p class="fs-15 lh-20">Spend five minutes feeling smart.</p>
+                    <h5 class="fs-18 mb-1 theme-font-2 fw-bold">Répondez aux questions</h5>
+                    <p class="fs-15 lh-20">Passez cinq minutes à vous sentir intelligent.</p>
                 </div>
             </div><!-- end media -->
             <div class="col-lg-4 media align-items-center pb-30px responsive-column-half">
@@ -231,8 +231,8 @@
                     </g>
                 </svg>
                 <div class="media-body">
-                    <h5 class="fs-18 mb-1 theme-font-2 fw-bold">Be Somebody's Hero</h5>
-                    <p class="fs-15 lh-20">Pat yourself on the back. You deserve it.</p>
+                    <h5 class="fs-18 mb-1 theme-font-2 fw-bold">Soyez le héros de quelqu'un</h5>
+                    <p class="fs-15 lh-20">Tapotez-vous dans le dos. Vous le méritez.</p>
                 </div>
             </div><!-- end media -->
         </div><!-- end hero-list -->
@@ -250,9 +250,9 @@
 <section class="get-started-area section--padding pattern-bg" id="for-developers">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-title pb-3">Industry Focused Community</h2>
-            <p class="section-desc w-50 mx-auto">UpShift is an open community for anyone that is looking for answers. We help you get answers
-                to your questions, share knowledge with members in your industry vertical.
+            <h2 class="section-title pb-3">Communauté axée sur l'industrie</h2>
+            <p class="section-desc w-50 mx-auto">UpShift est une communauté ouverte à tous ceux qui recherchent des réponses. Nous vous aidons à obtenir des réponses
+                 à vos questions, partagez vos connaissances avec les membres de votre industrie verticale.
             </p>
         </div>
         <div class="row pt-50px">
@@ -288,9 +288,9 @@
                                 </g>
                             </g>
                         </svg>
-                        <h5 class="card-title pt-4 pb-2">Public Q&A</h5>
-                        <p class="card-text pb-4">UpStack Network is a public question and answer forum for professional and industry enthusiast</p>
-                        <a href="/questions" class="btn theme-btn">Browse questions <i class="la la-arrow-right icon ml-1"></i></a>
+                        <h5 class="card-title pt-4 pb-2">Q&A publiques</h5>
+                        <p class="card-text pb-4">UpStack Network est un forum public de questions et réponses pour les professionnels et les passionnés de l'industrie</p>
+                        <a href="/questions" class="btn theme-btn">Parcourir les questions <i class="la la-arrow-right icon ml-1"></i></a>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
             </div><!-- end col-lg-4 -->
@@ -314,9 +314,9 @@
                             <path d="m69.3 90.8a5.3 5.3 0 1 0 -7.564 4.782v8.385h4.519v-8.386a5.293 5.293 0 0 0 3.045-4.781z" fill="#84879c" />
                             <path d="m66.259 104.966h-4.519a1 1 0 0 1 -1-1v-7.789a6.3 6.3 0 1 1 6.519 0v7.789a1 1 0 0 1 -1 1zm-3.519-2h2.519v-7.385a1 1 0 0 1 .572-.9 4.264 4.264 0 0 0 2.469-3.881 4.3 4.3 0 0 0 -8.609 0 4.264 4.264 0 0 0 2.473 3.878 1 1 0 0 1 .572.9z" fill="#2f3a5a" />
                         </svg>
-                        <h5 class="card-title pt-4 pb-2">Private Q&A</h5>
-                        <p class="card-text pb-4">Using UpStack, create the most of question and answer at your event or meeting using the platform.</p>
-                        <a href="#" class="btn theme-btn bg-3">Coming Soon <i class="la la-arrow-right icon ml-1"></i></a>
+                        <h5 class="card-title pt-4 pb-2">Q&A privées</h5>
+                        <p class="card-text pb-4">En utilisant UpStack, créez le maximum de questions et réponses lors de votre événement ou réunion en utilisant la plateforme.</p>
+                        <a href="#" class="btn theme-btn bg-3">À venir <i class="la la-arrow-right icon ml-1"></i></a>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
             </div><!-- end col-lg-4 -->
@@ -378,9 +378,9 @@
                                 </g>
                             </g>
                         </svg>
-                        <h5 class="card-title pt-4 pb-2">Browse RFPs</h5>
-                        <p class="card-text pb-4">We're partnering with a number of companies to provide a platform for submitting and responding to RFPs.</p>
-                        <a href="questions" class="btn theme-btn">Join Waiting List <i class="la la-arrow-right icon ml-1"></i></a>
+                        <h5 class="card-title pt-4 pb-2">Parcourir les appels d'offres</h5>
+                        <p class="card-text pb-4">Nous travaillons en partenariat avec un certain nombre d'entreprises pour fournir une plate-forme permettant de soumettre et de répondre aux appels d'offres.</p>
+                        <a href="questions" class="btn theme-btn">Rejoindre la liste d'attente <i class="la la-arrow-right icon ml-1"></i></a>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
             </div><!-- end col-lg-4 -->
@@ -398,8 +398,8 @@
 <section class="get-started-area section--padding bg-gray" id="for-businesses">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-title pb-3">For businesses, by community</h2>
-            <p class="section-desc w-50 mx-auto">We are here to support businesses with their question and answers about the industry or technology platforms
+            <h2 class="section-title pb-3">Pour les entreprises, par communauté</h2>
+            <p class="section-desc w-50 mx-auto">Nous sommes là pour accompagner les entreprises dans leurs questions et réponses sur l'industrie ou les plateformes technologiques
             </p>
         </div>
         <div class="row pt-50px">
@@ -482,8 +482,8 @@
                         </svg>
                     </div>
                     <div class="media-body">
-                        <h5 class="pb-2"><a href="free-demo.html">Public Q&A</a></h5>
-                        <p>Quickly find and share internal knowledge with the community</p>
+                        <h5 class="pb-2"><a href="free-demo.html">Q&A publiques</a></h5>
+                        <p>Trouvez et partagez rapidement des connaissances avec la communauté</p>
                     </div>
                 </div>
             </div><!-- end col-lg-4 -->
@@ -580,8 +580,8 @@
                         </svg>
                     </div>
                     <div class="media-body">
-                        <h5 class="pb-2"><a href="talent.html">Find RFPs</a></h5>
-                        <p>Find proposals based on technology and industry vertical</p>
+                        <h5 class="pb-2"><a href="talent.html">Trouver des appels d'offres</a></h5>
+                        <p>Trouvez des propositions basées sur la technologie et l'industrie verticale</p>
                     </div>
                 </div>
             </div><!-- end col-lg-4 -->
@@ -634,8 +634,8 @@
                         </svg>
                     </div>
                     <div class="media-body">
-                        <h5 class="pb-2"><a href="advertising.html">Platform Solutions</a></h5>
-                        <p>Accelerate the discovery of products or services for your company</p>
+                        <h5 class="pb-2"><a href="advertising.html">Solutions de plate-forme</a></h5>
+                        <p>Accélérez la découverte de produits ou services pour votre entreprise</p>
                     </div>
                 </div>
             </div><!-- end col-lg-4 -->
@@ -705,7 +705,7 @@
                         <path d="M13 44.5A11 11 0 1130.98 53h.52a1.5 1.5 0 010 3H15.54C13.5 56 12 57.54 12 59.21V78h4.38a1.5 1.5 0 01-.38-1V63a1.5 1.5 0 013 0v14c0 .38-.14.73-.38 1h9.06a1.5 1.5 0 010 3H10.5A1.5 1.5 0 019 79.5V59.21c0-3.5 3.03-6.21 6.54-6.21h1.48A10.98 10.98 0 0113 44.5zm11-8a8 8 0 100 16 8 8 0 000-16zm23 8A11 11 0 0040.02 64h-1.33C35.12 64 32 66.73 32 70.3v20.2c0 .83.67 1.5 1.5 1.5h27c.83 0 1.5-.67 1.5-1.5V70.3c0-3.57-3.12-6.3-6.7-6.3h-1.32A11 11 0 0047 44.5zm-8 11a8 8 0 1116 0 8 8 0 01-16 0zm-4 14.8c0-1.7 1.55-3.3 3.7-3.3h16.6c2.15 0 3.7 1.6 3.7 3.3V89h-4V75a1.5 1.5 0 00-3 0v14H42V75a1.5 1.5 0 00-3 0v14h-4V70.3zm35-36.8A11 11 0 0176.98 53h1.7A6.28 6.28 0 0185 59.21V79.5c0 .83-.67 1.5-1.5 1.5H66.32a1.5 1.5 0 010-3h8.06a1.5 1.5 0 01-.38-1V63a1.5 1.5 0 013 0v14c0 .38-.14.73-.38 1H82V59.21A3.28 3.28 0 0078.68 56H62.5a1.5 1.5 0 010-3h.52A11 11 0 0170 33.5zm8 11a8 8 0 10-16 0 8 8 0 0016 0z"></path>
                         <path d="M12.5 11a1.5 1.5 0 000 3h13a1.5 1.5 0 000-3h-13zM11 17.5c0-.83.67-1.5 1.5-1.5h9a1.5 1.5 0 010 3h-9a1.5 1.5 0 01-1.5-1.5zm-5-10C6 6.67 6.67 6 7.5 6h25c.83 0 1.5.67 1.5 1.5v15c0 .83-.67 1.5-1.5 1.5H29v6a1.5 1.5 0 01-2.4 1.2L17 24H7.5A1.5 1.5 0 016 22.5v-15zM9 9v12h8.5c.32 0 .64.1.9.3L26 27v-6h5V9H9zm60.5 3a1.5 1.5 0 000 3h13a1.5 1.5 0 000-3h-13zM68 18.5c0-.83.67-1.5 1.5-1.5h8a1.5 1.5 0 010 3h-8a1.5 1.5 0 01-1.5-1.5zM87.5 7c.83 0 1.5.67 1.5 1.5v16c0 .83-.67 1.5-1.5 1.5H76.42l-7.15 4.29A1.5 1.5 0 0167 29v-3h-2.5a1.5 1.5 0 01-1.5-1.5v-16c0-.83.67-1.5 1.5-1.5h23zM86 23V10H66v13h4v3.35l5.23-3.14c.23-.14.5-.21.77-.21h10zm-42.5 4a1.5 1.5 0 000 3h9a1.5 1.5 0 000-3h-9zM59 22.5c0-.83-.67-1.5-1.5-1.5h-19c-.83 0-1.5.67-1.5 1.5v12c0 .83.67 1.5 1.5 1.5H41v4.5a1.5 1.5 0 002.56 1.06L49.12 36h8.38c.83 0 1.5-.67 1.5-1.5v-12zM40 24h16v9h-8.12L44 36.88V33h-4v-9z" opacity=".35"></path>
                     </svg>
-                    <h5 class="card-title pt-4 pb-2">chefs d'ingénierie</h5>
+                    <h5 class="card-title pt-4 pb-2">Chefs d'ingénierie</h5>
                     <p class="card-text">Ceci est juste un simple script créé pour ce modèle unique et cool.</p>
                 </div><!-- end card-body -->
             </div><!-- end col -->

@@ -17,10 +17,10 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="hero-content">
-                    <h3 class="fs-16 fw-medium pb-3">Who we are</h3>
-                    <h2 class="section-title fs-40 pb-3 lh-55">Helping developers and technologists write the script of the future.</h2>
-                    <p class="lh-26 pb-3">Our public platform <strong class="fw-medium text-black">serves 100 million people every month</strong>, making it one of the 50 most popular websites in the world.</p>
-                    <p class="lh-26">Our asynchronous knowledge management and collaboration offering <strong class="fw-medium text-black">Disilab for Teams</strong>, is transforming how people work.</p>
+                    <h3 class="fs-16 fw-medium pb-3">Qui sommes-nous</h3>
+                    <h2 class="section-title fs-40 pb-3 lh-55">Aider les développeurs et les technologues à écrire le script du futur.</h2>
+                    <p class="lh-26 pb-3">Notre plateforme publique <strong class="fw-medium text-black">sert 100 millions de personnes chaque mois</strong>, ce qui en fait l'un des 50 sites Web les plus populaires au monde.</p>
+                    <p class="lh-26">Notre offre de gestion des connaissances et de collaboration asynchrone <strong class="fw-medium text-black">Forum Q&A pour les équipes</strong>, transforme la façon dont les gens travaillent.</p>
                 </div><!-- end hero-content -->
             </div><!-- end col-lg-6 -->
             <div class="col-lg-6">
@@ -50,7 +50,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">80+ million</h5>
-                            <p class="lh-20">Monthly visitors to our network</p>
+                            <p class="lh-20">Visiteurs mensuels de notre réseau</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -58,7 +58,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">25+ Million</h5>
-                            <p class="lh-20">Questions asked to-date</p>
+                            <p class="lh-20">Questions posées à ce jour</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -66,7 +66,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">14.7 seconds</h5>
-                            <p class="lh-20">Average time between new questions</p>
+                            <p class="lh-20">Délai moyen entre les nouvelles questions</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -74,7 +74,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">40+ Billion</h5>
-                            <p class="lh-20">Times a developer got help</p>
+                            <p class="lh-20">Nombre de fois qu'un développeur a obtenu de l'aide</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -82,7 +82,7 @@
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">10,000+</h5>
-                            <p class="lh-20">Customer companies for all products</p>
+                            <p class="lh-20">Entreprises clientes pour tous les produits</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -102,7 +102,7 @@
     <div class="container">
         <div class="about-box bg-white shadow-md rounded-rounded px-5 pt-40px pb-90px">
             <div class="value-box pt-60px pb-60px">
-                <h2 class="section-title fs-30 text-center">Our core values</h2>
+                <h2 class="section-title fs-30 text-center">Nos valeurs fondamentales</h2>
                 <div class="row pt-50px">
                     <div class="col-lg-4 responsive-column-half">
                         <div class="info-box px-3 text-center">
@@ -122,8 +122,8 @@
                                 </svg>
                             </div>
                             <div class="info-body">
-                                <h3 class="fs-18 pb-3 fw-bold">Adopt a customer-first mindset</h3>
-                                <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                                <h3 class="fs-18 pb-3 fw-bold">Adoptez un état d'esprit axé sur le client</h3>
+                                <p>Ceci est juste un simple texte créé pour ce modèle unique et génial, vous pouvez le remplacer par n'importe quel texte.</p>
                             </div>
                         </div>
                     </div><!-- end col-lg-4 -->
@@ -139,7 +139,7 @@
                                 </svg>
                             </div>
                             <div class="info-body">
-                                <h3 class="fs-18 pb-3 fw-bold">Learn, share, grow</h3>
+                                <h3 class="fs-18 pb-3 fw-bold">Apprendre, partager, grandir</h3>
                                 <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                                 </svg>
                             </div>
                             <div class="info-body">
-                                <h3 class="fs-18 pb-3 fw-bold">Be transparent</h3>
+                                <h3 class="fs-18 pb-3 fw-bold">Soyez transparent</h3>
                                 <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
                             </div>
                         </div>
@@ -176,7 +176,7 @@
                                 </svg>
                             </div>
                             <div class="info-body">
-                                <h3 class="fs-18 pb-3 fw-bold">Empower people to deliver outstanding results</h3>
+                                <h3 class="fs-18 pb-3 fw-bold">Donner aux gens les moyens d'obtenir des résultats exceptionnels</h3>
                                 <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                 </svg>
                             </div>
                             <div class="info-body">
-                                <h3 class="fs-18 pb-3 fw-bold">Keep community at our center</h3>
+                                <h3 class="fs-18 pb-3 fw-bold">Gardez la communauté au centre de nos préoccupations</h3>
                                 <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
                             </div>
                         </div>
@@ -275,7 +275,7 @@
                                 </svg>
                             </div>
                             <div class="info-body">
-                                <h3 class="fs-18 pb-3 fw-bold">Be flexible and inclusive</h3>
+                                <h3 class="fs-18 pb-3 fw-bold">Soyez flexible et inclusif</h3>
                                 <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
                             </div>
                         </div>
@@ -338,7 +338,7 @@
                         </svg>
                     </div>
                     <div class="info-body">
-                        <h3 class="fs-18 pb-4 fw-bold">Check out our FAQ about how Disilab works</h3>
+                        <h3 class="fs-18 pb-4 fw-bold">Consultez notre FAQ sur le fonctionnement de Forum Q&A</h3>
                         <a href="faq.html" class="btn theme-btn theme-btn-sm">Get help <i class="la la-arrow-right icon ml-1"></i></a>
                     </div>
                 </div><!-- end info-box -->
@@ -351,7 +351,7 @@
                         </svg>
                     </div>
                     <div class="info-body">
-                        <h3 class="fs-18 pb-4 fw-bold">To share feedback about our platform, please visit our meta community</h3>
+                        <h3 class="fs-18 pb-4 fw-bold">Pour partager des commentaires sur notre plateforme, veuillez visiter notre méta-communauté</h3>
                         <a href="faq.html" class="btn theme-btn theme-btn-sm">Visit Site <i class="la la-arrow-right icon ml-1"></i></a>
                     </div>
                 </div><!-- end info-box -->
@@ -364,7 +364,7 @@
                         </svg>
                     </div>
                     <div class="info-body">
-                        <h3 class="fs-18 pb-4 fw-bold">Looking for help with Disilab for Teams?</h3>
+                        <h3 class="fs-18 pb-4 fw-bold">Besoin d'aide avec Forum Q&A for Teams ?</h3>
                         <a href="faq.html" class="btn theme-btn theme-btn-sm">Team help <i class="la la-arrow-right icon ml-1"></i></a>
                     </div>
                 </div><!-- end info-box -->
