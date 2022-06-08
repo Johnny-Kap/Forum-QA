@@ -22,12 +22,7 @@
                         <nav class="menu-bar mr-auto">
                             <ul>
                                 <li>
-                                    <a href="#">Home <i class="la la-angle-down fs-11"></i></a>
-                                    <ul class="dropdown-menu-item">
-                                        <li><a href="index.html">Home - landing</a></li>
-                                        <li><a href="home-2.html">Home - main</a></li>
-                                        <li><a href="home-3.html">Home - layout 2 <span class="badge bg-warning text-white">New</span></a></li>
-                                    </ul>
+                                    <a href="#">Home </a>
                                 </li>
                                 <li class="is-mega-menu">
                                     <a href="#">pages <i class="la la-angle-down fs-11"></i></a>
@@ -86,7 +81,11 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#">Questions</a>
+                                    <a href="#">Questions <i class="la la-angle-down fs-11"></i></a>
+                                    <ul class="dropdown-menu-item">
+                                        <li><a href="index.html">Voir les questions</a></li>
+                                        <li><a href="home-2.html">Poser une question</a></li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="{{ route('about') }}">About</a>
