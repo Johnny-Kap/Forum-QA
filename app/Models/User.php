@@ -63,4 +63,30 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    public function votes()
+    {
+        return $this->hasMany(Vote::class);
+    }
+
+    public function reponses()
+    {
+        return $this->hasMany(Reponse::class);
+    }
+
+    public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class);
+    }
+
+    public function centres()
+    {
+        return $this->hasMany(Centre::class);
+    }
 }

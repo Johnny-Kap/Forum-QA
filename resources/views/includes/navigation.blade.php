@@ -29,7 +29,7 @@
                                     <a href="#">Questions <i class="la la-angle-down fs-11"></i></a>
                                     <ul class="dropdown-menu-item">
                                         <li><a href="{{ route('questions') }}">Voir les questions</a></li>
-                                        <li><a href="home-2.html">Poser une question</a></li>
+                                        <li><a href="{{route('askQuestion')}}">Poser une question</a></li>
                                     </ul>
                                 </li>
                                 <li>
