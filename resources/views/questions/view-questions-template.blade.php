@@ -59,7 +59,7 @@
             <div class="col-lg-2">
                 <div class="sidebar pb-45px position-sticky top-0 mt-2">
                     <ul class="generic-list-item generic-list-item-highlight fs-15">
-                        <li class="lh-26 active"><a href="home-2.html"><i class="la la-home mr-1 text-black"></i> Home</a></li>
+                        <li class="lh-26"><a href="{{route('questions')}}"><i class="la la-home mr-1 text-black"></i> Home</a></li>
                         @foreach($centres as $item)
                         <li class="lh-26"><a href="{{route('questionsTemplate', ['id' => $item->id] )}}"><i class="la la-laptop mr-1 text-black"></i> {{$item->label}}</a></li>
                         @endforeach
@@ -174,40 +174,7 @@
                                         @endforeach
                                     </div><!-- end row -->
                                 </div><!-- end tags-snippet -->
-                                <div class="pager d-flex align-items-center justify-content-between pt-10px pb-30px">
-                                    <div>
-                                        <nav aria-label="Page navigation example">
-                                            <ul class="pagination generic-pagination pr-1">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Next">
-                                                        <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
-                                                        <span class="sr-only">Next</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                        <p class="fs-13 pt-3">Showing 1-10 results of 50,577 tags</p>
-                                    </div>
-                                    <div class="filter-option-box w-20">
-                                        <select class="select-container">
-                                            <option selected="" value="10">10 per page</option>
-                                            <option value="20">20 per page</option>
-                                            <option value="30">30 per page</option>
-                                            <option value="40">40 per page</option>
-                                            <option value="50">50 per page</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                {{ $tags->links() }}
                             </div><!-- end tags-main-bar -->
                         </div><!-- end tab-pane -->
                         <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
@@ -250,40 +217,7 @@
                                         @endforeach
                                     </div><!-- end row -->
                                 </div><!-- end users-snippet -->
-                                <div class="pager d-flex align-items-center justify-content-between pt-10px pb-30px">
-                                    <div>
-                                        <nav aria-label="Page navigation example">
-                                            <ul class="pagination generic-pagination pr-1">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Next">
-                                                        <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
-                                                        <span class="sr-only">Next</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                        <p class="fs-13 pt-3">Showing 1-20 results of 50,577 users</p>
-                                    </div>
-                                    <div class="filter-option-box w-20">
-                                        <select class="select-container">
-                                            <option value="10">10 per page</option>
-                                            <option selected="" value="20">20 per page</option>
-                                            <option value="30">30 per page</option>
-                                            <option value="40">40 per page</option>
-                                            <option value="50">50 per page</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                {{ $users->links() }}
                             </div><!-- end users-main-bar -->
                         </div><!-- end tab-pane -->
                     </div><!-- end tab-content -->
@@ -298,19 +232,19 @@
                             <div class="row no-gutters text-center">
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color">980k</span>
+                                        <span class="fs-20 fw-bold text-color">{{$questions_counts}}</span>
                                         <p class="fs-14">Questions</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color-2">610k</span>
+                                        <span class="fs-20 fw-bold text-color-2">{{$reponses_counts}}</span>
                                         <p class="fs-14">Reponses</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color-4">320k</span>
+                                        <span class="fs-20 fw-bold text-color-4">{{$users_counts}}</span>
                                         <p class="fs-14">Utilisateurs</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->

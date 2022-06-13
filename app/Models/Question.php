@@ -21,6 +21,10 @@ class Question extends Model
         return $this->hasMany(Reponse::class);
     }
 
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
     public function tags(){
         return $this->belongsTo(Tags::class, 'tags_id', 'id');
     }

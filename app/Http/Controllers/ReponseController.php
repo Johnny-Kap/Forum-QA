@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commentaire;
 use App\Models\Reponse;
+use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReponseController extends Controller
 {
@@ -33,9 +36,58 @@ class ReponseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+
+        if ($request->hasFile('file')) {
+
+            $filename = time() . '.' . $request->file->extension();
+
+            $path = $request->file('file')->storeAs('avatars', $filename, 'public');
+        } else {
+
+            $path = 'noimage';
+        }
+
+        $questionItems = Question::find($id);
+
+        $questionId = $questionItems->id;
+
+        $add = new Reponse();
+
+        $add->question_id = $questionId;
+
+        $add->user_id = Auth::user()->id;
+
+        $add->contenu = $request->contenu;
+
+        $add->image = $path;
+
+        $add->save();
+
+        return back()->with('success', 'Reponse ajoutée avec succès!');
+    }
+
+    public function addComments(Request $request, $id){
+
+        $reponseItems = Reponse::find($id);
+
+        $questionId = $reponseItems->id;
+
+        $add = new Commentaire();
+
+        $add->user_id = Auth::user()->id;
+
+        $add->reponse_id = $questionId;
+
+        $add->website = $request->website;
+
+        $add->contenu = $request->message;
+
+        $add->save();
+
+        return back()->with('success', 'Commentaire ajoutée à la reponse avec succès!');
+
     }
 
     /**

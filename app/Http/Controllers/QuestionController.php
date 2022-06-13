@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Centre;
+use App\Models\Comment;
+use App\Models\Commentaire;
 use App\Models\Question;
+use App\Models\Reponse;
 use App\Models\Tags;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,35 +24,48 @@ class QuestionController extends Controller
 
         $centres = Centre::all();
 
-        $tags = Tags::withCount('questions')->get();
+        $tags = Tags::withCount('questions')->simplePaginate(10);
 
-        $users = User::withCount('reponses')->get();
+        $users = User::withCount('reponses')->simplePaginate(10);
 
-        $questions = Question::withCount('reponses')->get();
+        $questions = Question::withCount('reponses')->simplePaginate(10);
 
         $questions_tend = Question::take(3)->get();
 
-        return view('questions.view-questions', compact('centres', 'tags', 'users', 'questions', 'questions_tend'));
+        $questions_counts = Question::count();
+
+        $reponses_counts = Reponse::count();
+
+        $users_counts = User::count();
+
+        return view('questions.view-questions', compact('centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
     }
 
 
     public function showByCenter($id)
     {
 
+        $centreItems = Centre::find($id);
+
+        $centreIds = $centreItems->id;
+
         $centres = Centre::all();
 
-        $tags = Tags::withCount('questions')->get();
+        $tags = Tags::withCount('questions')->simplePaginate(10);
 
-        $users = User::withCount('reponses')->get();
+        $users = User::withCount('reponses')->simplePaginate(10);
 
         $questions_tend = Question::take(3)->get();
 
-        $centreId = Centre::find($id);
+        $questions = Question::where('centre_id', $centreIds)->withCount('reponses')->simplePaginate(10);
 
-        $questions = Question::whereIn('centre_id', $centreId)->withCount('reponses')->paginate(20);
-        dd($questions);
+        $questions_counts = Question::count();
 
-        return view('questions.view-questions-template', compact('centres', 'tags', 'users', 'questions', 'questions_tend'));
+        $reponses_counts = Reponse::count();
+
+        $users_counts = User::count();
+
+        return view('questions.view-questions-template', compact('centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
     }
 
     /**
@@ -120,8 +136,51 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $questionId = Question::find($id);
-        dd($questionId);
+
+        $questions_counts = Question::count();
+
+        $reponses_counts = Reponse::count();
+
+        $users_counts = User::count();
+
+        $questions_tend = Question::take(3)->get();
+
+        $questionDetails = Question::find($id);
+
+        $questionIds = $questionDetails->id;
+
+        $reponses = Reponse::where('question_id', $questionIds)->get();
+        
+        $reponses_counts_this = Reponse::where('question_id', $questionIds)->count();
+
+        $reponseIds = Reponse::where('question_id' , $questionIds)->pluck('id');
+        
+        $getComments = Comment::where('question_id' , $questionIds)->get();
+
+        return view('questions.details', compact('questions_counts', 'reponses_counts', 'users_counts', 'questions_tend', 'questionDetails', 'reponses', 'reponses_counts_this', 'getComments'));
+    }
+
+    public function addComments(Request $request ,$id){
+
+        $questionsItems = Question::find($id);
+
+        $questionId = $questionsItems->id;
+
+        $add = new Comment();
+
+        $add->user_id = Auth::user()->id;
+
+        $add->question_id = $questionId;
+
+        $add->website = $request->website;
+
+        $add->contenu = $request->message;
+
+        $add->save();
+
+        return back()->with('success', 'Commentaire ajouté à la question avec succès!');
+
+
     }
 
 
