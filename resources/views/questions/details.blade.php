@@ -16,21 +16,21 @@
         <div class="row align-items-center">
             <div class="col-lg-9">
                 <div class="hero-content">
-                    <h2 class="section-title pb-2 fs-24 lh-34">Find the best answer to your technical question, <br>
-                        help others answer theirs
+                    <h2 class="section-title pb-2 fs-24 lh-34">Trouvez la meilleure réponse à votre question technique, <br>
+                        aider les autres à répondre aux leurs
                     </h2>
                     <ul class="generic-list-item pt-3">
                         <li><span class="icon-element icon-element-xs shadow-sm d-inline-block mr-2"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#6c727c">
                                     <path d="M0 0h24v24H0V0z" fill="none" />
                                     <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z" />
-                                </svg></span> Anybody can ask a question</li>
+                                </svg></span> N'importe qui peut poser une question</li>
                         <li><span class="icon-element icon-element-xs shadow-sm d-inline-block mr-2"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#6c727c">
                                     <path d="M0 0h24v24H0V0z" fill="none" />
                                     <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
-                                </svg></span> Anybody can answer</li>
+                                </svg></span> N'importe qui peut répondre</li>
                         <li><span class="icon-element icon-element-xs shadow-sm d-inline-block mr-2"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 320 512" width="20px">
                                     <path fill="#6c727c" d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"></path>
-                                </svg></span> The best answers are voted up and rise to the top</li>
+                                </svg></span> Les meilleures réponses sont votées et montent au sommet</li>
                     </ul>
                 </div><!-- end hero-content -->
             </div><!-- end col-lg-9 -->
@@ -57,12 +57,12 @@
                                 <h5 class="fs-20">{{ $questionDetails->titre }}</h5>
                                 <div class="meta d-flex flex-wrap align-items-center fs-13 lh-20 py-1">
                                     <div class="pr-3">
-                                        <span>Asked</span>
+                                        <span>A posé le</span>
                                         <span class="text-black">{{$questionDetails->created_at}}</span>
                                     </div>
                                     <div class="pr-3">
-                                        <span class="pr-1">Viewed</span>
-                                        <span class="text-black">89 times</span>
+                                        <span class="pr-1">Vu</span>
+                                        <span class="text-black">{{$vuesCount}} fois</span>
                                     </div>
                                 </div>
                                 <div class="tags">
@@ -73,11 +73,14 @@
                     </div><!-- end question-highlight -->
                     <div class="question d-flex">
                         <div class="votes votes-styled w-auto">
-                            <div id="vote" class="upvotejs">
-                                <a class="upvote upvote-on" data-toggle="tooltip" data-placement="right" title="This question is useful"></a>
-                                <span class="count">1</span>
-                                <a class="downvote" data-toggle="tooltip" data-placement="right" title="This question is not useful"></a>
-                                <a class="star" data-toggle="tooltip" data-placement="right" title="Bookmark this question."></a>
+                            <div id="vote2" class="upvotejs">
+                                <form action="" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="upvote upvote-on" data-toggle="tooltip" data-placement="right" title="This question is useful"></a></button></form>
+                                <span class="count">2</span>
+                                <form action="" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="downvote" data-toggle="tooltip" data-placement="right" title="This question is not useful"></a></button></form>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star" viewBox="0 0 16 16">
+                                        <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
+                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+                                        <a class="star" data-toggle="tooltip" data-placement="right" title="Bookmark this question."></a></svg>
                             </div>
                         </div><!-- end votes -->
                         <div class="question-post-body-wrap flex-grow-1">
@@ -87,14 +90,14 @@
                             <div class="question-post-user-action">
                                 <div class="media media-card user-media align-items-center">
                                     <a href="user-profile.html" class="media-img d-block">
-                                        <img src="images/img4.jpg" alt="avatar">
+                                        <img src="/admins/images/img4.jpg" alt="avatar">
                                     </a>
                                     <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                                         <div>
                                             <h5 class="pb-1"><a href="user-profile.html">{{$questionDetails->users->name}}</a></h5>
                                         </div>
                                         <a href="revisions.html" class="meta d-block text-right fs-13 text-color">
-                                            <span class="d-block lh-18">edited</span>
+                                            <span class="d-block lh-18">édité le</span>
                                             <span class="d-block lh-18 fs-12">{{$questionDetails->created_at}}</span>
                                         </a>
                                     </div>
@@ -120,19 +123,19 @@
                                 </ul>
                                 <div class="comment-form">
                                     <div class="comment-link-wrap text-center">
-                                        <a class="collapse-btn comment-link" data-toggle="collapse" href="#addCommentCollapse" role="button" aria-expanded="false" aria-controls="addCommentCollapse" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">Add
-                                            a comment</a>
+                                        <a class="collapse-btn comment-link" data-toggle="collapse" href="#addCommentCollapse" role="button" aria-expanded="false" aria-controls="addCommentCollapse" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">
+                                            Ajouter un commentaire</a>
                                     </div>
                                     <div class="collapse border-top border-top-gray mt-2 pt-3" id="addCommentCollapse">
                                         <form method="post" action="{{ route('addCommentQuestion', [ 'id' => $questionDetails->id ]) }}" class="row pb-3">
                                             @csrf
                                             <div class="col-lg-12">
-                                                <h4 class="fs-16 pb-2">Leave a Comment</h4>
+                                                <h4 class="fs-16 pb-2">Laissez un commentaire</h4>
                                                 <div class="divider mb-2"><span></span></div>
                                             </div><!-- end col-lg-12 -->
                                             <div class="col-lg-12">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20">Website</label>
+                                                    <label class="fs-13 text-black lh-20">Site Internet</label>
                                                     <div class="form-group">
                                                         <input class="form-control form--control form-control-sm fs-13" type="text" name="website" placeholder="Website link">
                                                     </div>
@@ -145,7 +148,7 @@
                                                         <textarea class="form-control form--control form-control-sm fs-13" name="message" rows="5" placeholder="Your comment here..."></textarea>
                                                         <div class="d-flex flex-wrap align-items-center pt-2">
                                                             <div class="badge bg-gray border border-gray mr-3 fw-regular fs-13">
-                                                                [named hyperlinks] (https://example.com)</div>
+                                                                [hyperliens nommés] (https://example.com)</div>
                                                             <div class="mr-3 fw-bold fs-13">**bold**</div>
                                                             <div class="mr-3 font-italic fs-13">_italic_</div>
                                                         </div>
@@ -154,7 +157,7 @@
                                             </div><!-- end col-lg-12 -->
                                             <div class="col-lg-12">
                                                 <div class="input-box d-flex flex-wrap align-items-center justify-content-between">
-                                                    <button class="btn theme-btn theme-btn-sm theme-btn-outline theme-btn-outline-gray" type="submit">Post Comment</button>
+                                                    <button class="btn theme-btn theme-btn-sm theme-btn-outline theme-btn-outline-gray" type="submit">Poster un commentaire</button>
                                                 </div>
                                             </div><!-- end col-lg-12 -->
                                         </form>
@@ -165,14 +168,14 @@
                     </div><!-- end question -->
                     <div class="subheader d-flex align-items-center justify-content-between">
                         <div class="subheader-title">
-                            <h3 class="fs-16">{{$reponses_counts_this}} Answer</h3>
+                            <h3 class="fs-16">{{$reponses_counts_this}} réponse(s)</h3>
                         </div><!-- end subheader-title -->
                         <div class="subheader-actions d-flex align-items-center lh-1">
-                            <label class="fs-13 fw-regular mr-1 mb-0">Order by</label>
+                            <label class="fs-13 fw-regular mr-1 mb-0">Filtré par</label>
                             <div class="w-100px">
                                 <select class="select-container">
                                     <option value="active">active</option>
-                                    <option value="oldest">oldest</option>
+                                    <option value="oldest">le plus ancien</option>
                                     <option value="votes" selected="selected">votes</option>
                                 </select>
                             </div>
@@ -182,10 +185,10 @@
                     <div class="answer-wrap d-flex">
                         <div class="votes votes-styled w-auto">
                             <div id="vote2" class="upvotejs">
-                                <a class="upvote upvote-on" data-toggle="tooltip" data-placement="right" title="This question is useful"></a>
-                                <span class="count">2</span>
-                                <a class="downvote" data-toggle="tooltip" data-placement="right" title="This question is not useful"></a>
-                                <a class="star check star-on" data-toggle="tooltip" data-placement="right" title="The question owner accepted this answer"></a>
+                                <form action="{{ route('upvote', ['id' => $item->id]) }}" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="upvote upvote-on" data-toggle="tooltip" data-placement="right" title="This question is useful"></a></button></form>
+                                <span class="count">{{ $item->votes_count }}</span>
+                                <form action="{{ route('downvote', ['id' => $item->id]) }}" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="downvote" data-toggle="tooltip" data-placement="right" title="This question is not useful"></a></button></form>
+                                <a class="star check star-on" data-toggle="tooltip" data-placement="right" title="The question owner accepted this answer"><span class="fa fa-star"></span><i class="fa fa-star"></i></a>
                             </div>
                         </div><!-- end votes -->
                         <div class="answer-body-wrap flex-grow-1">
@@ -195,14 +198,14 @@
                             <div class="question-post-user-action">
                                 <div class="media media-card user-media align-items-center">
                                     <a href="user-profile.html" class="media-img d-block">
-                                        <img src="images/img4.jpg" alt="avatar">
+                                        <img src="/admins/images/img4.jpg" alt="avatar">
                                     </a>
                                     <div class="media-body d-flex align-items-center justify-content-between">
                                         <div>
                                             <h5 class="pb-1"><a href="user-profile.html">{{$item->users->name}}</a></h5>
                                         </div>
                                         <small class="meta d-block text-right">
-                                            <span class="text-black d-block lh-18">answered</span>
+                                            <span class="text-black d-block lh-18">a répondu le</span>
                                             <span class="d-block lh-18 fs-12">{{$item->created_at}}</span>
                                         </small>
                                     </div>
@@ -214,16 +217,16 @@
                     @endforeach
                     <div class="subheader">
                         <div class="subheader-title">
-                            <h3 class="fs-16">Your Answer</h3>
+                            <h3 class="fs-16">Les réponses</h3>
                         </div><!-- end subheader-title -->
                     </div><!-- end subheader -->
                     <div class="post-form">
                         <form method="post" action="{{ route('addReponse', [ 'id' => $questionDetails->id ]) }}" enctype="multipart/form-data" class="pt-3">
                             @csrf
                             <div class="input-box">
-                                <label class="fs-14 text-black lh-20 fw-medium">Body</label>
+                                <label class="fs-14 text-black lh-20 fw-medium">Corps</label>
                                 <div class="form-group">
-                                    <textarea class="form-control form--control form-control-sm fs-13 user-text-editor" name="contenu" rows="6" placeholder="Your answer here...">Your answer here...</textarea>
+                                    <textarea class="form-control form--control form-control-sm fs-13 user-text-editor" name="contenu" rows="6" placeholder="Votre réponse ici...">Votre réponse ici...</textarea>
                                 </div>
                             </div>
                             <div class="input-box">
@@ -231,8 +234,7 @@
                                 <div class="form-group">
                                     <div class="file-upload-wrap file-upload-layout-2">
                                         <input type="file" name="file" class="file-upload-input" multiple>
-                                        <span class="file-upload-text d-flex align-items-center justify-content-center"><i class="la la-cloud-upload mr-2 fs-24"></i>Drop files here or click
-                                            to upload.</span>
+                                        <span class="file-upload-text d-flex align-items-center justify-content-center"><i class="la la-cloud-upload mr-2 fs-24"></i>Déposez les fichiers ici ou cliquez pour télécharger.</span>
                                     </div>
                                 </div>
                             </div><!-- end input-box -->
@@ -241,7 +243,7 @@
                             <a href="{{route('login')}}" class="btn theme-btn ">Connectez-vous <i class="la la-sign-in mr-1"></i></a> ou <a href="{{route('register')}}" class="btn theme-btn ">Inscrivez-vous <i class="la la-user mr-1"></i></a> <span>pour repondre à la question !</span>
                             @endif
                             @else
-                            <button class="btn theme-btn theme-btn-sm" type="submit">Post Your Answer</button>
+                            <button class="btn theme-btn theme-btn-sm" type="submit">Postez votre réponse</button>
                             @endguest
                         </form>
                     </div>
@@ -251,7 +253,7 @@
                 <div class="sidebar">
                     <div class="card card-item">
                         <div class="card-body">
-                            <h3 class="fs-17 pb-3">Number Achievement</h3>
+                            <h3 class="fs-17 pb-3">Réalisation en nombre</h3>
                             <div class="divider"><span></span></div>
                             <div class="row no-gutters text-center">
                                 <div class="col-lg-6 responsive-column-half">
@@ -263,24 +265,24 @@
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
                                         <span class="fs-20 fw-bold text-color-2">{{$reponses_counts}}</span>
-                                        <p class="fs-14">Answers</p>
+                                        <p class="fs-14">Réponses</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
                                         <span class="fs-20 fw-bold text-color-4">{{$users_counts}}</span>
-                                        <p class="fs-14">Users</p>
+                                        <p class="fs-14">Utilisateurs</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-12 pt-3">
-                                    <p class="fs-14">To get answer of question <a href="signup.html" class="text-color hover-underline">Join<i class="la la-arrow-right ml-1"></i></a></p>
+                                    <p class="fs-14">Pour obtenir la réponse à la question <a href="{{route('register')}}" class="text-color hover-underline">Rejoindre<i class="la la-arrow-right ml-1"></i></a></p>
                                 </div>
                             </div><!-- end row -->
                         </div>
                     </div><!-- end card -->
                     <div class="card card-item">
                         <div class="card-body">
-                            <h3 class="fs-17 pb-3">Related Questions</h3>
+                            <h3 class="fs-17 pb-3">Questions Connexes</h3>
                             <div class="divider"><span></span></div>
                             <div class="sidebar-questions pt-3">
                                 @foreach($questions_tend as $item)

@@ -31,3 +31,5 @@ Route::post('questions/add', [App\Http\Controllers\QuestionController::class, 's
 Route::post('answers/add/{id}', [App\Http\Controllers\ReponseController::class, 'store'])->name('addReponse');
 Route::post('answers/comments/add/{id}', [App\Http\Controllers\ReponseController::class, 'addComments'])->name('addCommentReponse');
 Route::post('questions/comments/add/{id}', [App\Http\Controllers\QuestionController::class, 'addComments'])->name('addCommentQuestion');
+Route::post('questions/vote/upvote/{id}', [App\Http\Controllers\VoteController::class, 'upVote'])->name('upvote');
+Route::post('questions/vote/downvote/{id}', [App\Http\Controllers\VoteController::class, 'downVote'])->name('downvote');

@@ -9,6 +9,7 @@ use App\Models\Question;
 use App\Models\Reponse;
 use App\Models\Tags;
 use App\Models\User;
+use App\Models\Vue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -79,7 +80,8 @@ class QuestionController extends Controller
         $id = optional(Auth::user())->id;
 
         if ($id == NULL) {
-            return view('auth.login');
+
+            return redirect()->route('login');
         } else {
 
             $tags = Tags::all();
@@ -149,18 +151,27 @@ class QuestionController extends Controller
 
         $questionIds = $questionDetails->id;
 
-        $reponses = Reponse::where('question_id', $questionIds)->get();
-        
+        $reponses = Reponse::where('question_id', $questionIds)->withCount('votes')->get();
+
         $reponses_counts_this = Reponse::where('question_id', $questionIds)->count();
 
-        $reponseIds = Reponse::where('question_id' , $questionIds)->pluck('id');
-        
-        $getComments = Comment::where('question_id' , $questionIds)->get();
+        $reponseIds = Reponse::where('question_id', $questionIds)->pluck('id');
 
-        return view('questions.details', compact('questions_counts', 'reponses_counts', 'users_counts', 'questions_tend', 'questionDetails', 'reponses', 'reponses_counts_this', 'getComments'));
+        $getComments = Comment::where('question_id', $questionIds)->get();
+
+        $addVue = new Vue();
+
+        $addVue->question_id = $questionIds;
+
+        $addVue->save();
+
+        $vuesCount = Vue::where('question_id', $questionIds)->count();
+
+        return view('questions.details', compact('questions_counts', 'reponses_counts', 'users_counts', 'questions_tend', 'questionDetails', 'reponses', 'reponses_counts_this', 'getComments', 'vuesCount'));
     }
 
-    public function addComments(Request $request ,$id){
+    public function addComments(Request $request, $id)
+    {
 
         $questionsItems = Question::find($id);
 
@@ -179,8 +190,6 @@ class QuestionController extends Controller
         $add->save();
 
         return back()->with('success', 'Commentaire ajouté à la question avec succès!');
-
-
     }
 
 

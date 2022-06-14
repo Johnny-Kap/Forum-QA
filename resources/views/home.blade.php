@@ -114,7 +114,7 @@
             </p>
             <div class="hero-btn-box py-4">
                 <a href="{{route('register')}}" class="btn theme-btn mr-2">Joindre la communauté</a>
-                <a href="ask-question.html" class="btn theme-btn theme-btn-outline">Poser une question</a>
+                <a href="{{route('askQuestion')}}" class="btn theme-btn theme-btn-outline">Poser une question</a>
             </div>
         </div><!-- end hero-content -->
         <div class="row">

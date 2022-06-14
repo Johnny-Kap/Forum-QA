@@ -28,4 +28,8 @@ class Question extends Model
     public function tags(){
         return $this->belongsTo(Tags::class, 'tags_id', 'id');
     }
+
+    public function vues(){
+        return $this->hasMany(Vue::class);
+    }
 }

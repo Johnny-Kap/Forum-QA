@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reponse;
 use App\Models\Vote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VoteController extends Controller
 {
@@ -15,6 +17,62 @@ class VoteController extends Controller
     public function index()
     {
         //
+    }
+
+    public function upVote(Request $request, $id)
+    {
+
+        $ids = optional(Auth::user())->id;
+
+        if ($ids == NULL) {
+
+            return redirect()->route('login');
+        } else {
+
+            $reponseItems = Reponse::find($id);
+
+            $reponseId = $reponseItems->id;
+
+            $add = new Vote();
+
+            $add->reponse_id = $reponseId;
+
+            $add->user_id = Auth::user()->id;
+
+            $add->vote = 1;
+
+            $add->save();
+
+            return back()->with('success', 'Vote ajouté avec succès!');
+        }
+    }
+
+    public function downVote(Request $request, $id)
+    {
+
+        $ids = optional(Auth::user())->id;
+
+        if ($ids == NULL) {
+
+            return redirect()->route('login');
+        } else {
+
+            $reponseItems = Reponse::find($id);
+
+            $reponseId = $reponseItems->id;
+
+            $add = new Vote();
+
+            $add->reponse_id = $reponseId;
+
+            $add->user_id = Auth::user()->id;
+
+            $add->vote = 0;
+
+            $add->save();
+
+            return back()->with('success', 'Vote ajouté avec succès!');
+        }
     }
 
     /**
@@ -35,7 +93,6 @@ class VoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**

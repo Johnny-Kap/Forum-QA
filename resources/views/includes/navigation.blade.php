@@ -24,7 +24,7 @@
                                 <li>
                                     <a href="{{ url('/') }}">Accueil </a>
                                 </li>
-                          
+
                                 <li>
                                     <a href="#">Questions <i class="la la-angle-down fs-11"></i></a>
                                     <ul class="dropdown-menu-item">
@@ -70,7 +70,8 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        
+                                       {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
