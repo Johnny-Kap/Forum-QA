@@ -58,7 +58,7 @@
                                 <div class="meta d-flex flex-wrap align-items-center fs-13 lh-20 py-1">
                                     <div class="pr-3">
                                         <span>A posé le</span>
-                                        <span class="text-black">{{$questionDetails->created_at}}</span>
+                                        <span class="text-black">{{$questionDetails->created_at->format('j F Y, h:i')}}</span>
                                     </div>
                                     <div class="pr-3">
                                         <span class="pr-1">Vu</span>
@@ -98,7 +98,7 @@
                                         </div>
                                         <a href="revisions.html" class="meta d-block text-right fs-13 text-color">
                                             <span class="d-block lh-18">édité le</span>
-                                            <span class="d-block lh-18 fs-12">{{$questionDetails->created_at}}</span>
+                                            <span class="d-block lh-18 fs-12">{{$questionDetails->created_at->format('j F Y, h:i')}}</span>
                                         </a>
                                     </div>
                                 </div><!-- end media -->
@@ -116,7 +116,7 @@
                                             <span class="comment-separated">-</span>
                                             <a href="user-profile.html" class="comment-user owner" title="224,110 reputation">{{$item->users->name}}</a>
                                             <span class="comment-separated">-</span>
-                                            <a href="#" class="comment-date">{{$item->created_at}}</a>
+                                            <a href="#" class="comment-date">{{$item->created_at->format('j F Y, h:i')}}</a>
                                         </div>
                                     </li>
                                     @endforeach
@@ -206,7 +206,7 @@
                                         </div>
                                         <small class="meta d-block text-right">
                                             <span class="text-black d-block lh-18">a répondu le</span>
-                                            <span class="d-block lh-18 fs-12">{{$item->created_at}}</span>
+                                            <span class="d-block lh-18 fs-12">{{$item->created_at->format('j F Y, h:i')}}</span>
                                         </small>
                                     </div>
                                 </div><!-- end media -->
@@ -290,7 +290,7 @@
                                     <div class="media-body">
                                         <h5><a href="question-details.html">{{$item->titre}}</a></h5>
                                         <small class="meta">
-                                            <span class="pr-1">{{$item->created_at}}</span>
+                                            <span class="pr-1">{{$item->created_at->format('j F Y, h:i')}}</span>
                                             <span class="pr-1">. par</span>
                                             <a href="#" class="author">{{$item->users->name}}</a>
                                         </small>

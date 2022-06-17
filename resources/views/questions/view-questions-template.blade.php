@@ -111,7 +111,7 @@
                                         <div class="media-body">
                                             <h5><a href="{{ route('showQuestion', ['id' => $item->id]) }}">{{$item->titre}}</a></h5>
                                             <small class="meta">
-                                                <span class="pr-1">{{$item->created_at}}</span>
+                                                <span class="pr-1">{{$item->created_at->format('j F Y, h:i')}}</span>
                                                 <a href="user-profile.html" class="author">{{$item->users->name}}</a>
                                             </small>
                                             <div class="tags">
@@ -264,7 +264,7 @@
                                     <div class="media-body">
                                         <h5><a href="question-details.html">{{$item->titre}}</a></h5>
                                         <small class="meta">
-                                            <span class="pr-1">{{$item->created_at}}</span>
+                                            <span class="pr-1">{{$item->created_at->format('j F Y, h:i')}}</span>
                                             <span class="pr-1">. par</span>
                                             <a href="#" class="author">{{$item->users->name}}</a>
                                         </small>
