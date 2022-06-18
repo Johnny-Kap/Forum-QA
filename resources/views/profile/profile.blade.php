@@ -31,7 +31,7 @@
             </div><!-- end col-lg-8 -->
             <div class="col-lg-4">
                 <div class="hero-btn-box text-right py-3">
-                    <a href="setting.html" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-gear mr-1"></i> Edit Profile</a>
+                    <a href="{{route('EditProfile')}}" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-gear mr-1"></i> Edit Profile</a>
                 </div>
             </div><!-- end col-lg-4 -->
             <div class="col-lg-12">
@@ -557,7 +557,7 @@
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-12 pt-3">
-                                    <p class="fs-14">To get answer of question <a href="signup.html" class="text-color hover-underline">Join<i class="la la-arrow-right ml-1"></i></a></p>
+                                    <p class="fs-14">To get answer of question <a href="{{route('register')}}" class="text-color hover-underline">Join<i class="la la-arrow-right ml-1"></i></a></p>
                                 </div>
                             </div><!-- end row -->
                         </div>

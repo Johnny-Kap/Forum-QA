@@ -11,4 +11,10 @@ class UserController extends Controller
 
         return view('profile.profile');
     }
+
+
+    public function Edit(){
+
+        return view('profile.edit');
+    }
 }

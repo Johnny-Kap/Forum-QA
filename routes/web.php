@@ -39,3 +39,4 @@ Route::post('questions/vote/downvote/{id}', [App\Http\Controllers\VoteController
 
 //User profile routes
 Route::get('/myprofile', [App\Http\Controllers\UserController::class, 'MyProfile'])->name('MyProfile');
+Route::get('/myprofile/edit', [App\Http\Controllers\UserController::class, 'Edit'])->name('EditProfile');
