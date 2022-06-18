@@ -101,7 +101,7 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
 
-        if ($request->hasFile('upload')) {
+        if ($request->hasFile('file')) {
 
             $filename = time() . '.' . $request->file->extension();
 
