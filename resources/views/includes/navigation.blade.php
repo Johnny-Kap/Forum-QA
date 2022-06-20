@@ -61,6 +61,9 @@
                             @endif
                         </div>
                         @else
+                        <div class="media-img media-img-xs flex-shrink-0 rounded-full mr-2">
+                            <img src="{{ Storage::url(Auth::user()->image) }}" alt="avatar" class="rounded-full" style="width: 30px; height: 30px;">
+                        </div>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" style="color:black;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

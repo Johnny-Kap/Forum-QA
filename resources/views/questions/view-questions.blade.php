@@ -111,7 +111,7 @@
                                         <div class="media-body">
                                             <h5><a href="{{ route('showQuestion', ['id' => $item->id]) }}">{{$item->titre}}</a></h5>
                                             <small class="meta">
-                                                <span class="pr-1">{{$item->created_at->format('j F Y, h:i')}}</span>
+                                                <span class="pr-1">{{$item->created_at->format('j F Y, H:i')}}</span>
                                                 <a href="user-profile.html" class="author">{{$item->users->name}}</a>
                                             </small>
                                             <div class="tags">
@@ -205,11 +205,11 @@
                                         <div class="col-lg-6">
                                             <div class="media media-card p-3">
                                                 <a href="#" class="media-img d-inline-block">
-                                                    <img src="/admins/images/company-logo.png" alt="company logo">
+                                                    <img src="{{ Storage::url($item->image) }}" alt="company logo">
                                                 </a>
                                                 <div class="media-body">
                                                     <h5 class="fs-16 fw-medium"><a href="user-profile.html">{{$item->name}}</a></h5>
-                                                    <small class="meta d-block lh-24 pb-1"><span>Douala</span></small>
+                                                    <small class="meta d-block lh-24 pb-1"><span>{{$item->location}}</span></small>
                                                     <p class="fw-medium fs-15 text-black-50 lh-18">{{$item->reponses_count}}</p>
                                                 </div><!-- end media-body -->
                                             </div><!-- end media -->
@@ -264,7 +264,7 @@
                                     <div class="media-body">
                                         <h5><a href="question-details.html">{{$item->titre}}</a></h5>
                                         <small class="meta">
-                                            <span class="pr-1">{{$item->created_at->format('j F Y, h:i')}}</span>
+                                            <span class="pr-1">{{$item->created_at->format('j F Y, H:i')}}</span>
                                             <span class="pr-1">. par</span>
                                             <a href="#" class="author">{{$item->users->name}}</a>
                                         </small>

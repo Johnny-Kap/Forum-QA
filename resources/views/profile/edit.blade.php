@@ -22,27 +22,27 @@
                             <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.09-.16-.26-.25-.44-.25-.06 0-.12.01-.17.03l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.06-.02-.12-.03-.18-.03-.17 0-.34.09-.43.25l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.09.16.26.25.44.25.06 0 .12-.01.17-.03l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.06.02.12.03.18.03.17 0 .34-.09.43-.25l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zm-1.98-1.71c.04.31.05.52.05.73 0 .21-.02.43-.05.73l-.14 1.13.89.7 1.08.84-.7 1.21-1.27-.51-1.04-.42-.9.68c-.43.32-.84.56-1.25.73l-1.06.43-.16 1.13-.2 1.35h-1.4l-.19-1.35-.16-1.13-1.06-.43c-.43-.18-.83-.41-1.23-.71l-.91-.7-1.06.43-1.27.51-.7-1.21 1.08-.84.89-.7-.14-1.13c-.03-.31-.05-.54-.05-.74s.02-.43.05-.73l.14-1.13-.89-.7-1.08-.84.7-1.21 1.27.51 1.04.42.9-.68c.43-.32.84-.56 1.25-.73l1.06-.43.16-1.13.2-1.35h1.39l.19 1.35.16 1.13 1.06.43c.43.18.83.41 1.23.71l.91.7 1.06-.43 1.27-.51.7 1.21-1.07.85-.89.7.14 1.13zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
                         </svg>
                     </div>
-                    <h2 class="section-title fs-30">Settings</h2>
+                    <h2 class="section-title fs-30">Paramètres</h2>
                 </div><!-- end hero-content -->
             </div><!-- end col-lg-8 -->
             <div class="col-lg-4">
                 <div class="hero-btn-box text-right py-3">
-                    <a href="{{route('MyProfile')}}" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-user mr-1"></i>View Profile</a>
+                    <a href="{{route('MyProfile')}}" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-user mr-1"></i>Voir le Profil</a>
                 </div>
             </div><!-- end col-lg-4 -->
         </div><!-- end row -->
         <ul class="nav nav-tabs generic-tabs generic--tabs generic--tabs-2 mt-4" id="myTab" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" id="edit-profile-tab" data-toggle="tab" href="#edit-profile" role="tab" aria-controls="edit-profile" aria-selected="true">Edit Profile</a>
+                <a class="nav-link active" id="edit-profile-tab" data-toggle="tab" href="#edit-profile" role="tab" aria-controls="edit-profile" aria-selected="true">Editer Profil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="change-password-tab" data-toggle="tab" href="#change-password" role="tab" aria-controls="change-password" aria-selected="false">Change Password</a>
+                <a class="nav-link" id="change-password-tab" data-toggle="tab" href="#change-password" role="tab" aria-controls="change-password" aria-selected="false">Changer le mot de passe</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="email-settings-tab" data-toggle="tab" href="#email-settings" role="tab" aria-controls="email-settings" aria-selected="false">Email Settings</a>
+                <a class="nav-link" id="email-settings-tab" data-toggle="tab" href="#email-settings" role="tab" aria-controls="email-settings" aria-selected="false">Paramètres Email</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="delete-account-tab" data-toggle="tab" href="#delete-account" role="tab" aria-controls="delete-account" aria-selected="false">Delete Account</a>
+                <a class="nav-link" id="delete-account-tab" data-toggle="tab" href="#delete-account" role="tab" aria-controls="delete-account" aria-selected="false">Supprimer le compte</a>
             </li>
         </ul>
     </div><!-- end container -->
@@ -64,119 +64,111 @@
                         <div class="user-panel-main-bar">
                             <div class="user-panel">
                                 <div class="bg-gray p-3 rounded-rounded">
-                                    <h3 class="fs-17">Edit your profile</h3>
+                                    <h3 class="fs-17">Editer votre profil</h3>
                                 </div>
-                                <form method="post" class="pt-35px">
+                                <form method="post" action="{{route('EditedProfile')}}" enctype="multipart/form-data" class="pt-35px">
+                                    @csrf
                                     <div class="settings-item mb-10px">
-                                        <h4 class="fs-14 pb-2 text-gray text-uppercase">Public information</h4>
+                                        <h4 class="fs-14 pb-2 text-gray text-uppercase">Informations publiques</h4>
                                         <div class="divider"><span></span></div>
                                         <div class="row pt-4 align-items-center">
                                             <div class="col-lg-6">
                                                 <div class="edit-profile-photo d-flex flex-wrap align-items-center">
-                                                    <img src="/admins/images/team.jpg" alt="user avatar" class="profile-img mr-4">
+                                                    <img src="{{ Storage::url(Auth::user()->image) }}" alt="user avatar" class="profile-img mr-4">
                                                     <div>
                                                         <div class="file-upload-wrap file--upload-wrap">
-                                                            <input type="file" name="files[]" class="multi file-upload-input" multiple>
-                                                            <span class="file-upload-text"><i class="la la-photo mr-2"></i>Upload Photo</span>
+                                                            <input type="file" name="file" class="multi file-upload-input" multiple>
+                                                            <span class="file-upload-text"><i class="la la-photo mr-2"></i>Envoyer la photo</span>
                                                         </div>
-                                                        <p class="fs-14">Maximum file size: 10 MB.</p>
+                                                        <p class="fs-14">Taille de fichier maximale: 10 MB.</p>
                                                     </div>
                                                 </div><!-- end edit-profile-photo -->
                                             </div><!-- end col-lg-6 -->
                                             <div class="col-lg-6">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Display name</label>
+                                                    <label class="fs-13 text-black lh-20 fw-medium">Nom</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control" type="text" name="text" value="Arden Smith">
+                                                        <input class="form-control form--control" type="text" name="name" value="{{Auth::user()->name}}">
                                                     </div>
                                                 </div>
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Location</label>
+                                                    <label class="fs-13 text-black lh-20 fw-medium">Emplacement</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control" type="text" name="text" value="United States">
+                                                        <input class="form-control form--control" type="text" name="location" value="{{Auth::user()->location}}">
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-6 -->
                                             <div class="col-lg-12">
                                                 <div class="input-box">
-                                                    <label class="fs-15 text-black lh-20 fw-medium">About me</label>
+                                                    <label class="fs-15 text-black lh-20 fw-medium">À propos de moi</label>
                                                     <div class="form-group">
-                                                        <textarea class="form-control form--control user-text-editor" rows="10" cols="40"></textarea>
+                                                        <textarea class="form-control form--control user-text-editor" value="{{Auth::user()->bio}}" name="bio" rows="10" cols="40">{{Auth::user()->bio}}</textarea>
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-12 -->
                                         </div><!-- end row -->
                                     </div><!-- end settings-item -->
                                     <div class="settings-item">
-                                        <h4 class="fs-14 pb-2 text-gray text-uppercase">Web presence</h4>
+                                        <h4 class="fs-14 pb-2 text-gray text-uppercase">Présence Web</h4>
                                         <div class="divider"><span></span></div>
                                         <div class="row pt-4">
                                             <div class="col-lg-6">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Website link</label>
+                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien de site Web</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" name="text">
+                                                        <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->website}}" name="website">
                                                         <span class="la la-link input-icon"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-6 -->
                                             <div class="col-lg-6">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Twitter link</label>
+                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien Twitter</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" name="text">
+                                                        <input class="form-control form--control pl-40px" value="{{Auth::user()->twitterlink}}" type="text" name="twiter">
                                                         <span class="la la-twitter input-icon"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-6 -->
                                             <div class="col-lg-6">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Facebook link</label>
+                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien Facebook</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" name="text">
+                                                        <input class="form-control form--control pl-40px" value="{{Auth::user()->facebooklink}}" type="text" name="facebook">
                                                         <span class="la la-facebook input-icon"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-6 -->
                                             <div class="col-lg-6">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Instagram link</label>
+                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien Instagram</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" name="text">
+                                                        <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->instalink}}" name="instagram">
                                                         <span class="la la-instagram input-icon"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-6 -->
                                             <div class="col-lg-6">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Youtube link</label>
+                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien Youtube</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" name="text">
+                                                        <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->youtubelink}}" name="youtube">
                                                         <span class="la la-youtube input-icon"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-6 -->
                                             <div class="col-lg-6">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Vimeo link</label>
+                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien GitHub</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" name="text">
-                                                        <span class="la la-vimeo input-icon"></span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-12">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">GitHub link</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" name="text">
+                                                        <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->githublink}}" name="github">
                                                         <span class="la la-github input-icon"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-12 -->
                                             <div class="col-lg-12">
                                                 <div class="submit-btn-box pt-3">
-                                                    <button class="btn theme-btn" type="button">Save changes</button>
+                                                    <button class="btn theme-btn" type="submit">Sauvegarder les modifications</button>
                                                 </div>
                                             </div><!-- end col-lg-12 -->
                                         </div><!-- end row -->
@@ -189,22 +181,22 @@
                         <div class="user-panel-main-bar">
                             <div class="user-panel">
                                 <div class="bg-gray p-3 rounded-rounded">
-                                    <h3 class="fs-17">Change password</h3>
+                                    <h3 class="fs-17">Changer le mot de passe</h3>
                                 </div>
                                 <form method="post" class="pt-20px">
                                     <div class="settings-item mb-30px">
                                         <div class="form-group">
-                                            <label class="fs-13 text-black lh-20 fw-medium">Current Password</label>
-                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="Current password">
+                                            <label class="fs-13 text-black lh-20 fw-medium">Mot de passe actuel</label>
+                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="Mot de passe actuel">
                                         </div>
                                         <div class="form-group">
-                                            <label class="fs-13 text-black lh-20 fw-medium">New Password</label>
-                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="New password">
+                                            <label class="fs-13 text-black lh-20 fw-medium">Nouveau mot de passe</label>
+                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="Nouveau mot de passe">
                                         </div>
                                         <div class="form-group">
-                                            <label class="fs-13 text-black lh-20 fw-medium">New Password (again)</label>
-                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="New password again">
-                                            <p class="fs-14 lh-18 py-2">Passwords must contain at least eight characters, including at least 1 letter and 1 number.</p>
+                                            <label class="fs-13 text-black lh-20 fw-medium">Confirmer le nouveau mot de passe</label>
+                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="Confirmer le nouveau mot de passe">
+                                            <p class="fs-14 lh-18 py-2">Les mots de passe doivent contenir au moins huit caractères, dont au moins 1 lettre et 1 chiffre.</p>
                                             <button class="btn theme-btn-outline theme-btn-outline-gray toggle-password" type="button" data-toggle="tooltip" data-placement="right" title="Show/hide password">
                                                 <svg class="eye-on" xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 0 24 24" width="22px" fill="#7f8897">
                                                     <path d="M0 0h24v24H0V0z" fill="none" />
@@ -217,7 +209,7 @@
                                             </button>
                                         </div>
                                         <div class="submit-btn-box pt-3">
-                                            <button class="btn theme-btn" type="button">Change Password</button>
+                                            <button class="btn theme-btn" type="button">Changer le mot de passe</button>
                                         </div>
                                     </div><!-- end settings-item -->
                                 </form>
@@ -228,15 +220,15 @@
                         <div class="user-panel-main-bar">
                             <div class="user-panel">
                                 <div class="bg-gray p-3 rounded-rounded">
-                                    <h3 class="fs-17">Email Settings</h3>
+                                    <h3 class="fs-17">Paramètres Email</h3>
                                 </div>
                                 <form method="post" class="pt-20px">
                                     <div class="settings-item mb-30px border-bottom border-bottom-gray pb-30px">
-                                        <label class="fs-13 text-black lh-20 fw-medium">Email Address</label>
+                                        <label class="fs-13 text-black lh-20 fw-medium">Adresse Email</label>
                                         <div class="input-group">
                                             <input class="form-control form--control" type="email" name="email" value="ardensmith81@gmail.com">
                                             <div class="input-group-append">
-                                                <button class="btn theme-btn" type="button">Save</button>
+                                                <button class="btn theme-btn" type="button">Sauvegarder</button>
                                             </div>
                                         </div>
                                     </div><!-- end settings-item -->
@@ -249,18 +241,18 @@
                             <div class="user-panel">
                                 <div class="delete-account-info card card-item border border-danger">
                                     <div class="card-body">
-                                        <h3 class="fs-22 text-danger fw-bold">Delete Account</h3>
-                                        <p class="pb-3 pt-2 lh-22 fs-15">Before confirming that you would like your profile deleted, we'd like to take a moment to explain the implications of deletion:</p>
+                                        <h3 class="fs-22 text-danger fw-bold">Supprimer le compte</h3>
+                                        <p class="pb-3 pt-2 lh-22 fs-15">Avant de confirmer que vous souhaitez que votre profil soit supprimé, nous aimerions prendre un moment pour vous expliquer les implications de la suppression :</p>
                                         <ul class="generic-list-item generic-list-item-bullet fs-15">
-                                            <li>Deletion is irreversible, and you will have no way to regain any of your original content, should this deletion be carried out and you change your mind later on.</li>
-                                            <li>Your questions and answers will remain on the site, but will be disassociated and anonymized (the author will be listed as "user15319675") and will not indicate your authorship even if you later return to the site.</li>
+                                            <li>La suppression est irréversible et vous n'aurez aucun moyen de retrouver votre contenu d'origine si cette suppression est effectuée et que vous changez d'avis par la suite.</li>
+                                            <li>Vos questions et réponses resteront sur le site, mais seront dissociées et anonymisées (l'auteur sera répertorié comme "user15319675") et n'indiqueront pas votre paternité même si vous revenez ultérieurement sur le site.</li>
                                         </ul>
-                                        <p class="pb-3 pt-2 lh-22 fs-15">Once you delete your account, there is no going back. Please be certain.</p>
+                                        <p class="pb-3 pt-2 lh-22 fs-15">Une fois que vous avez supprimé votre compte, il n'y a plus de retour en arrière. S'il vous plaît soyez certain.</p>
                                         <div class="custom-control custom-checkbox fs-15 mb-4">
                                             <input type="checkbox" class="custom-control-input" id="delete-terms">
-                                            <label class="custom-control-label custom--control-label lh-22" for="delete-terms">I have read the information stated above and understand the implications of having my profile deleted. I wish to proceed with the deletion of my profile.</label>
+                                            <label class="custom-control-label custom--control-label lh-22" for="delete-terms">J'ai lu les informations indiquées ci-dessus et je comprends les implications de la suppression de mon profil. Je souhaite procéder à la suppression de mon profil.</label>
                                         </div>
-                                        <button type="button" class="btn btn-danger fw-medium" data-toggle="modal" data-target="#deleteModal" id="delete-button" disabled><i class="la la-trash mr-1"></i> Delete your account</button>
+                                        <button type="button" class="btn btn-danger fw-medium" data-toggle="modal" data-target="#deleteModal" id="delete-button" disabled><i class="la la-trash mr-1"></i> Supprimer votre compte</button>
                                     </div>
                                 </div>
                             </div><!-- end user-panel -->
@@ -272,74 +264,50 @@
                 <div class="sidebar">
                     <div class="card card-item p-4">
                         <div class="card-body">
-                            <h3 class="fs-17 pb-3">Number Achievement</h3>
+                            <h3 class="fs-17 pb-3">Réalisation en nombre</h3>
                             <div class="divider"><span></span></div>
                             <div class="row no-gutters text-center">
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color">980k</span>
+                                        <span class="fs-20 fw-bold text-color">{{$questions_counts}}</span>
                                         <p class="fs-14">Questions</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color-2">610k</span>
-                                        <p class="fs-14">Answers</p>
+                                        <span class="fs-20 fw-bold text-color-2">{{$reponses_counts}}</span>
+                                        <p class="fs-14">Réponses</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color-3">650k</span>
-                                        <p class="fs-14">Answer accepted</p>
-                                    </div><!-- end icon-box -->
-                                </div><!-- end col-lg-6 -->
-                                <div class="col-lg-6 responsive-column-half">
-                                    <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color-4">320k</span>
-                                        <p class="fs-14">Users</p>
+                                        <span class="fs-20 fw-bold text-color-4">{{$users_counts}}</span>
+                                        <p class="fs-14">Utilisateurs</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-12 pt-3">
-                                    <p class="fs-14">To get answer of question <a href="{{route('register')}}" class="text-color hover-underline">Join<i class="la la-arrow-right ml-1"></i></a></p>
+                                    <p class="fs-14">Pour obtenir la réponse à la question <a href="{{route('register')}}" class="text-color hover-underline">Rejoindre<i class="la la-arrow-right ml-1"></i></a></p>
                                 </div>
                             </div><!-- end row -->
                         </div>
                     </div><!-- end card -->
                     <div class="card card-item p-4">
                         <div class="card-body">
-                            <h3 class="fs-17 pb-3">Trending Questions</h3>
+                            <h3 class="fs-17 pb-3">Questions tendance</h3>
                             <div class="divider"><span></span></div>
                             <div class="sidebar-questions pt-3">
+                                @foreach($questions_tend as $item)
                                 <div class="media media-card media--card media--card-2">
                                     <div class="media-body">
-                                        <h5><a href="question-details.html">Using web3 to call precompile contract</a></h5>
+                                        <h5><a href="question-details.html">{{$item->titre}}</a></h5>
                                         <small class="meta">
-                                            <span class="pr-1">2 mins ago</span>
-                                            <span class="pr-1">. by</span>
-                                            <a href="#" class="author">Sudhir Kumbhare</a>
+                                            <span class="pr-1">{{$item->created_at->format('j F Y, H:i')}}</span>
+                                            <span class="pr-1">. par</span>
+                                            <a href="#" class="author">{{$item->users->name}}</a>
                                         </small>
                                     </div>
                                 </div><!-- end media -->
-                                <div class="media media-card media--card media--card-2">
-                                    <div class="media-body">
-                                        <h5><a href="question-details.html">Is it true while finding Time Complexity of the algorithm [closed]</a></h5>
-                                        <small class="meta">
-                                            <span class="pr-1">48 mins ago</span>
-                                            <span class="pr-1">. by</span>
-                                            <a href="#" class="author">wimax</a>
-                                        </small>
-                                    </div>
-                                </div><!-- end media -->
-                                <div class="media media-card media--card media--card-2">
-                                    <div class="media-body">
-                                        <h5><a href="question-details.html">image picker and store them into firebase with flutter</a></h5>
-                                        <small class="meta">
-                                            <span class="pr-1">1 hour ago</span>
-                                            <span class="pr-1">. by</span>
-                                            <a href="#" class="author">Antonin gavrel</a>
-                                        </small>
-                                    </div>
-                                </div><!-- end media -->
+                                @endforeach
                             </div><!-- end sidebar-questions -->
                         </div>
                     </div><!-- end card -->

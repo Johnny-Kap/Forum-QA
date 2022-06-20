@@ -18,29 +18,41 @@
                 <div class="hero-content">
                     <div class="media media-card align-items-center shadow-none p-0 mb-0 rounded-0 bg-transparent">
                         <div class="media-img media--img">
-                            <img src="/admins/images/img4.jpg" alt="avatar">
+                            <img src="{{ Storage::url(Auth::user()->image) }}" alt="avatar">
                         </div>
                         <div class="media-body">
-                            <h5>Arden Smith</h5>
+                            <h5>{{Auth::user()->name}}</h5>
                             <small class="meta d-block lh-20 pb-2">
-                                <span>United States, member since 11 years ago</span>
+                                <span>{{Auth::user()->location}}, membre depuis {{Auth::user()->created_at->format('j F Y, H:i')}}</span>
                             </small>
+                            <div class="stats fs-14 fw-medium d-flex align-items-center lh-18">
+                                <span class="text-black pr-2" title="Reputation">
+                                    {{Auth::user()->email}} |
+                                    @php
+                                    if(Auth::user()->email_verified_at == NULL){
+                                    echo'<span class="badge badge-warning">Non vérifié</span>';
+                                    }else{
+                                    echo'<span class="badge badge-success">Vérifié</span>';
+                                    }
+                                    @endphp
+                                </span>
+                            </div>
                         </div>
                     </div><!-- end media -->
                 </div><!-- end hero-content -->
             </div><!-- end col-lg-8 -->
             <div class="col-lg-4">
                 <div class="hero-btn-box text-right py-3">
-                    <a href="{{route('EditProfile')}}" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-gear mr-1"></i> Edit Profile</a>
+                    <a href="{{route('EditProfile')}}" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-gear mr-1"></i> Editer le profil</a>
                 </div>
             </div><!-- end col-lg-4 -->
             <div class="col-lg-12">
                 <ul class="nav nav-tabs generic-tabs generic--tabs generic--tabs-2 mt-4" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="user-profile-tab" data-toggle="tab" href="#user-profile" role="tab" aria-controls="user-profile" aria-selected="true">Profile</a>
+                        <a class="nav-link active" id="user-profile-tab" data-toggle="tab" href="#user-profile" role="tab" aria-controls="user-profile" aria-selected="true">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="user-activity-tab" data-toggle="tab" href="#user-activity" role="tab" aria-controls="user-activity" aria-selected="false">Activity</a>
+                        <a class="nav-link" id="user-activity-tab" data-toggle="tab" href="#user-activity" role="tab" aria-controls="user-activity" aria-selected="false">Activités</a>
                     </li>
                 </ul>
             </div><!-- end col-lg-4 -->
@@ -63,16 +75,16 @@
                     <div class="tab-pane fade show active" id="user-profile" role="tabpanel" aria-labelledby="user-profile-tab">
                         <div class="user-panel-main-bar">
                             <div class="user-panel mb-30px">
-                                <p class="pb-2">I am a programmer. My principal language is C++. I've also done commercial work in Java, C, Perl, Python, Javascript and APL. I've also been known to dabble in lisp, Haskell, assembler (ARM, x86, amd64) and probably a few other languages that haven't left as big a mark.</p>
-                                <p class="pb-2">Programmer at <a href="#" class="text-color hover-underline">Bloomberg</a>. Posts and commments are my opinions and are not sponsored or endorsed by my employer.</p>
-                                <p>If my answers helped you can <a href="#" class="text-color hover-underline">buy me a coffee.</a></p>
+                                {{Auth::user()->bio}}
                             </div><!-- end user-panel -->
                             <div class="user-panel mb-30px pt-30px border-top border-top-gray">
                                 <ul class="generic-list-item generic-list-item-bullet">
-                                    <li class="pl-3"><a href="#" class="d-inline-block">ardensmith.com</a></li>
-                                    <li class="pl-3"><a href="#" class="d-inline-block">Facebook</a></li>
-                                    <li class="pl-3"><a href="#" class="d-inline-block">Twitter</a></li>
-                                    <li class="pl-3"><a href="#" class="d-inline-block">Instagram</a></li>
+                                    <li class="pl-3"><a href="{{Auth::user()->website}}" class="d-inline-block">{{Auth::user()->website}}</a></li>
+                                    <li class="pl-3"><a href="{{Auth::user()->githublink}}" class="d-inline-block">Github</a></li>
+                                    <li class="pl-3"><a href="{{Auth::user()->facebooklink}}" class="d-inline-block">Facebook</a></li>
+                                    <li class="pl-3"><a href="{{Auth::user()->twitterlink}}" class="d-inline-block">Twitter</a></li>
+                                    <li class="pl-3"><a href="{{Auth::user()->instalink}}" class="d-inline-block">Instagram</a></li>
+                                    <li class="pl-3"><a href="{{Auth::user()->youtubelink}}" class="d-inline-block">Youtube</a></li>
                                 </ul>
                             </div><!-- end user-panel -->
                             <div class="user-panel mb-30px">
@@ -96,8 +108,8 @@
                                                 </svg>
                                             </div>
                                             <div class="media-body">
-                                                <h5 class="fw-medium">1,979</h5>
-                                                <p class="fs-15">Answers</p>
+                                                <h5 class="fw-medium">{{ $reponses_users }}</h5>
+                                                <p class="fs-15">Réponses</p>
                                             </div>
                                         </div>
                                     </div><!-- end col-lg-4 -->
@@ -138,7 +150,7 @@
                                                 </svg>
                                             </div>
                                             <div class="media-body">
-                                                <h5 class="fw-medium">11</h5>
+                                                <h5 class="fw-medium">{{ $questions_users }}</h5>
                                                 <p class="fs-15">Questions</p>
                                             </div>
                                         </div>
@@ -155,8 +167,8 @@
                                                 </svg>
                                             </div>
                                             <div class="media-body">
-                                                <h5 class="fw-medium">~46.3m</h5>
-                                                <p class="fs-15">People reached</p>
+                                                <h5 class="fw-medium">{{ $votes_users }}</h5>
+                                                <p class="fs-15">Votes apportés</p>
                                             </div>
                                         </div>
                                     </div><!-- end col-lg-4 -->
@@ -171,162 +183,37 @@
                                     <h3 class="fs-17">Impact</h3>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <div class="media media-card align-items-center shadow-none border border-gray p-3 text-center">
                                             <div class="media-body">
-                                                <h5 class="fw-medium">~46.3m</h5>
-                                                <p class="fs-15">people reached</p>
+                                                <h5 class="fw-medium">{{ $questions_users }}</h5>
+                                                <p class="fs-15">Questions posées</p>
                                             </div>
                                         </div>
                                     </div><!-- end col-lg-3 -->
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <div class="media media-card align-items-center shadow-none border border-gray p-3 text-center">
                                             <div class="media-body">
-                                                <h5 class="fw-medium">122</h5>
-                                                <p class="fs-15">posts edited</p>
+                                                <h5 class="fw-medium">{{ $reponses_users }}</h5>
+                                                <p class="fs-15">Réponses apportées</p>
                                             </div>
                                         </div>
                                     </div><!-- end col-lg-3 -->
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <div class="media media-card align-items-center shadow-none border border-gray p-3 text-center">
                                             <div class="media-body">
-                                                <h5 class="fw-medium">72</h5>
-                                                <p class="fs-15">helpful flags</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- end col-lg-3 -->
-                                    <div class="col-lg-3">
-                                        <div class="media media-card align-items-center shadow-none border border-gray p-3 text-center">
-                                            <div class="media-body">
-                                                <h5 class="fw-medium">1,351</h5>
-                                                <p class="fs-15">votes cast</p>
+                                                <h5 class="fw-medium">{{ $votes_users }}</h5>
+                                                <p class="fs-15">votes apportées</p>
                                             </div>
                                         </div>
                                     </div><!-- end col-lg-3 -->
                                 </div><!-- end row -->
                             </div><!-- end user-panel -->
                             <div class="user-panel mb-40px">
-                                <div class="bg-gray p-3 rounded-rounded">
-                                    <div class="filter-option-box w-20">
-                                        <select class="select-container">
-                                            <option value="summary" selected="">Summary</option>
-                                            <option value="answers">Answers</option>
-                                            <option value="questions">Questions</option>
-                                            <option value="tags">Tags</option>
-                                            <option value="badges">Badges</option>
-                                            <option value="bookmarks">Bookmarks</option>
-                                            <option value="bounties">Bounties</option>
-                                            <option value="reputation">Reputation</option>
-                                            <option value="activity">All actions</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="summary-panel">
-                                    <div class="border-bottom border-bottom-gray p-3 d-flex align-items-center justify-content-between">
-                                        <h4 class="fs-15 fw-regular">Answers <span>(1,979)</span></h4>
-                                        <div class="filter-option-box flex-grow-1 d-flex align-items-center justify-content-end lh-1">
-                                            <label class="fs-14 fw-medium mr-2 mb-0">Sort</label>
-                                            <div class="w-100px">
-                                                <select class="select-container">
-                                                    <option selected="selected" value="Votes">Votes</option>
-                                                    <option value="Activity">Activity</option>
-                                                    <option value="Newest">Newest</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="vertical-list">
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes answered-accepted">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">999k</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">How to make Git “forget” about a file that was tracked but is now in .gitignore?</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes answered-accepted">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">4714</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">Undoing a git rebase</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes answered-accepted">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">4448</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">Difference between “git add -A” and “git add .”</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes answered-accepted">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">3275</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">How to find and restore a deleted file in a Git repository</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes answered-accepted">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">2822</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">Branch from a previous commit using Git</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="pager pt-30px">
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination generic-pagination generic--pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                            <p class="fs-13 pt-2">Showing 1-5 of (1,979) results</p>
-                                        </div>
-                                    </div>
-                                </div><!-- end summary-panel -->
-                            </div><!-- end user-panel -->
-                            <div class="user-panel mb-40px">
                                 <div class="bg-gray p-3 rounded-rounded d-flex align-items-center justify-content-between">
-                                    <h3 class="fs-17">Questions <span>(50)</span></h3>
+                                    <h3 class="fs-15 fw-regular">Réponses <span>({{ $reponses_users }})</span></h3>
                                     <div class="filter-option-box flex-grow-1 d-flex align-items-center justify-content-end lh-1">
-                                        <label class="fs-14 fw-medium mr-2 mb-0">Sort</label>
+                                        <label class="fs-14 fw-medium mr-2 mb-0">Filtrer</label>
                                         <div class="w-100px">
                                             <select class="select-container">
                                                 <option selected="selected" value="Votes">Votes</option>
@@ -338,89 +225,51 @@
                                 </div>
                                 <div class="summary-panel">
                                     <div class="vertical-list">
+                                        @foreach($reponses_items as $item)
                                         <div class="item post p-0">
                                             <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                                                 <div class="votes answered-accepted">
                                                     <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">2653</span>
+                                                        <span class="vote-counts">{{$item->votes_count}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">What are the correct version numbers for C#?</a></h5>
+                                                    <h5 class="fs-15">{{$item->contenu}}</h5>
                                                 </div>
                                             </div><!-- end media -->
                                         </div><!-- end item -->
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">563</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">Curious null-coalescing operator custom implicit conversion behaviour</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes answered-accepted">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">363</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">What's your most controversial programming opinion?</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes answered-accepted">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">336</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">Performance surprise with “as” and nullable types</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="item post p-0">
-                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                                                <div class="votes answered-accepted">
-                                                    <div class="vote-block" title="Votes">
-                                                        <span class="vote-counts">322</span>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h5 class="fs-15"><a href="question-details.html">What's the strangest corner case you've seen in C# or .NET? [closed]</a></h5>
-                                                </div>
-                                            </div><!-- end media -->
-                                        </div><!-- end item -->
-                                        <div class="pager pt-30px">
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination generic-pagination generic--pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                            <p class="fs-13 pt-2">Showing 1-5 of (50) results</p>
+                                        @endforeach
+                                        {{ $reponses_items->links() }}
+                                    </div>
+                                </div><!-- end summary-panel -->
+                            </div><!-- end user-panel -->
+                            <div class="user-panel mb-40px">
+                                <div class="bg-gray p-3 rounded-rounded d-flex align-items-center justify-content-between">
+                                    <h3 class="fs-17">Questions <span>({{ $questions_users }})</span></h3>
+                                    <div class="filter-option-box flex-grow-1 d-flex align-items-center justify-content-end lh-1">
+                                        <label class="fs-14 fw-medium mr-2 mb-0">Filtrer</label>
+                                        <div class="w-100px">
+                                            <select class="select-container">
+                                                <option selected="selected" value="Votes">Votes</option>
+                                                <option value="Activity">Activity</option>
+                                                <option value="Newest">Newest</option>
+                                            </select>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="summary-panel">
+                                    <div class="vertical-list">
+                                        @foreach($questions_items as $item)
+                                        <div class="item post p-0">
+                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                                                <div class="media-body">
+                                                    <h5 class="fs-15"><a href="{{ route('showQuestion', ['id' => $item->id]) }}">{{$item->titre}}</a></h5>
+                                                </div>
+                                            </div><!-- end media -->
+                                        </div><!-- end item -->
+                                        @endforeach
+                                       
+                                        {{ $questions_items->links() }}
                                     </div>
                                 </div><!-- end summary-panel -->
                             </div><!-- end user-panel -->
@@ -506,27 +355,6 @@
                                     </div>
                                 </div><!-- end summary-panel -->
                             </div><!-- end user-panel -->
-                            <div class="user-panel mb-40px">
-                                <div class="bg-gray p-3 rounded-rounded">
-                                    <h3 class="fs-17">Votes cast <span>(18,850)</span></h3>
-                                </div>
-                                <div class="summary-panel">
-                                    <div class="vertical-list">
-                                        <div class="item">
-                                            <p class="fs-14">Of the votes cast, <span class="text-black">18,808</span> were upvotes and <span class="text-black">42</span> were downvotes. <span class="text-black">Arden Smith</span> voted on questions <span class="text-black">7,553</span> times and <span class="text-black">11,297</span> times on answers.</p>
-                                        </div><!-- end item -->
-                                        <div class="item">
-                                            <p class="fs-14"><span class="text-black">50</span> votes in the last month</p>
-                                        </div><!-- end item -->
-                                        <div class="item">
-                                            <p class="fs-14"><span class="text-black">62</span> votes in the last week</p>
-                                        </div><!-- end item -->
-                                        <div class="item">
-                                            <p class="fs-14"><span class="text-black">1</span> vote in the last day</p>
-                                        </div><!-- end item -->
-                                    </div>
-                                </div><!-- end summary-panel -->
-                            </div><!-- end user-panel -->
                         </div><!-- end user-panel-main-bar -->
                     </div><!-- end tab-pane -->
                 </div>
@@ -535,68 +363,50 @@
                 <div class="sidebar">
                     <div class="card card-item">
                         <div class="card-body">
-                            <h3 class="fs-17 pb-3">Number Achievement</h3>
+                            <h3 class="fs-17 pb-3">Réalisation en nombre</h3>
                             <div class="divider"><span></span></div>
                             <div class="row no-gutters text-center">
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color">980k</span>
+                                        <span class="fs-20 fw-bold text-color">{{$questions_counts}}</span>
                                         <p class="fs-14">Questions</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color-2">610k</span>
-                                        <p class="fs-14">Answers</p>
+                                        <span class="fs-20 fw-bold text-color-2">{{$reponses_counts}}</span>
+                                        <p class="fs-14">Réponses</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-6 responsive-column-half">
                                     <div class="icon-box pt-3">
-                                        <span class="fs-20 fw-bold text-color-4">320k</span>
-                                        <p class="fs-14">Users</p>
+                                        <span class="fs-20 fw-bold text-color-4">{{$users_counts}}</span>
+                                        <p class="fs-14">Utilisateurs</p>
                                     </div><!-- end icon-box -->
                                 </div><!-- end col-lg-6 -->
                                 <div class="col-lg-12 pt-3">
-                                    <p class="fs-14">To get answer of question <a href="{{route('register')}}" class="text-color hover-underline">Join<i class="la la-arrow-right ml-1"></i></a></p>
+                                    <p class="fs-14">Pour obtenir la réponse à la question <a href="{{route('register')}}" class="text-color hover-underline">Rejoindre<i class="la la-arrow-right ml-1"></i></a></p>
                                 </div>
                             </div><!-- end row -->
                         </div>
                     </div><!-- end card -->
                     <div class="card card-item">
                         <div class="card-body">
-                            <h3 class="fs-17 pb-3">Trending Questions</h3>
+                            <h3 class="fs-17 pb-3">Questions tendance</h3>
                             <div class="divider"><span></span></div>
                             <div class="sidebar-questions pt-3">
+                                @foreach($questions_tend as $item)
                                 <div class="media media-card media--card media--card-2">
                                     <div class="media-body">
-                                        <h5><a href="question-details.html">Using web3 to call precompile contract</a></h5>
+                                        <h5><a href="question-details.html">{{$item->titre}}</a></h5>
                                         <small class="meta">
-                                            <span class="pr-1">2 mins ago</span>
-                                            <span class="pr-1">. by</span>
-                                            <a href="#" class="author">Sudhir Kumbhare</a>
+                                            <span class="pr-1">{{$item->created_at->format('j F Y, H:i')}}</span>
+                                            <span class="pr-1">. par</span>
+                                            <a href="#" class="author">{{$item->users->name}}</a>
                                         </small>
                                     </div>
                                 </div><!-- end media -->
-                                <div class="media media-card media--card media--card-2">
-                                    <div class="media-body">
-                                        <h5><a href="question-details.html">Is it true while finding Time Complexity of the algorithm [closed]</a></h5>
-                                        <small class="meta">
-                                            <span class="pr-1">48 mins ago</span>
-                                            <span class="pr-1">. by</span>
-                                            <a href="#" class="author">wimax</a>
-                                        </small>
-                                    </div>
-                                </div><!-- end media -->
-                                <div class="media media-card media--card media--card-2">
-                                    <div class="media-body">
-                                        <h5><a href="question-details.html">image picker and store them into firebase with flutter</a></h5>
-                                        <small class="meta">
-                                            <span class="pr-1">1 hour ago</span>
-                                            <span class="pr-1">. by</span>
-                                            <a href="#" class="author">Antonin gavrel</a>
-                                        </small>
-                                    </div>
-                                </div><!-- end media -->
+                                @endforeach
                             </div><!-- end sidebar-questions -->
                         </div>
                     </div><!-- end card -->
