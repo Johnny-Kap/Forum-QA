@@ -79,14 +79,6 @@
                         </div>
                     </div>
                 </div><!-- end col -->
-                <div class="col responsive-column-half">
-                    <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
-                        <div class="media-body">
-                            <h5 class="fw-semi-bold pb-2">1000+</h5>
-                            <p class="lh-20">Entreprises clientes sur la plateforme</p>
-                        </div>
-                    </div>
-                </div><!-- end col -->
             </div><!-- end row -->
         </div><!-- end counter-box -->
     </div><!-- end container -->
@@ -316,7 +308,7 @@
                         </svg>
                         <h5 class="card-title pt-4 pb-2">Q&A privées</h5>
                         <p class="card-text pb-4">En utilisant Forum Q&A, créez le maximum de questions et réponses lors de votre événement ou réunion en utilisant la plateforme.</p>
-                        <a href="#" class="btn theme-btn bg-3">À venir <i class="la la-arrow-right icon ml-1"></i></a>
+                        <a href="#" class="btn theme-btn bg-3">À venir <span class="badge badge-pill badge-primary">Bientot</span></a>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
             </div><!-- end col-lg-4 -->
@@ -380,7 +372,7 @@
                         </svg>
                         <h5 class="card-title pt-4 pb-2">Parcourir les appels d'offres</h5>
                         <p class="card-text pb-4">Nous travaillons en partenariat avec un certain nombre d'entreprises pour fournir une plate-forme permettant de soumettre et de répondre aux appels d'offres.</p>
-                        <a href="questions" class="btn theme-btn">Rejoindre la liste d'attente <i class="la la-arrow-right icon ml-1"></i></a>
+                        <a href="#" class="btn theme-btn">Rejoindre la liste d'attente <span class="badge badge-pill badge-primary" style="background-color: #f9b851;">Bientot</span></a>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
             </div><!-- end col-lg-4 -->

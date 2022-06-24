@@ -18,11 +18,11 @@
             <div class="col-lg-9">
                 <div class="hero-content">
                     <h2 class="section-title pb-3 text-white">Partagez et développez vos connaissances avec nous !</h2>
-                    <p class="section-desc text-white">Une plate-forme axée sur l'industrie qui permet aux gens de répondre et de poser des questions
+                    <p class="section-desc text-white">Une plate-forme axée sur les technologies qui permet aux gens de répondre et de poser des questions
                         <br> afin de croitre ses connaissances
                     </p>
                     <div class="hero-btn-box py-4">
-                        <a href="{{route('askQuestion')}}" class="btn theme-btn theme-btn-white">Posez une question <i class="la la-arrow-right icon ml-1"></i></a>
+                        <a href="{{route('askQuestion')}}" class="btn theme-btn theme-btn-white">Poser une question <i class="la la-arrow-right icon ml-1"></i></a>
                     </div>
                 </div><!-- end hero-content -->
             </div><!-- end col-lg-9 -->
@@ -38,7 +38,7 @@
                     </div>
                     <div class="d-flex align-items-center">
                         <img src="/admins/images/anonymousHeroUpvote.svg" alt="vote icon" class="mr-3">
-                        <p class="fs-15 text-white lh-20">Les meilleures réponses sont votées et montent au sommet</p>
+                        <p class="fs-15 text-white lh-20">Les meilleures réponses sont votées</p>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                                             <h5><a href="{{ route('showQuestion', ['id' => $item->id]) }}">{{$item->titre}}</a></h5>
                                             <small class="meta">
                                                 <span class="pr-1">{{$item->created_at->format('j F Y, H:i')}}</span>
-                                                <a href="user-profile.html" class="author">{{$item->users->name}}</a>
+                                                <a href="{{ route('userProfile', [ 'id' => $item->user_id ]) }}" class="author">{{$item->users->name}}</a>
                                             </small>
                                             <div class="tags">
                                                 <a href="#" class="tag-link">{{$item->tags->title}}</a>
