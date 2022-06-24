@@ -9,6 +9,7 @@ use App\Models\Question;
 use App\Models\Reponse;
 use App\Models\Tags;
 use App\Models\User;
+use App\Models\Vote;
 use App\Models\Vue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -167,7 +168,7 @@ class QuestionController extends Controller
 
         $vuesCount = Vue::where('question_id', $questionIds)->count();
 
-        return view('questions.details', compact('questions_counts', 'reponses_counts', 'users_counts', 'questions_tend', 'questionDetails', 'reponses', 'reponses_counts_this', 'getComments', 'vuesCount'));
+        return view('questions.details', compact( 'questions_counts', 'reponses_counts', 'users_counts', 'questions_tend', 'questionDetails', 'reponses', 'reponses_counts_this', 'getComments', 'vuesCount'));
     }
 
     public function addComments(Request $request, $id)

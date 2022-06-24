@@ -56,7 +56,7 @@
         <div class="row align-items-center pb-4 copyright-wrap">
             <div class="col-lg-6">
                 <a href="{{ url('/') }}" class="d-inline-block">
-                    <img src="/admins/images/logo-forum-white.png" alt="footer logo" class="footer-logo">
+                    <img src="/admins/images/new-logo-white.png" alt="footer logo" class="footer-logo">
                 </a>
             </div><!-- end col-lg-6 -->
             <div class="col-lg-6">

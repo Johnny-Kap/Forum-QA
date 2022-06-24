@@ -183,19 +183,29 @@
                                 <div class="bg-gray p-3 rounded-rounded">
                                     <h3 class="fs-17">Changer le mot de passe</h3>
                                 </div>
-                                <form method="post" class="pt-20px">
+                                <form method="post" action="{{route('password')}}" class="pt-20px">
+                                    @csrf
                                     <div class="settings-item mb-30px">
                                         <div class="form-group">
                                             <label class="fs-13 text-black lh-20 fw-medium">Mot de passe actuel</label>
-                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="Mot de passe actuel">
+                                            <input class="form-control form--control password-field" type="password" name="old_password" placeholder="Mot de passe actuel">
                                         </div>
+                                        @if($errors->any('old_password'))
+                                        <span class="text-danger">{{$errors->first('old_password')}}</span>
+                                        @endif
                                         <div class="form-group">
                                             <label class="fs-13 text-black lh-20 fw-medium">Nouveau mot de passe</label>
-                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="Nouveau mot de passe">
+                                            <input class="form-control form--control password-field" type="password" name="new_password" placeholder="Nouveau mot de passe">
                                         </div>
+                                        @if($errors->any('new_password'))
+                                        <span class="text-danger">{{$errors->first('new_password')}}</span>
+                                        @endif
                                         <div class="form-group">
                                             <label class="fs-13 text-black lh-20 fw-medium">Confirmer le nouveau mot de passe</label>
-                                            <input class="form-control form--control password-field" type="password" name="password" placeholder="Confirmer le nouveau mot de passe">
+                                            <input class="form-control form--control password-field" type="password" name="confirm_password" placeholder="Confirmer le nouveau mot de passe">
+                                            @if($errors->any('confirm_password'))
+                                            <span class="text-danger">{{$errors->first('confirm_password')}}</span>
+                                            @endif
                                             <p class="fs-14 lh-18 py-2">Les mots de passe doivent contenir au moins huit caractères, dont au moins 1 lettre et 1 chiffre.</p>
                                             <button class="btn theme-btn-outline theme-btn-outline-gray toggle-password" type="button" data-toggle="tooltip" data-placement="right" title="Show/hide password">
                                                 <svg class="eye-on" xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 0 24 24" width="22px" fill="#7f8897">
@@ -209,7 +219,7 @@
                                             </button>
                                         </div>
                                         <div class="submit-btn-box pt-3">
-                                            <button class="btn theme-btn" type="button">Changer le mot de passe</button>
+                                            <button class="btn theme-btn" type="submit">Changer le mot de passe</button>
                                         </div>
                                     </div><!-- end settings-item -->
                                 </form>

@@ -32,4 +32,8 @@ class Question extends Model
     public function vues(){
         return $this->hasMany(Vue::class);
     }
+
+    public function favoris(){
+        return $this->hasMany(Favori::class);
+    }
 }

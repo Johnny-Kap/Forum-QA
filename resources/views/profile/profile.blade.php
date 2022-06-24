@@ -23,7 +23,7 @@
                         <div class="media-body">
                             <h5>{{Auth::user()->name}}</h5>
                             <small class="meta d-block lh-20 pb-2">
-                                <span>{{Auth::user()->location}}, membre depuis {{Auth::user()->created_at->format('j F Y, H:i')}}</span>
+                                <span>{{Auth::user()->location}}, membre depuis le {{Auth::user()->created_at->format('j F Y, H:i')}}</span>
                             </small>
                             <div class="stats fs-14 fw-medium d-flex align-items-center lh-18">
                                 <span class="text-black pr-2" title="Reputation">
@@ -53,6 +53,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="user-activity-tab" data-toggle="tab" href="#user-activity" role="tab" aria-controls="user-activity" aria-selected="false">Activités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="user-activity-tab" data-toggle="tab" href="#user-favoris" role="tab" aria-controls="user-favoris" aria-selected="false">Favoris</a>
                     </li>
                 </ul>
             </div><!-- end col-lg-4 -->
@@ -268,7 +271,7 @@
                                             </div><!-- end media -->
                                         </div><!-- end item -->
                                         @endforeach
-                                       
+
                                         {{ $questions_items->links() }}
                                     </div>
                                 </div><!-- end summary-panel -->
@@ -352,6 +355,40 @@
                                             </nav>
                                             <p class="fs-13 pt-2">Showing 1-5 of (4,654) results</p>
                                         </div>
+                                    </div>
+                                </div><!-- end summary-panel -->
+                            </div><!-- end user-panel -->
+                        </div><!-- end user-panel-main-bar -->
+                    </div><!-- end tab-pane -->
+                    <div class="tab-pane fade" id="user-favoris" role="tabpanel" aria-labelledby="user-favoris-tab">
+                        <div class="user-panel-main-bar">
+                            <div class="user-panel mb-40px">
+                                <div class="bg-gray p-3 rounded-rounded d-flex align-items-center justify-content-between">
+                                    <h3 class="fs-17">Mes questions favorites <span>({{ $fav_count }})</span></h3>
+                                </div>
+                                <div class="summary-panel">
+                                    <div class="vertical-list">
+                                        @foreach($questions_fav as $item)
+                                        <div class="item post p-0">
+                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                                                <div class="media-body">
+                                                    <h5 class="fs-15"><a href="{{ route('showQuestion', ['id' => $item->id]) }}">{{$item->questions->titre}}</a></h5>
+                                                    <div class="filter-option-box flex-grow-1 d-flex align-items-center justify-content-end lh-1" style="position: relative; bottom: 20px;">
+                                                        <form action="{{ route('deleteFav', ['id' => $item->id]) }}" method="post">
+                                                            @csrf <button type="submit" style="border: 0; background-color:transparent;">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                                                </svg>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end media -->
+                                        </div><!-- end item -->
+                                        @endforeach
+
+                                        {{ $questions_fav->links() }}
                                     </div>
                                 </div><!-- end summary-panel -->
                             </div><!-- end user-panel -->

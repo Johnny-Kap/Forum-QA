@@ -6,7 +6,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-2">
                     <div class="logo-box">
-                        <a href="{{ url('/') }}" class="logo"><img src="/admins/images/logo-forum-black.png" alt="logo"></a>
+                        <a href="{{ url('/') }}" class="logo"><img src="/admins/images/new-logo-black.png" alt="logo"></a>
                         <div class="user-action">
                             <div class="search-menu-toggle icon-element icon-element-xs shadow-sm mr-1" data-toggle="tooltip" data-placement="top" title="Search">
                                 <i class="la la-search"></i>
@@ -62,7 +62,7 @@
                         </div>
                         @else
                         <div class="media-img media-img-xs flex-shrink-0 rounded-full mr-2">
-                            <img src="{{ Storage::url(Auth::user()->image) }}" alt="avatar" class="rounded-full" style="width: 30px; height: 30px;">
+                            <img src="{{ Storage::url(Auth::user()->image) }}" alt="" class="rounded-full" style="width: 30px; height: 30px;">
                         </div>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item dropdown">

@@ -15,4 +15,4 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" sizes="16x16" href="/admins/images/favicon-forum.png">
+    <link rel="icon" sizes="16x16" href="/admins/images/new-favicon.png">

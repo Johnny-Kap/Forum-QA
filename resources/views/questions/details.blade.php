@@ -30,7 +30,7 @@
                                 </svg></span> N'importe qui peut répondre</li>
                         <li><span class="icon-element icon-element-xs shadow-sm d-inline-block mr-2"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 320 512" width="20px">
                                     <path fill="#6c727c" d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"></path>
-                                </svg></span> Les meilleures réponses sont votées et montent au sommet</li>
+                                </svg></span> Les meilleures réponses sont votées</li>
                     </ul>
                 </div><!-- end hero-content -->
             </div><!-- end col-lg-9 -->
@@ -74,13 +74,11 @@
                     <div class="question d-flex">
                         <div class="votes votes-styled w-auto">
                             <div id="vote2" class="upvotejs">
-                                <form action="" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="upvote upvote-on" data-toggle="tooltip" data-placement="right" title="This question is useful"></a></button></form>
-                                <span class="count">2</span>
-                                <form action="" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="downvote" data-toggle="tooltip" data-placement="right" title="This question is not useful"></a></button></form>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star" viewBox="0 0 16 16">
-                                        <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
-                                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
-                                        <a class="star" data-toggle="tooltip" data-placement="right" title="Bookmark this question."></a></svg>
+                           <form action="{{ route('storeFav', [ 'id' => $questionDetails->id ]) }}" method="post"> @csrf <button type="submit" style="border-color: transparent; background-color:transparent;" title="Ajouter aux favoris"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star" viewBox="0 0 16 16">
+                                    <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
+                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+                                </svg>
+                                </button> </form>
                             </div>
                         </div><!-- end votes -->
                         <div class="question-post-body-wrap flex-grow-1">
@@ -89,14 +87,14 @@
                             </div><!-- end question-post-body -->
                             <div class="question-post-user-action">
                                 <div class="media media-card user-media align-items-center">
-                                    <a href="user-profile.html" class="media-img d-block">
-                                        <img src="/admins/images/img4.jpg" alt="avatar">
+                                    <a href="{{ route('userProfile', [ 'id' => $questionDetails->user_id ]) }}" class="media-img d-block">
+                                        <img src="{{ Storage::url($questionDetails->users->image) }}" alt="avatar">
                                     </a>
                                     <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                                         <div>
-                                            <h5 class="pb-1"><a href="user-profile.html">{{$questionDetails->users->name}}</a></h5>
+                                            <h5 class="pb-1"><a href="{{ route('userProfile', [ 'id' => $questionDetails->user_id ]) }}">{{$questionDetails->users->name}}</a></h5>
                                         </div>
-                                        <a href="revisions.html" class="meta d-block text-right fs-13 text-color">
+                                        <a href="#" class="meta d-block text-right fs-13 text-color">
                                             <span class="d-block lh-18">édité le</span>
                                             <span class="d-block lh-18 fs-12">{{$questionDetails->created_at->format('j F Y, h:i')}}</span>
                                         </a>
@@ -198,7 +196,7 @@
                             <div class="question-post-user-action">
                                 <div class="media media-card user-media align-items-center">
                                     <a href="user-profile.html" class="media-img d-block">
-                                        <img src="/admins/images/img4.jpg" alt="avatar">
+                                        <img src="{{ Storage::url($item->users->image) }}" alt="avatar">
                                     </a>
                                     <div class="media-body d-flex align-items-center justify-content-between">
                                         <div>

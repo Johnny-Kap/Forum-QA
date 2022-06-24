@@ -30,6 +30,8 @@ Route::get('/questions/ask-question', [App\Http\Controllers\QuestionController::
 Route::get('/questions/view/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('showQuestion');
 Route::get('/questions/centre/{id}', [App\Http\Controllers\QuestionController::class, 'showByCenter'])->name('questionsTemplate');
 Route::post('questions/add', [App\Http\Controllers\QuestionController::class, 'store'])->name('addQuestion');
+Route::post('questions/add/favori/{id}', [App\Http\Controllers\FavoriController::class, 'store'])->name('storeFav');
+Route::post('questions/add/favori/supp/{id}', [App\Http\Controllers\FavoriController::class, 'delete'])->name('deleteFav');
 
 Route::post('answers/add/{id}', [App\Http\Controllers\ReponseController::class, 'store'])->name('addReponse');
 Route::post('answers/comments/add/{id}', [App\Http\Controllers\ReponseController::class, 'addComments'])->name('addCommentReponse');
@@ -39,5 +41,7 @@ Route::post('questions/vote/downvote/{id}', [App\Http\Controllers\VoteController
 
 //User profile routes
 Route::get('/myprofile', [App\Http\Controllers\UserController::class, 'MyProfile'])->name('MyProfile');
+Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
 Route::get('/myprofile/edit', [App\Http\Controllers\UserController::class, 'Edit'])->name('EditProfile');
 Route::post('/myprofile/edited', [App\Http\Controllers\UserController::class, 'Edited'])->name('EditedProfile');
+Route::post('/myprofile/password', [App\Http\Controllers\UserController::class, 'ResetPassword'])->name('password');

@@ -17,8 +17,8 @@
         <div class="row">
             <div class="col-lg-7 mr-auto">
                 <div class="hero-content">
-                    <h2 class="section-title fs-50 pb-3 text-white lh-65">Rejoignez le plus grand réseau mondial axé sur l'industrie, tout en restant anonyme!</h2>
-                    <p class="lh-26 text-white">Une plate-forme axée sur l'industrie qui permet aux gens de répondre et de poser des questions </p>
+                    <h2 class="section-title fs-50 pb-3 text-white lh-65">Rejoignez le plus grand réseau axé sur les technologies, tout en restant anonyme!</h2>
+                    <p class="lh-26 text-white">Une plate-forme axée sur les technologies qui permet aux gens de répondre et de poser des questions </p>
                     <div class="hero-btn-box pt-30px">
                         <a href="#for-developers" class="btn theme-btn mr-2 page-scroll">Pour les personnes <i class="la la-angle-down icon ml-1"></i></a>
                         <a href="#for-businesses" class="btn theme-btn bg-3 page-scroll">Pour les entreprises <i class="la la-angle-down icon ml-1"></i></a><br><br>
@@ -251,7 +251,7 @@
     <div class="container">
         <div class="text-center">
             <h2 class="section-title pb-3">Communauté axée sur l'industrie</h2>
-            <p class="section-desc w-50 mx-auto">UpShift est une communauté ouverte à tous ceux qui recherchent des réponses. Nous vous aidons à obtenir des réponses
+            <p class="section-desc w-50 mx-auto">Forum Q&A est une communauté ouverte à tous ceux qui recherchent des réponses. Nous vous aidons à obtenir des réponses
                  à vos questions, partagez vos connaissances avec les membres de votre industrie verticale.
             </p>
         </div>
@@ -289,7 +289,7 @@
                             </g>
                         </svg>
                         <h5 class="card-title pt-4 pb-2">Q&A publiques</h5>
-                        <p class="card-text pb-4">UpStack Network est un forum public de questions et réponses pour les professionnels et les passionnés de l'industrie</p>
+                        <p class="card-text pb-4">Forum Q&A est un forum public de questions et réponses pour les professionnels et les passionnés de l'industrie</p>
                         <a href="/questions" class="btn theme-btn">Parcourir les questions <i class="la la-arrow-right icon ml-1"></i></a>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
@@ -315,7 +315,7 @@
                             <path d="m66.259 104.966h-4.519a1 1 0 0 1 -1-1v-7.789a6.3 6.3 0 1 1 6.519 0v7.789a1 1 0 0 1 -1 1zm-3.519-2h2.519v-7.385a1 1 0 0 1 .572-.9 4.264 4.264 0 0 0 2.469-3.881 4.3 4.3 0 0 0 -8.609 0 4.264 4.264 0 0 0 2.473 3.878 1 1 0 0 1 .572.9z" fill="#2f3a5a" />
                         </svg>
                         <h5 class="card-title pt-4 pb-2">Q&A privées</h5>
-                        <p class="card-text pb-4">En utilisant UpStack, créez le maximum de questions et réponses lors de votre événement ou réunion en utilisant la plateforme.</p>
+                        <p class="card-text pb-4">En utilisant Forum Q&A, créez le maximum de questions et réponses lors de votre événement ou réunion en utilisant la plateforme.</p>
                         <a href="#" class="btn theme-btn bg-3">À venir <i class="la la-arrow-right icon ml-1"></i></a>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
