@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <label class="fs-14 text-black fw-medium lh-18">Mot de passe</label>
                             <div class="input-group mb-1">
-                                <input id="password" type="password" placeholder="Entrer votre mot de passe" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" type="password" placeholder="Entrer votre mot de passe" class="form-control form--control password-field @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -70,7 +70,7 @@
                         <div class="form-group">
                             <label class="fs-14 text-black fw-medium lh-18">Confirmez le mot de passe</label>
                             <div class="input-group mb-1">
-                                <input id="password-confirm" type="password" placeholder="Confirmer votre mot de passe" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" placeholder="Confirmer votre mot de passe" class="form-control form--control password-field" name="password_confirmation" required autocomplete="new-password">
                                 <div class="input-group-append">
                                     <button class="btn theme-btn-outline theme-btn-outline-gray toggle-password" type="button">
                                         <svg class="eye-on" xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 0 24 24" width="22px" fill="#7f8897">

@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label class="fs-14 text-black fw-medium lh-18">Mot de passe</label>
                             <div class="input-group">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"  placeholder="Entrer votre mot de passe" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control form--control password-field @error('password') is-invalid @enderror"  placeholder="Entrer votre mot de passe" name="password" required autocomplete="current-password">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
