@@ -30,6 +30,7 @@
                                     <ul class="dropdown-menu-item">
                                         <li><a href="{{ route('questions') }}">Voir les questions</a></li>
                                         <li><a href="{{route('askQuestion')}}">Poser une question</a></li>
+                                        <li><a href="{{route('chat')}}">Chat du forum</a></li>
                                     </ul>
                                 </li>
                                 <li>

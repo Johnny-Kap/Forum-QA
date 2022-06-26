@@ -24,6 +24,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'showContact'])->name('contact');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'showAbout'])->name('about');
 
+Route::get('/chat', [App\Http\Controllers\HomeController::class, 'chat'])->name('chat');
+Route::get('/messages', [App\Http\Controllers\HomeController::class, 'messages'])->name('messages');
+Route::post('/messages', [App\Http\Controllers\HomeController::class, 'messageStore'])->name('messageStore');
+
 //Questions Route
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
 Route::get('/questions/ask-question', [App\Http\Controllers\QuestionController::class, 'create'])->name('askQuestion');
