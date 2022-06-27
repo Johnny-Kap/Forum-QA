@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\CentreInteretListScreen;
+use App\Orchid\Screens\CentreInteretScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
@@ -12,6 +14,8 @@ use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
+use App\Orchid\Screens\TagsListScreen;
+use App\Orchid\Screens\TagsScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
@@ -111,5 +115,9 @@ Route::screen('example-charts', ExampleChartsScreen::class)->name('platform.exam
 Route::screen('example-editors', ExampleTextEditorsScreen::class)->name('platform.example.editors');
 Route::screen('example-cards', ExampleCardsScreen::class)->name('platform.example.cards');
 Route::screen('example-advanced', ExampleFieldsAdvancedScreen::class)->name('platform.example.advanced');
+Route::screen('tags-page', TagsScreen::class)->name('platform.tags');
+Route::screen('tags-list', TagsListScreen::class)->name('platform.tags.list');
+Route::screen('centre-interet-page', CentreInteretScreen::class)->name('platform.centre.interet');
+Route::screen('centre-interet-list', CentreInteretListScreen::class)->name('platform.centre.interet.list');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');

@@ -43,6 +43,15 @@ class PlatformProvider extends OrchidServiceProvider
                     Menu::make('Sub element item 2')->icon('heart'),
                 ]),
 
+            Menu::make('Tags Controls')
+                ->title('Gestion des elements')
+                ->icon('pencil')
+                ->route('platform.tags'),
+
+            Menu::make('Centre interet')
+                ->icon('pencil')
+                ->route('platform.centre.interet'),
+
             Menu::make('Basic Elements')
                 ->title('Form controls')
                 ->icon('note')

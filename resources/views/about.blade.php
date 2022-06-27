@@ -19,7 +19,7 @@
                 <div class="hero-content">
                     <h3 class="fs-16 fw-medium pb-3">Qui sommes-nous</h3>
                     <h2 class="section-title fs-40 pb-3 lh-55">Aider les développeurs et les technologues à écrire le script du futur.</h2>
-                    <p class="lh-26 pb-3">Notre plateforme publique <strong class="fw-medium text-black">sert 100 millions de personnes chaque mois</strong>, ce qui en fait l'un des 50 sites Web les plus populaires au monde.</p>
+                    <p class="lh-26 pb-3">Notre plateforme publique <strong class="fw-medium text-black">sert plusieurs personnes chaque mois</strong>, ce qui en fait l'un des sites Web les plus populaires.</p>
                     <p class="lh-26">Notre offre de gestion des connaissances et de collaboration asynchrone <strong class="fw-medium text-black">Forum Q&A pour les équipes</strong>, transforme la façon dont les gens travaillent.</p>
                 </div><!-- end hero-content -->
             </div><!-- end col-lg-6 -->
@@ -123,7 +123,7 @@
                             </div>
                             <div class="info-body">
                                 <h3 class="fs-18 pb-3 fw-bold">Adoptez un état d'esprit axé sur le client</h3>
-                                <p>Ceci est juste un simple texte créé pour ce modèle unique et génial, vous pouvez le remplacer par n'importe quel texte.</p>
+                                <!-- <p>Ceci est juste un simple texte créé pour ce modèle unique et génial, vous pouvez le remplacer par n'importe quel texte.</p> -->
                             </div>
                         </div>
                     </div><!-- end col-lg-4 -->
@@ -140,7 +140,7 @@
                             </div>
                             <div class="info-body">
                                 <h3 class="fs-18 pb-3 fw-bold">Apprendre, partager, grandir</h3>
-                                <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                                <!-- <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p> -->
                             </div>
                         </div>
                     </div><!-- end col-lg-4 -->
@@ -164,7 +164,7 @@
                             </div>
                             <div class="info-body">
                                 <h3 class="fs-18 pb-3 fw-bold">Soyez transparent</h3>
-                                <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                                <!-- <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p> -->
                             </div>
                         </div>
                     </div><!-- end col-lg-4 -->
@@ -177,7 +177,7 @@
                             </div>
                             <div class="info-body">
                                 <h3 class="fs-18 pb-3 fw-bold">Donner aux gens les moyens d'obtenir des résultats exceptionnels</h3>
-                                <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                                <!-- <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p> -->
                             </div>
                         </div>
                     </div><!-- end col-lg-4 -->
@@ -190,7 +190,7 @@
                             </div>
                             <div class="info-body">
                                 <h3 class="fs-18 pb-3 fw-bold">Gardez la communauté au centre de nos préoccupations</h3>
-                                <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                                <!-- <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p> -->
                             </div>
                         </div>
                     </div><!-- end col-lg-4 -->
@@ -276,7 +276,7 @@
                             </div>
                             <div class="info-body">
                                 <h3 class="fs-18 pb-3 fw-bold">Soyez flexible et inclusif</h3>
-                                <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                                <!-- <p>This is just a simple text made for this unique and awesome template, you can replace it with any text.</p> -->
                             </div>
                         </div>
                     </div><!-- end col-lg-4 -->
