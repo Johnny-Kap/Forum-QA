@@ -50,32 +50,40 @@
                 <div class="col responsive-column-half border-right border-right-gray">
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
-                            <h5 class="fw-semi-bold pb-2">1000+</h5>
-                            <p class="lh-20">Visiteurs mensuels de notre réseau</p>
+                            <h5 class="fw-semi-bold pb-2">
+                                @php
+                                if($vues < 40){ echo'30+'; }else{ echo'70+'; } @endphp </h5>
+                                    <p class="lh-20">Visiteurs mensuels de notre réseau</p>
                         </div>
                     </div>
                 </div><!-- end col -->
                 <div class="col responsive-column-half border-right border-right-gray">
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
-                            <h5 class="fw-semi-bold pb-2">300+</h5>
-                            <p class="lh-20">Questions posées à ce jour sur la plateforme</p>
+                            <h5 class="fw-semi-bold pb-2">
+                                @php
+                                if($question < 15){ echo'20+'; }else{ echo'50+'; } @endphp </h5>
+                                    <p class="lh-20">Questions posées à ce jour sur la plateforme</p>
                         </div>
                     </div>
                 </div><!-- end col -->
                 <div class="col responsive-column-half border-right border-right-gray">
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
-                            <h5 class="fw-semi-bold pb-2">20 minutes</h5>
-                            <p class="lh-20">Délai moyen entre les nouvelles questions</p>
+                            <h5 class="fw-semi-bold pb-2">
+                                @php
+                                if($reaction < 10){ echo'20+'; }else{ echo'50+'; } @endphp </h5>
+                                    <p class="lh-20">Nombre de réactions des utilisateurs</p>
                         </div>
                     </div>
                 </div><!-- end col -->
                 <div class="col responsive-column-half border-right border-right-gray">
                     <div class="media media-card text-center px-0 py-4 shadow-none rounded-0 bg-transparent counter-item mb-0">
                         <div class="media-body">
-                            <h5 class="fw-semi-bold pb-2">400+ </h5>
-                            <p class="lh-20">Les membres ont obtenu de l'aide sur la plateforme</p>
+                            <h5 class="fw-semi-bold pb-2">
+                                @php
+                                if($reponse < 30){ echo'40+'; }else{ echo'70+'; } @endphp </h5>
+                                    <p class="lh-20">Les membres ont obtenu de l'aide sur la plateforme</p>
                         </div>
                     </div>
                 </div><!-- end col -->
@@ -102,7 +110,7 @@
         <div class="hero-content text-center pb-5">
             <h2 class="section-title pb-3 theme-font-2 fs-40">La communauté Q&A sur les réseaux sociaux</h2>
             <p class="section-desc">Le site de questions/réponses conçu pour aider les gens, pour s'entraider : <br>
-            Demander, apprendre, partager, grandir.
+                Demander, apprendre, partager, grandir.
             </p>
             <div class="hero-btn-box py-4">
                 <a href="{{route('register')}}" class="btn theme-btn mr-2">Joindre la communauté</a>
@@ -244,7 +252,7 @@
         <div class="text-center">
             <h2 class="section-title pb-3">Communauté axée sur l'industrie</h2>
             <p class="section-desc w-50 mx-auto">Forum Q&A est une communauté ouverte à tous ceux qui recherchent des réponses. Nous vous aidons à obtenir des réponses
-                 à vos questions, partagez vos connaissances avec les membres de votre industrie verticale.
+                à vos questions, partagez vos connaissances avec les membres de votre industrie verticale.
             </p>
         </div>
         <div class="row pt-50px">

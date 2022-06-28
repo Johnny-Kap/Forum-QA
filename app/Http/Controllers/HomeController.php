@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Message;
+use App\Models\Reponse;
+use App\Models\Question;
 use App\Events\SendMessage;
+use App\Models\Vue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,14 +30,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $reponse = Reponse::count();
+
+        $question = Question::count();
+
+        $reaction = User::count();
+
+        $vues = Vue::count();
+        
+        return view('home', compact('reponse', 'question', 'reaction', 'vues'));
     }
 
-    public function showContact(){
+    public function showContact()
+    {
         return view('contact');
     }
 
-    public function showAbout(){
+    public function showAbout()
+    {
         return view('about');
     }
 

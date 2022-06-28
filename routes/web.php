@@ -1,5 +1,10 @@
 <?php
 
+use App\Models\Question;
+use App\Models\Reponse;
+use App\Models\User;
+use App\Models\Vote;
+use App\Models\Vue;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +20,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $reponse = Reponse::count();
+    $question = Question::count();
+    $reaction = Vote::count();
+    $vues = Vue::count();
+    return view('home', compact('reponse', 'question', 'reaction','vues'));
 });
 
 Auth::routes(['verify' => true]);
