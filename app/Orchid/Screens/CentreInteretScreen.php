@@ -86,7 +86,7 @@ class CentreInteretScreen extends Screen
     {
         $centre->fill($request->get('centre'))->save();
 
-        Alert::info('You have successfully deleted the post.');
+        Alert::info('Le centre interet a été créé avec susscès.');
 
         return redirect()->route('platform.centre.interet');
     }
