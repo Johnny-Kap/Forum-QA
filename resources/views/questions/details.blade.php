@@ -74,11 +74,11 @@
                     <div class="question d-flex">
                         <div class="votes votes-styled w-auto">
                             <div id="vote2" class="upvotejs">
-                           <form action="{{ route('storeFav', [ 'id' => $questionDetails->id ]) }}" method="post"> @csrf <button type="submit" style="border-color: transparent; background-color:transparent;" title="Ajouter aux favoris"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star" viewBox="0 0 16 16">
-                                    <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
-                                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
-                                </svg>
-                                </button> </form>
+                                <form action="{{ route('storeFav', [ 'id' => $questionDetails->id ]) }}" method="post"> @csrf <button type="submit" style="border-color: transparent; background-color:transparent;" title="Ajouter aux favoris"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-star" viewBox="0 0 16 16">
+                                            <path d="M7.84 4.1a.178.178 0 0 1 .32 0l.634 1.285a.178.178 0 0 0 .134.098l1.42.206c.145.021.204.2.098.303L9.42 6.993a.178.178 0 0 0-.051.158l.242 1.414a.178.178 0 0 1-.258.187l-1.27-.668a.178.178 0 0 0-.165 0l-1.27.668a.178.178 0 0 1-.257-.187l.242-1.414a.178.178 0 0 0-.05-.158l-1.03-1.001a.178.178 0 0 1 .098-.303l1.42-.206a.178.178 0 0 0 .134-.098L7.84 4.1z" />
+                                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+                                        </svg>
+                                    </button> </form>
                             </div>
                         </div><!-- end votes -->
                         <div class="question-post-body-wrap flex-grow-1">
@@ -112,7 +112,7 @@
                                             <span class="comment-copy"> {{$item->contenu}} </span>
                                             <span class="comment-separated">-</span><span class="comment-separated"> {{$item->website}} </span>
                                             <span class="comment-separated">-</span>
-                                            <a href="user-profile.html" class="comment-user owner" title="224,110 reputation">{{$item->users->name}}</a>
+                                            <a href="{{ route('userProfile', [ 'id' => $item->user_id ]) }}" class="comment-user owner" title="224,110 reputation">{{$item->users->name}}</a>
                                             <span class="comment-separated">-</span>
                                             <a href="#" class="comment-date">{{$item->created_at->format('j F Y, h:i')}}</a>
                                         </div>
@@ -200,7 +200,7 @@
                                     </a>
                                     <div class="media-body d-flex align-items-center justify-content-between">
                                         <div>
-                                            <h5 class="pb-1"><a href="user-profile.html">{{$item->users->name}}</a></h5>
+                                            <h5 class="pb-1"><a href="{{ route('userProfile', [ 'id' => $item->user_id ]) }}">{{$item->users->name}}</a></h5>
                                         </div>
                                         <small class="meta d-block text-right">
                                             <span class="text-black d-block lh-18">a répondu le</span>

@@ -23,7 +23,7 @@
                         <div class="media-body">
                             <h5>{{Auth::user()->name}}</h5>
                             <small class="meta d-block lh-20 pb-2">
-                                <span>{{Auth::user()->location}}, membre depuis le {{Auth::user()->created_at->format('j F Y, H:i')}}</span>
+                                <span><i class="la la-map-marker mr-1"></i>{{Auth::user()->location}} <i class="la la-calendar-week mr-1"></i>membre depuis le {{Auth::user()->created_at->format('j F Y, H:i')}}</span>
                             </small>
                             <div class="stats fs-14 fw-medium d-flex align-items-center lh-18">
                                 <span class="text-black pr-2" title="Reputation">

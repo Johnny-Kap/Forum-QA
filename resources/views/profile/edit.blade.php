@@ -65,26 +65,31 @@
                             <div class="user-panel">
                                 <div class="bg-gray p-3 rounded-rounded">
                                     <h3 class="fs-17">Editer votre profil</h3>
-                                </div>
-                                <form method="post" action="{{route('EditedProfile')}}" enctype="multipart/form-data" class="pt-35px">
-                                    @csrf
-                                    <div class="settings-item mb-10px">
-                                        <h4 class="fs-14 pb-2 text-gray text-uppercase">Informations publiques</h4>
-                                        <div class="divider"><span></span></div>
-                                        <div class="row pt-4 align-items-center">
-                                            <div class="col-lg-6">
-                                                <div class="edit-profile-photo d-flex flex-wrap align-items-center">
-                                                    <img src="{{ Storage::url(Auth::user()->image) }}" alt="user avatar" class="profile-img mr-4">
-                                                    <div>
-                                                        <div class="file-upload-wrap file--upload-wrap">
-                                                            <input type="file" name="file" class="multi file-upload-input" multiple>
-                                                            <span class="file-upload-text"><i class="la la-photo mr-2"></i>Envoyer la photo</span>
-                                                        </div>
-                                                        <p class="fs-14">Taille de fichier maximale: 10 MB.</p>
+                                </div><br>
+                                <div class="settings-item mb-10px">
+                                    <h4 class="fs-14 pb-2 text-gray text-uppercase">Informations publiques</h4>
+                                    <div class="divider"><span></span></div>
+                                    <div class="row pt-4 align-items-center">
+                                        <div class="col-lg-6">
+                                            <div class="edit-profile-photo d-flex flex-wrap align-items-center">
+                                                <img src="{{ Storage::url(Auth::user()->image) }}" alt="user avatar" class="profile-img mr-4">
+                                                <div>
+                                                    <div class="file-upload-wrap file--upload-wrap">
+                                                        <form method="post" action="{{route('photoEdited')}}" enctype="multipart/form-data">
+                                                            @csrf <input type="file" name="file" class="multi file-upload-input" required><button type="submit" class="" style="left: 180px; border-color: transparent; background-color:transparent;">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+                                                                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+                                                                </svg>
+                                                            </button></form>
+                                                        <span class="file-upload-text"><i class="la la-photo mr-2"></i>Envoyer la photo</span>
                                                     </div>
-                                                </div><!-- end edit-profile-photo -->
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-6">
+                                                    <p class="fs-14">Taille de fichier maximale: 10 MB.</p>
+                                                </div>
+                                            </div><!-- end edit-profile-photo -->
+                                        </div><!-- end col-lg-6 -->
+                                        <form method="post" action="{{route('EditedProfile')}}" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="col-lg-12">
                                                 <div class="input-box">
                                                     <label class="fs-13 text-black lh-20 fw-medium">Nom</label>
                                                     <div class="form-group">
@@ -106,73 +111,73 @@
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-12 -->
-                                        </div><!-- end row -->
-                                    </div><!-- end settings-item -->
-                                    <div class="settings-item">
-                                        <h4 class="fs-14 pb-2 text-gray text-uppercase">Présence Web</h4>
-                                        <div class="divider"><span></span></div>
-                                        <div class="row pt-4">
-                                            <div class="col-lg-6">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien de site Web</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->website}}" name="website">
-                                                        <span class="la la-link input-icon"></span>
-                                                    </div>
+                                    </div><!-- end row -->
+                                </div><!-- end settings-item -->
+                                <div class="settings-item">
+                                    <h4 class="fs-14 pb-2 text-gray text-uppercase">Présence Web</h4>
+                                    <div class="divider"><span></span></div>
+                                    <div class="row pt-4">
+                                        <div class="col-lg-6">
+                                            <div class="input-box">
+                                                <label class="fs-13 text-black lh-20 fw-medium">Lien de site Web</label>
+                                                <div class="form-group">
+                                                    <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->website}}" name="website">
+                                                    <span class="la la-link input-icon"></span>
                                                 </div>
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-6">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien Twitter</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" value="{{Auth::user()->twitterlink}}" type="text" name="twiter">
-                                                        <span class="la la-twitter input-icon"></span>
-                                                    </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6">
+                                            <div class="input-box">
+                                                <label class="fs-13 text-black lh-20 fw-medium">Lien Twitter</label>
+                                                <div class="form-group">
+                                                    <input class="form-control form--control pl-40px" value="{{Auth::user()->twitterlink}}" type="text" name="twiter">
+                                                    <span class="la la-twitter input-icon"></span>
                                                 </div>
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-6">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien Facebook</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" value="{{Auth::user()->facebooklink}}" type="text" name="facebook">
-                                                        <span class="la la-facebook input-icon"></span>
-                                                    </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6">
+                                            <div class="input-box">
+                                                <label class="fs-13 text-black lh-20 fw-medium">Lien Facebook</label>
+                                                <div class="form-group">
+                                                    <input class="form-control form--control pl-40px" value="{{Auth::user()->facebooklink}}" type="text" name="facebook">
+                                                    <span class="la la-facebook input-icon"></span>
                                                 </div>
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-6">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien Instagram</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->instalink}}" name="instagram">
-                                                        <span class="la la-instagram input-icon"></span>
-                                                    </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6">
+                                            <div class="input-box">
+                                                <label class="fs-13 text-black lh-20 fw-medium">Lien Instagram</label>
+                                                <div class="form-group">
+                                                    <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->instalink}}" name="instagram">
+                                                    <span class="la la-instagram input-icon"></span>
                                                 </div>
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-6">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien Youtube</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->youtubelink}}" name="youtube">
-                                                        <span class="la la-youtube input-icon"></span>
-                                                    </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6">
+                                            <div class="input-box">
+                                                <label class="fs-13 text-black lh-20 fw-medium">Lien Youtube</label>
+                                                <div class="form-group">
+                                                    <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->youtubelink}}" name="youtube">
+                                                    <span class="la la-youtube input-icon"></span>
                                                 </div>
-                                            </div><!-- end col-lg-6 -->
-                                            <div class="col-lg-6">
-                                                <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20 fw-medium">Lien GitHub</label>
-                                                    <div class="form-group">
-                                                        <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->githublink}}" name="github">
-                                                        <span class="la la-github input-icon"></span>
-                                                    </div>
+                                            </div>
+                                        </div><!-- end col-lg-6 -->
+                                        <div class="col-lg-6">
+                                            <div class="input-box">
+                                                <label class="fs-13 text-black lh-20 fw-medium">Lien GitHub</label>
+                                                <div class="form-group">
+                                                    <input class="form-control form--control pl-40px" type="text" value="{{Auth::user()->githublink}}" name="github">
+                                                    <span class="la la-github input-icon"></span>
                                                 </div>
-                                            </div><!-- end col-lg-12 -->
-                                            <div class="col-lg-12">
-                                                <div class="submit-btn-box pt-3">
-                                                    <button class="btn theme-btn" type="submit">Sauvegarder les modifications</button>
-                                                </div>
-                                            </div><!-- end col-lg-12 -->
-                                        </div><!-- end row -->
-                                    </div><!-- end settings-item -->
+                                            </div>
+                                        </div><!-- end col-lg-12 -->
+                                        <div class="col-lg-12">
+                                            <div class="submit-btn-box pt-3">
+                                                <button class="btn theme-btn" type="submit">Sauvegarder les modifications</button>
+                                            </div>
+                                        </div><!-- end col-lg-12 -->
+                                    </div><!-- end row -->
+                                </div><!-- end settings-item -->
                                 </form>
                             </div><!-- end user-panel -->
                         </div><!-- end user-panel-main-bar -->

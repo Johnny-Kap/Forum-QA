@@ -45,7 +45,8 @@ class UserController extends Controller
     }
 
 
-    public function userProfile($id){
+    public function userProfile($id)
+    {
 
         $user_items = User::find($id);
 
@@ -73,9 +74,7 @@ class UserController extends Controller
 
         $questions_fav = Favori::where('user_id', $ids)->simplePaginate(5);
 
-        return view('profile.user-profile', compact('user_items','questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav'));
-   
-
+        return view('profile.user-profile', compact('user_items', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav'));
     }
 
 
@@ -93,19 +92,26 @@ class UserController extends Controller
         return view('profile.edit', compact('questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
     }
 
+    public function photoEdited(Request $request)
+    {
+
+        $filename = time() . '.' . $request->file->extension();
+
+        $path = $request->file('file')->storeAs('avatars', $filename, 'public');
+
+        $ids = Auth::user()->id;
+
+        $affected = User::where('id', $ids)
+            ->update([
+                'image' => $path,
+            ]);
+
+        return back()->with('success', 'Photo de profil ajouté avec succès!');
+    }
+
 
     public function Edited(Request $request)
     {
-
-        if ($request->hasFile('file')) {
-
-            $filename = time() . '.' . $request->file->extension();
-
-            $path = $request->file('file')->storeAs('avatars', $filename, 'public');
-        } else {
-
-            $path = 'noimage';
-        }
 
         $ids = Auth::user()->id;
 
@@ -130,7 +136,6 @@ class UserController extends Controller
         $affected = User::where('id', $ids)
             ->update([
                 'name' => $name,
-                'image' => $path,
                 'location' => $location,
                 'bio' => $bio,
                 'website' => $website,

@@ -79,25 +79,483 @@
                             <a class="nav-link" id="tags-tab" data-toggle="tab" href="#tags" role="tab" aria-controls="tags" aria-selected="false">Tags</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users" aria-selected="false">Users</a>
+                            <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users" aria-selected="false">Utilisateurs</a>
                         </li>
                     </ul>
                     <div class="tab-content pt-40px" id="myTabContent">
                         <div class="tab-pane fade show active" id="questions" role="tabpanel" aria-labelledby="questions-tab">
                             <div class="filters d-flex align-items-center justify-content-between pb-4">
                                 <h3 class="fs-17 fw-medium">Toutes les Questions</h3>
-                                <div class="filter-option-box w-20">
-                                    <select class="select-container">
-                                        <option value="newest" selected="selected">Newest </option>
-                                        <option value="featured">Bountied (390)</option>
-                                        <option value="frequent">Frequent </option>
-                                        <option value="votes">Votes </option>
-                                        <option value="active">Active </option>
-                                        <option value="unanswered">Unanswered </option>
-                                        <option value="Votes">Votes </option>
-                                    </select>
-                                </div><!-- end filter-option-box -->
+                                <div class="filter-option-box">
+                                    <a class="btn theme-btn theme-btn-outline theme-btn-outline-gray" data-toggle="collapse" href="#collapseSearchAdvanced" role="button" aria-expanded="false" aria-controls="collapseSearchAdvanced">
+                                        <i class="la la-gear mr-1"></i> Filtre
+                                    </a>
+                                </div>
                             </div><!-- end filters -->
+                            <div class="collapse pt-3" id="collapseSearchAdvanced">
+                                <div class="card card-item mb-0">
+                                    <form method="post" class="search-advanced card-body pb-1">
+                                        <div class="search-advanced-item mb-10px row align-items-center">
+                                            <div class="col-lg-6">
+                                                <h4 class="fs-16">Filters</h4>
+                                            </div><!-- end col-lg-6 -->
+                                            <div class="col-lg-6">
+                                                <div class="search-filter-btn-box text-right">
+                                                    <button type="submit" class="btn theme-btn theme-btn-sm">Search <i class="la la-search ml-1"></i></button>
+                                                </div>
+                                            </div><!-- end col-lg-6 -->
+                                        </div><!-- end search-advanced-item -->
+                                        <div class="search-advanced-item mb-10px">
+                                            <h4 class="fs-14 pb-2 text-gray text-uppercase">Location</h4>
+                                            <div class="divider"><span></span></div>
+                                            <div class="row pt-3">
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Distance</label>
+                                                    <div class="form-group">
+                                                        <select class="select-container">
+                                                            <option value="5">within 5 km</option>
+                                                            <option value="10">within 10 km</option>
+                                                            <option selected="selected" value="20">within 20 km</option>
+                                                            <option value="50">within 50 km</option>
+                                                            <option value="100">within 100 km</option>
+                                                        </select>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">City</label>
+                                                    <div class="form-group">
+                                                        <select class="select-container">
+                                                            <option selected="selected" value="1">New york</option>
+                                                            <option value="2">Austin</option>
+                                                            <option value="3">Chicago</option>
+                                                            <option value="4">Boston</option>
+                                                            <option value="5">Denver</option>
+                                                            <option value="6">Berlin</option>
+                                                            <option value="7">Munich</option>
+                                                            <option value="8">Hamburg</option>
+                                                            <option value="9">Cologne</option>
+                                                            <option value="10">Rome</option>
+                                                            <option value="11">Turin</option>
+                                                            <option value="12">Milan</option>
+                                                            <option value="13">Florence</option>
+                                                            <option value="14">Bologna</option>
+                                                            <option value="15">Marylebone</option>
+                                                            <option value="16">Southwark</option>
+                                                            <option value="16">Westminster</option>
+                                                        </select>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end search-advanced-item -->
+                                        <div class="search-advanced-item mb-10px">
+                                            <h4 class="fs-14 pb-2 text-gray text-uppercase">Tech</h4>
+                                            <div class="divider"><span></span></div>
+                                            <div class="row pt-3">
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Tech You Like</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control form--control form-control-sm" type="text" name="text" placeholder="e.g. javascript">
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Tech You Dislike</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control form--control form-control-sm" type="text" name="text" placeholder="e.g. java">
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end search-advanced-item -->
+                                        <div class="search-advanced-item mb-10px">
+                                            <h4 class="fs-14 pb-2 text-gray text-uppercase">Compensation</h4>
+                                            <div class="divider"><span></span></div>
+                                            <div class="row pt-3">
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Minimum Annual Salary</label>
+                                                    <div class="form-group">
+                                                        <input class="form-control form--control form-control-sm" type="text" name="text" placeholder="e.g. 35">
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Currency</label>
+                                                    <div class="form-group">
+                                                        <select class="select-container">
+                                                            <option selected="selected" value="BDT">BDT</option>
+                                                            <option value="USD">USD ($)</option>
+                                                            <option value="EUR">EUR (€)</option>
+                                                            <option value="GBP">GBP (£)</option>
+                                                            <option value="CAD">CAD (C$)</option>
+                                                            <option value="AUD">AUD (A$)</option>
+                                                            <option value="INR">INR (₹)</option>
+                                                            <option value="SEK">SEK (kr)</option>
+                                                            <option value="PLN">PLN (zł)</option>
+                                                            <option value="CHF">CHF</option>
+                                                            <option value="DKK">DKK</option>
+                                                            <option value="NZD">NZD</option>
+                                                        </select>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="form-group col-lg-12">
+                                                    <div class="custom-control custom-checkbox fs-13">
+                                                        <input type="checkbox" class="custom-control-input" id="offersEquity">
+                                                        <label class="custom-control-label custom--control-label" for="offersEquity">Offers Equity</label>
+                                                    </div>
+                                                </div><!-- end col-lg-12 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end search-advanced-item -->
+                                        <div class="search-advanced-item mb-10px">
+                                            <h4 class="fs-14 pb-2 text-gray text-uppercase">Perks</h4>
+                                            <div class="divider"><span></span></div>
+                                            <div class="row pt-3">
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Location options</label>
+                                                    <div class="form-group">
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="allowsRemote">
+                                                            <label class="custom-control-label custom--control-label" for="allowsRemote">Allows remote</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="offersRelocation">
+                                                            <label class="custom-control-label custom--control-label" for="offersRelocation">Offers relocation</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="offersVisaSponsorship">
+                                                            <label class="custom-control-label custom--control-label" for="offersVisaSponsorship">Offers visa sponsorship</label>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Perks</label>
+                                                    <div class="form-group">
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="educationAndTuitionBenefits">
+                                                            <label class="custom-control-label custom--control-label" for="educationAndTuitionBenefits">Education and tuition benefits</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="vacationDays10Plus">
+                                                            <label class="custom-control-label custom--control-label" for="vacationDays10Plus">10+ vacation days</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="gymAndFitnessPerks">
+                                                            <label class="custom-control-label custom--control-label" for="gymAndFitnessPerks">Gym and fitness perks</label>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end search-advanced-item -->
+                                        <div class="search-advanced-item mb-10px">
+                                            <h4 class="fs-14 pb-2 text-gray text-uppercase">Background</h4>
+                                            <div class="divider"><span></span></div>
+                                            <div class="row pt-3">
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Experience Level Min</label>
+                                                    <div class="form-group">
+                                                        <select class="select-container">
+                                                            <option selected="selected" value="">Select min. experience</option>
+                                                            <option value="Student">Student</option>
+                                                            <option value="Junior">Junior</option>
+                                                            <option value="MidLevel">Mid-Level</option>
+                                                            <option value="Senior">Senior</option>
+                                                            <option value="Lead">Lead</option>
+                                                            <option value="Manager">Manager</option>
+                                                        </select>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Experience Level Max</label>
+                                                    <div class="form-group">
+                                                        <select class="select-container">
+                                                            <option selected="selected" value="">Select max. experience</option>
+                                                            <option value="Student">Student</option>
+                                                            <option value="Junior">Junior</option>
+                                                            <option value="MidLevel">Mid-Level</option>
+                                                            <option value="Senior">Senior</option>
+                                                            <option value="Lead">Lead</option>
+                                                            <option value="Manager">Manager</option>
+                                                        </select>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Role</label>
+                                                    <div class="form-group">
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="backendDeveloper">
+                                                            <label class="custom-control-label custom--control-label" for="backendDeveloper">Backend Developer</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="dataScientist">
+                                                            <label class="custom-control-label custom--control-label" for="dataScientist">Data Scientist</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="databaseAdministrator">
+                                                            <label class="custom-control-label custom--control-label" for="databaseAdministrator">Database Administrator</label>
+                                                        </div>
+                                                        <div class="collapse" id="collapseMore">
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Designer">
+                                                                <label class="custom-control-label custom--control-label" for="Designer">Designer</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="DesktopDeveloper">
+                                                                <label class="custom-control-label custom--control-label" for="DesktopDeveloper">Desktop Developer</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="DevOps">
+                                                                <label class="custom-control-label custom--control-label" for="DevOps">DevOps</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="EmbeddedDeveloper">
+                                                                <label class="custom-control-label custom--control-label" for="EmbeddedDeveloper">Embedded Developer</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="FrontendDeveloper">
+                                                                <label class="custom-control-label custom--control-label" for="FrontendDeveloper">Frontend Developer</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="FullStackDeveloper">
+                                                                <label class="custom-control-label custom--control-label" for="FullStackDeveloper">Full Stack Developer</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="GraphicsGameDeveloper">
+                                                                <label class="custom-control-label custom--control-label" for="GraphicsGameDeveloper">Graphics/Game Developer</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="MobileDeveloper">
+                                                                <label class="custom-control-label custom--control-label" for="MobileDeveloper">Mobile Developer</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="ProductManager">
+                                                                <label class="custom-control-label custom--control-label" for="ProductManager">Product Manager</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="QATestDeveloper">
+                                                                <label class="custom-control-label custom--control-label" for="QATestDeveloper">QA/Test Developer</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="SystemAdministrator">
+                                                                <label class="custom-control-label custom--control-label" for="SystemAdministrator"> System Administrator</label>
+                                                            </div>
+                                                        </div><!-- end collapse -->
+                                                        <a class="collapse-btn fs-13" data-toggle="collapse" href="#collapseMore" role="button" aria-expanded="false" aria-controls="collapseMore">
+                                                            <span class="collapse-btn-hide">Show more<i class="la la-angle-down ml-1 fs-11"></i></span>
+                                                            <span class="collapse-btn-show">Show less<i class="la la-angle-up ml-1 fs-11"></i></span>
+                                                        </a>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Job Type</label>
+                                                    <div class="form-group">
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="FullTime">
+                                                            <label class="custom-control-label custom--control-label" for="FullTime">Full-time</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="PartTime">
+                                                            <label class="custom-control-label custom--control-label" for="PartTime">Part-time</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="Contract">
+                                                            <label class="custom-control-label custom--control-label" for="Contract">Contract</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="Internship">
+                                                            <label class="custom-control-label custom--control-label" for="Internship">Internship</label>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end search-advanced-item -->
+                                        <div class="search-advanced-item mb-10px">
+                                            <h4 class="fs-14 pb-2 text-gray text-uppercase">Companies</h4>
+                                            <div class="divider"><span></span></div>
+                                            <div class="row pt-3">
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Companies to Include</label>
+                                                    <div class="form-group">
+                                                        <input class="input-tags" type="text" name="text" placeholder="Add up to 5 (e.g. Initrode)">
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Companies to Exclude</label>
+                                                    <div class="form-group">
+                                                        <input class="input-tags" type="text" name="text" placeholder="Add up to 5 (e.g. Initech)">
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-12">
+                                                    <label class="fs-13 text-black lh-20">Industries</label>
+                                                    <div class="form-group row">
+                                                        <div class="col-lg-4">
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Accounting">
+                                                                <label class="custom-control-label custom--control-label" for="Accounting">Accounting</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Advertising">
+                                                                <label class="custom-control-label custom--control-label" for="Advertising">Advertising</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Aerospace">
+                                                                <label class="custom-control-label custom--control-label" for="Aerospace">Aerospace</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Agriculture">
+                                                                <label class="custom-control-label custom--control-label" for="Agriculture">Agriculture</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Architecture">
+                                                                <label class="custom-control-label custom--control-label" for="Architecture">Architecture</label>
+                                                            </div>
+                                                        </div><!-- end col-lg-4 -->
+                                                        <div class="col-lg-4">
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Arts">
+                                                                <label class="custom-control-label custom--control-label" for="Arts">Arts</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Automotive">
+                                                                <label class="custom-control-label custom--control-label" for="Automotive">Automotive</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="CustomerService">
+                                                                <label class="custom-control-label custom--control-label" for="CustomerService">Customer Service</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Data&Analytics">
+                                                                <label class="custom-control-label custom--control-label" for="Data&Analytics">Data & Analytics</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Finance">
+                                                                <label class="custom-control-label custom--control-label" for="Finance">Finance</label>
+                                                            </div>
+                                                        </div><!-- end col-lg-4 -->
+                                                        <div class="col-lg-4">
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Food&Beverage">
+                                                                <label class="custom-control-label custom--control-label" for="Food&Beverage">Food & Beverage</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Gaming">
+                                                                <label class="custom-control-label custom--control-label" for="Gaming">Gaming</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Government">
+                                                                <label class="custom-control-label custom--control-label" for="Government">Government</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Hardware">
+                                                                <label class="custom-control-label custom--control-label" for="Hardware">Hardware</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox fs-13">
+                                                                <input type="checkbox" class="custom-control-input" id="Health&Fitness">
+                                                                <label class="custom-control-label custom--control-label" for="Health&Fitness">Health & Fitness</label>
+                                                            </div>
+                                                        </div><!-- end col-lg-4 -->
+                                                        <div class="col-lg-12">
+                                                            <div class="collapse" id="collapseMoreTwo">
+                                                                <div class="row">
+                                                                    <div class="col-lg-4">
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="HealthCare">
+                                                                            <label class="custom-control-label custom--control-label" for="HealthCare">Health Care</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="HomeAndGarden">
+                                                                            <label class="custom-control-label custom--control-label" for="HomeAndGarden">Home and Garden</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Hospitality">
+                                                                            <label class="custom-control-label custom--control-label" for="Hospitality">Hospitality</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="InformationTechnology">
+                                                                            <label class="custom-control-label custom--control-label" for="InformationTechnology">Information Technology</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Insurance">
+                                                                            <label class="custom-control-label custom--control-label" for="Insurance">Insurance</label>
+                                                                        </div>
+                                                                    </div><!-- end col-lg-4 -->
+                                                                    <div class="col-lg-4">
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="LanguageServices">
+                                                                            <label class="custom-control-label custom--control-label" for="LanguageServices">Language Services</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Legal">
+                                                                            <label class="custom-control-label custom--control-label" for="Legal">Legal</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="LifeSciences">
+                                                                            <label class="custom-control-label custom--control-label" for="LifeSciences">Life Sciences</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="LocationServices">
+                                                                            <label class="custom-control-label custom--control-label" for="LocationServices">Location Services</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Logistics&Distribution">
+                                                                            <label class="custom-control-label custom--control-label" for="Logistics&Distribution">Logistics & Distribution</label>
+                                                                        </div>
+                                                                    </div><!-- end col-lg-4 -->
+                                                                    <div class="col-lg-4">
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Manufacturing">
+                                                                            <label class="custom-control-label custom--control-label" for="Manufacturing">Manufacturing</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Marketing">
+                                                                            <label class="custom-control-label custom--control-label" for="Marketing">Marketing</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Media">
+                                                                            <label class="custom-control-label custom--control-label" for="Media">Media</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Meteorology">
+                                                                            <label class="custom-control-label custom--control-label" for="Meteorology">Meteorology</label>
+                                                                        </div>
+                                                                        <div class="custom-control custom-checkbox fs-13">
+                                                                            <input type="checkbox" class="custom-control-input" id="Mobile">
+                                                                            <label class="custom-control-label custom--control-label" for="Mobile">Mobile</label>
+                                                                        </div>
+                                                                    </div><!-- end col-lg-4 -->
+                                                                </div><!-- end row -->
+                                                            </div><!-- end collapse -->
+                                                            <a class="collapse-btn fs-13" data-toggle="collapse" href="#collapseMoreTwo" role="button" aria-expanded="false" aria-controls="collapseMoreTwo">
+                                                                <span class="collapse-btn-hide">Show more<i class="la la-angle-down ml-1 fs-11"></i></span>
+                                                                <span class="collapse-btn-show">Show less<i class="la la-angle-up ml-1 fs-11"></i></span>
+                                                            </a>
+                                                        </div><!-- end col-lg-12 -->
+                                                    </div>
+                                                </div><!-- end col-lg-12 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end search-advanced-item -->
+                                        <div class="search-advanced-item">
+                                            <h4 class="fs-14 pb-2 text-gray text-uppercase">More</h4>
+                                            <div class="divider"><span></span></div>
+                                            <div class="row pt-3">
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Applications</label>
+                                                    <div class="form-group">
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="BeOneOfTheFirstApplicants">
+                                                            <label class="custom-control-label custom--control-label" for="BeOneOfTheFirstApplicants">Be one of the first applicants</label>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Responses</label>
+                                                    <div class="form-group">
+                                                        <div class="custom-control custom-checkbox fs-13">
+                                                            <input type="checkbox" class="custom-control-input" id="HighResponseRate">
+                                                            <label class="custom-control-label custom--control-label" for="HighResponseRate">High response rate</label>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end search-advanced-item -->
+                                    </form>
+                                </div><!-- end card -->
+                            </div><!-- end collapse -->
                             <div class="question-main-bar">
                                 <div class="questions-snippet">
                                     @foreach($questions as $item)
@@ -136,21 +594,6 @@
                                 <p class="fs-15 lh-24 pb-4">Une étiquette est un mot-clé ou une étiquette qui catégorise votre question avec d'autres questions similaires.
                                     L'utilisation des bonnes balises permet aux autres de trouver et de répondre plus facilement à votre question.
                                 </p>
-                                <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                    <form method="post" class="flex-grow-1 mr-3">
-                                        <div class="form-group mb-0">
-                                            <input class="form-control form--control form-control-sm h-auto lh-34" type="text" name="search" placeholder="Filtrer par nom du Tag...">
-                                            <button class="form-btn" type="button"><i class="la la-search"></i></button>
-                                        </div>
-                                    </form>
-                                    <div class="filter-option-box w-20">
-                                        <select class="select-container mt-2">
-                                            <option value="popular" selected="selected">Populaire</option>
-                                            <option value="name">Nom</option>
-                                            <option value="new">Nouveaux</option>
-                                        </select>
-                                    </div>
-                                </div>
                             </div><!-- end filters -->
                             <div class="tags-main-bar">
                                 <div class="tags-snippet">
@@ -179,23 +622,14 @@
                         </div><!-- end tab-pane -->
                         <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
                             <div class="filters pb-4">
-                                <h3 class="fs-17 fw-medium pb-4">Users</h3>
+                                <h3 class="fs-17 fw-medium pb-4">Utilisateurs</h3>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                    <form method="post" class="flex-grow-1 mr-3">
+                                    <form method="get" action="{{route('searchUser')}}" class="flex-grow-1 mr-3">
                                         <div class="form-group mb-0">
-                                            <input class="form-control form--control form-control-sm h-auto lh-34" type="text" name="search" placeholder="Filter by user...">
-                                            <button class="form-btn" type="button"><i class="la la-search"></i></button>
+                                            <input class="form-control form--control form-control-sm h-auto lh-34" type="text" name="search" placeholder="Rechercher un utilisateur...">
+                                            <button class="form-btn" type="submit"><i class="la la-search"></i></button>
                                         </div>
                                     </form>
-                                    <div class="filter-option-box w-20 mt-2">
-                                        <select class="select-container">
-                                            <option value="reputation" selected="selected">Reputation</option>
-                                            <option value="new-users">New users</option>
-                                            <option value="voters">Voters</option>
-                                            <option value="editors">Editors</option>
-                                            <option value="moderators">Moderators</option>
-                                        </select>
-                                    </div>
                                 </div>
                             </div><!-- end filters -->
                             <div class="users-main-bar">
@@ -208,7 +642,7 @@
                                                     <img src="{{ Storage::url($item->image) }}" alt="company logo">
                                                 </a>
                                                 <div class="media-body">
-                                                    <h5 class="fs-16 fw-medium"><a href="user-profile.html">{{$item->name}}</a></h5>
+                                                    <h5 class="fs-16 fw-medium"><a href="{{ route('userProfile', [ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
                                                     <small class="meta d-block lh-24 pb-1"><span>{{$item->location}}</span></small>
                                                     <p class="fw-medium fs-15 text-black-50 lh-18">{{$item->reponses_count}}</p>
                                                 </div><!-- end media-body -->

@@ -33,22 +33,34 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'showContact'])->name('contact');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'showAbout'])->name('about');
 
+//Message
 Route::get('/chat', [App\Http\Controllers\HomeController::class, 'chat'])->name('chat');
 Route::get('/messages', [App\Http\Controllers\HomeController::class, 'messages'])->name('messages');
 Route::post('/messages', [App\Http\Controllers\HomeController::class, 'messageStore'])->name('messageStore');
 
-//Questions Route
+//Questions
 Route::get('/questions', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions');
 Route::get('/questions/ask-question', [App\Http\Controllers\QuestionController::class, 'create'])->name('askQuestion');
 Route::get('/questions/view/{id}', [App\Http\Controllers\QuestionController::class, 'show'])->name('showQuestion');
 Route::get('/questions/centre/{id}', [App\Http\Controllers\QuestionController::class, 'showByCenter'])->name('questionsTemplate');
 Route::post('questions/add', [App\Http\Controllers\QuestionController::class, 'store'])->name('addQuestion');
+
+//search
+Route::get('/search/questions', [App\Http\Controllers\QuestionController::class, 'searchQuestion'])->name('searchQuestion');
+Route::get('/search/user', [App\Http\Controllers\QuestionController::class, 'searchUser'])->name('searchUser');
+
+//Favoris
 Route::post('questions/add/favori/{id}', [App\Http\Controllers\FavoriController::class, 'store'])->name('storeFav');
 Route::post('questions/add/favori/supp/{id}', [App\Http\Controllers\FavoriController::class, 'delete'])->name('deleteFav');
 
+//Reponses
 Route::post('answers/add/{id}', [App\Http\Controllers\ReponseController::class, 'store'])->name('addReponse');
+
+//Comments
 Route::post('answers/comments/add/{id}', [App\Http\Controllers\ReponseController::class, 'addComments'])->name('addCommentReponse');
 Route::post('questions/comments/add/{id}', [App\Http\Controllers\QuestionController::class, 'addComments'])->name('addCommentQuestion');
+
+//Votes
 Route::post('questions/vote/upvote/{id}', [App\Http\Controllers\VoteController::class, 'upVote'])->name('upvote');
 Route::post('questions/vote/downvote/{id}', [App\Http\Controllers\VoteController::class, 'downVote'])->name('downvote');
 
@@ -57,4 +69,5 @@ Route::get('/myprofile', [App\Http\Controllers\UserController::class, 'MyProfile
 Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
 Route::get('/myprofile/edit', [App\Http\Controllers\UserController::class, 'Edit'])->name('EditProfile');
 Route::post('/myprofile/edited', [App\Http\Controllers\UserController::class, 'Edited'])->name('EditedProfile');
+Route::post('/myprofile/photo-edited', [App\Http\Controllers\UserController::class, 'photoEdited'])->name('photoEdited');
 Route::post('/myprofile/password', [App\Http\Controllers\UserController::class, 'ResetPassword'])->name('password');

@@ -59,7 +59,7 @@
             <div class="col-lg-2">
                 <div class="sidebar pb-45px position-sticky top-0 mt-2">
                     <ul class="generic-list-item generic-list-item-highlight fs-15">
-                        <li class="lh-26"><a href="{{route('questions')}}"><i class="la la-home mr-1 text-black"></i> Home</a></li>
+                        <li class="lh-26 active"><a href="{{route('questions')}}"><i class="la la-home mr-1 text-black"></i> Home</a></li>
                         @foreach($centres as $item)
                         <li class="lh-26"><a href="{{route('questionsTemplate', ['id' => $item->id] )}}"><i class="la la-laptop mr-1 text-black"></i> {{$item->label}}</a></li>
                         @endforeach
@@ -79,7 +79,7 @@
                             <a class="nav-link" id="tags-tab" data-toggle="tab" href="#tags" role="tab" aria-controls="tags" aria-selected="false">Tags</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users" aria-selected="false">Utilisateurs</a>
+                            <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users" aria-selected="false">Users</a>
                         </li>
                     </ul>
                     <div class="tab-content pt-40px" id="myTabContent">
@@ -136,6 +136,21 @@
                                 <p class="fs-15 lh-24 pb-4">Une étiquette est un mot-clé ou une étiquette qui catégorise votre question avec d'autres questions similaires.
                                     L'utilisation des bonnes balises permet aux autres de trouver et de répondre plus facilement à votre question.
                                 </p>
+                                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                    <form method="post" class="flex-grow-1 mr-3">
+                                        <div class="form-group mb-0">
+                                            <input class="form-control form--control form-control-sm h-auto lh-34" type="text" name="search" placeholder="Filtrer par nom du Tag...">
+                                            <button class="form-btn" type="button"><i class="la la-search"></i></button>
+                                        </div>
+                                    </form>
+                                    <div class="filter-option-box w-20">
+                                        <select class="select-container mt-2">
+                                            <option value="popular" selected="selected">Populaire</option>
+                                            <option value="name">Nom</option>
+                                            <option value="new">Nouveaux</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div><!-- end filters -->
                             <div class="tags-main-bar">
                                 <div class="tags-snippet">
@@ -164,14 +179,23 @@
                         </div><!-- end tab-pane -->
                         <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
                             <div class="filters pb-4">
-                                <h3 class="fs-17 fw-medium pb-4">Utilisateurs</h3>
+                                <h3 class="fs-17 fw-medium pb-4">Users</h3>
                                 <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                    <form method="get" action="{{route('searchUser')}}" class="flex-grow-1 mr-3">
+                                    <form method="post" class="flex-grow-1 mr-3">
                                         <div class="form-group mb-0">
-                                            <input class="form-control form--control form-control-sm h-auto lh-34" type="text" name="search" placeholder="Rechercher un utilisateur...">
-                                            <button class="form-btn" type="submit"><i class="la la-search"></i></button>
+                                            <input class="form-control form--control form-control-sm h-auto lh-34" type="text" name="search" placeholder="Filter by user...">
+                                            <button class="form-btn" type="button"><i class="la la-search"></i></button>
                                         </div>
                                     </form>
+                                    <div class="filter-option-box w-20 mt-2">
+                                        <select class="select-container">
+                                            <option value="reputation" selected="selected">Reputation</option>
+                                            <option value="new-users">New users</option>
+                                            <option value="voters">Voters</option>
+                                            <option value="editors">Editors</option>
+                                            <option value="moderators">Moderators</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div><!-- end filters -->
                             <div class="users-main-bar">
@@ -184,7 +208,7 @@
                                                     <img src="{{ Storage::url($item->image) }}" alt="company logo">
                                                 </a>
                                                 <div class="media-body">
-                                                    <h5 class="fs-16 fw-medium"><a href="{{ route('userProfile', [ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>
+                                                    <h5 class="fs-16 fw-medium"><a href="user-profile.html">{{$item->name}}</a></h5>
                                                     <small class="meta d-block lh-24 pb-1"><span>{{$item->location}}</span></small>
                                                     <p class="fw-medium fs-15 text-black-50 lh-18">{{$item->reponses_count}}</p>
                                                 </div><!-- end media-body -->

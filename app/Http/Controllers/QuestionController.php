@@ -150,6 +150,8 @@ class QuestionController extends Controller
 
         $questionDetails = Question::find($id);
 
+        $image = 'noimage';
+
         $questionIds = $questionDetails->id;
 
         $reponses = Reponse::where('question_id', $questionIds)->withCount('votes')->get();
@@ -168,7 +170,7 @@ class QuestionController extends Controller
 
         $vuesCount = Vue::where('question_id', $questionIds)->count();
 
-        return view('questions.details', compact( 'questions_counts', 'reponses_counts', 'users_counts', 'questions_tend', 'questionDetails', 'reponses', 'reponses_counts_this', 'getComments', 'vuesCount'));
+        return view('questions.details', compact('image', 'questions_counts', 'reponses_counts', 'users_counts', 'questions_tend', 'questionDetails', 'reponses', 'reponses_counts_this', 'getComments', 'vuesCount'));
     }
 
     public function addComments(Request $request, $id)
@@ -191,6 +193,42 @@ class QuestionController extends Controller
         $add->save();
 
         return back()->with('success', 'Commentaire ajouté à la question avec succès!');
+    }
+
+    public function searchQuestion(Request $request)
+    {
+
+        $search = $request->search;
+
+        $centres = Centre::all();
+
+        $tags = Tags::withCount('questions')->simplePaginate(10);
+
+        $users = User::withCount('reponses')->simplePaginate(10);
+
+        $questions = Question::where('titre', 'like', '%' . $search . '%')->withCount('reponses')->simplePaginate(10);
+
+        $questions_tend = Question::take(3)->get();
+
+        $questions_counts = Question::count();
+
+        $reponses_counts = Reponse::count();
+
+        $users_counts = User::count();
+
+        return view('search.search-nav', compact('centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
+    }
+
+    public function searchUser(Request $request)
+    {
+
+        $search = $request->search;
+
+        $users = User::where('name', 'like', '%' . $search . '%')->simplePaginate(10);
+
+        $user_count = User::where('name', 'like', '%' . $search . '%')->count();
+
+        return view('search.search-user', compact('users', 'user_count'));
     }
 
 
