@@ -6,6 +6,7 @@ use App\Models\Favori;
 use App\Models\User;
 use App\Models\Reponse;
 use App\Models\Question;
+use App\Models\Tags;
 use App\Models\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,11 @@ class UserController extends Controller
     {
 
         $ids = Auth::user()->id;
+
+        // $tags_id_questions = Question::where('user_id', $ids)->pluck('tags_id');
+       
+        // $tags_items = Tags::join('questions', $ids , '=' , 'questions.user_id')->get();
+        // dd($tags_id_questions);
 
         $questions_tend = Question::take(3)->get();
 

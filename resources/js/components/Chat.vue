@@ -26,7 +26,7 @@
                 placeholder="Entrer votre message ici..." v-model="newMessage" @keyup.enter="addMessage">
 
             <span class="input-group-btn">
-                <button class="btn btn-primary" id="btn-chat" @click="addMessage">
+                <button class="btn btn-primary" style="background-color : #8b3a5f;" id="btn-chat" @click="addMessage">
                     Envoyer
                 </button>
             </span>

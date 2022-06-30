@@ -314,9 +314,9 @@
                             <path d="m69.3 90.8a5.3 5.3 0 1 0 -7.564 4.782v8.385h4.519v-8.386a5.293 5.293 0 0 0 3.045-4.781z" fill="#84879c" />
                             <path d="m66.259 104.966h-4.519a1 1 0 0 1 -1-1v-7.789a6.3 6.3 0 1 1 6.519 0v7.789a1 1 0 0 1 -1 1zm-3.519-2h2.519v-7.385a1 1 0 0 1 .572-.9 4.264 4.264 0 0 0 2.469-3.881 4.3 4.3 0 0 0 -8.609 0 4.264 4.264 0 0 0 2.473 3.878 1 1 0 0 1 .572.9z" fill="#2f3a5a" />
                         </svg>
-                        <h5 class="card-title pt-4 pb-2">Q&A privées</h5>
-                        <p class="card-text pb-4">En utilisant Forum Q&A, créez le maximum de questions et réponses lors de votre événement ou réunion en utilisant la plateforme.</p>
-                        <a href="#" class="btn theme-btn bg-3">À venir <span class="badge badge-pill badge-primary">Bientot</span></a>
+                        <h5 class="card-title pt-4 pb-2">Echanges privés</h5>
+                        <p class="card-text pb-4">En utilisant Forum Q&A, créez le maximum de liens avec la communauté en utilisant la discussion instantanée de la plateforme.</p>
+                        <a href="{{route('chat')}}" class="btn theme-btn bg-3">Démarrer une discussion</a>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
             </div><!-- end col-lg-4 -->
