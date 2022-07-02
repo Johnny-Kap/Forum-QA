@@ -85,7 +85,7 @@
                     <div class="tab-content pt-40px" id="myTabContent">
                         <div class="tab-pane fade show active" id="questions" role="tabpanel" aria-labelledby="questions-tab">
                             <div class="filters d-flex align-items-center justify-content-between pb-4">
-                                <h3 class="fs-17 fw-medium">Les Questions recherchées</h3>
+                                <h3 class="fs-17 fw-medium">Les Questions filtrées</h3>
                             </div><!-- end filters -->
                             <div class="question-main-bar">
                                 <div class="questions-snippet">

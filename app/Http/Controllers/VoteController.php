@@ -67,7 +67,7 @@ class VoteController extends Controller
 
             $add->user_id = Auth::user()->id;
 
-            $add->vote = 0;
+            $add->vote = -1;
 
             $add->save();
 

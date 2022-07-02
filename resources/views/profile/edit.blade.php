@@ -241,7 +241,7 @@
                                     <div class="settings-item mb-30px border-bottom border-bottom-gray pb-30px">
                                         <label class="fs-13 text-black lh-20 fw-medium">Adresse Email</label>
                                         <div class="input-group">
-                                            <input class="form-control form--control" type="email" name="email" value="ardensmith81@gmail.com">
+                                            <input class="form-control form--control" type="email" name="email" value="{{Auth::user()->email}}">
                                             <div class="input-group-append">
                                                 <button class="btn theme-btn" type="button">Sauvegarder</button>
                                             </div>

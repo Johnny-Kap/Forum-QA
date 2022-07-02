@@ -32,6 +32,8 @@ class QuestionController extends Controller
 
         $questions = Question::withCount('reponses')->simplePaginate(10);
 
+        $questions_items_count = Question::withCount('reponses')->count();
+
         $questions_tend = Question::take(3)->get();
 
         $questions_counts = Question::count();
@@ -40,7 +42,7 @@ class QuestionController extends Controller
 
         $users_counts = User::count();
 
-        return view('questions.view-questions', compact('centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
+        return view('questions.view-questions', compact('questions_items_count','centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
     }
 
 
@@ -61,13 +63,15 @@ class QuestionController extends Controller
 
         $questions = Question::where('centre_id', $centreIds)->withCount('reponses')->simplePaginate(10);
 
+        $questions_items_count = Question::where('centre_id', $centreIds)->count();
+
         $questions_counts = Question::count();
 
         $reponses_counts = Reponse::count();
 
         $users_counts = User::count();
 
-        return view('questions.view-questions-template', compact('centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
+        return view('questions.view-questions-template', compact('questions_items_count','centreItems','centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
     }
 
     /**
@@ -229,6 +233,86 @@ class QuestionController extends Controller
         $user_count = User::where('name', 'like', '%' . $search . '%')->count();
 
         return view('search.search-user', compact('users', 'user_count'));
+    }
+
+
+    public function filterQuestion(Request $request)
+    {
+
+        if ($request->reponses == 0) {
+
+            $tags_name = $request->tags;
+
+            $reponses_name = $request->reponses;
+
+            $centres = Centre::all();
+
+            $tags = Tags::withCount('questions')->simplePaginate(10);
+
+            $users = User::withCount('reponses')->simplePaginate(10);
+
+            $questions = Question::where('tags_id', $tags_name)->withCount('reponses')->simplePaginate(10);
+
+            $questions_tend = Question::take(3)->get();
+
+            $questions_counts = Question::count();
+
+            $reponses_counts = Reponse::count();
+
+            $users_counts = User::count();
+
+            return view('filter.question-filter', compact('centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
+        } elseif ($request->reponses == 1) {
+
+            $tags_name = $request->tags;
+
+            $reponses_name = $request->reponses;
+
+            $centres = Centre::all();
+
+            $tags = Tags::withCount('questions')->simplePaginate(10);
+
+            $users = User::withCount('reponses')->simplePaginate(10);
+
+            $reponses_add = Reponse::pluck('question_id');
+
+            $questions = Question::where('tags_id', $tags_name)->whereIn('id', $reponses_add)->withCount('reponses')->simplePaginate(10);
+
+            $questions_tend = Question::take(3)->get();
+
+            $questions_counts = Question::count();
+
+            $reponses_counts = Reponse::count();
+
+            $users_counts = User::count();
+
+            return view('filter.question-filter', compact('centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
+        } elseif ($request->reponses == 2) {
+
+            $tags_name = $request->tags;
+
+            $reponses_name = $request->reponses;
+
+            $centres = Centre::all();
+
+            $tags = Tags::withCount('questions')->simplePaginate(10);
+
+            $users = User::withCount('reponses')->simplePaginate(10);
+
+            $reponses_add = Reponse::pluck('question_id');
+
+            $questions = Question::where('tags_id', $tags_name)->whereNotIn('id', $reponses_add)->withCount('reponses')->simplePaginate(10);
+
+            $questions_tend = Question::take(3)->get();
+
+            $questions_counts = Question::count();
+
+            $reponses_counts = Reponse::count();
+
+            $users_counts = User::count();
+
+            return view('filter.question-filter', compact('centres', 'tags', 'users', 'questions', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts'));
+        }
     }
 
 

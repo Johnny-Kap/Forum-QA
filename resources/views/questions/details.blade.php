@@ -168,16 +168,6 @@
                         <div class="subheader-title">
                             <h3 class="fs-16">{{$reponses_counts_this}} réponse(s)</h3>
                         </div><!-- end subheader-title -->
-                        <div class="subheader-actions d-flex align-items-center lh-1">
-                            <label class="fs-13 fw-regular mr-1 mb-0">Filtré par</label>
-                            <div class="w-100px">
-                                <select class="select-container">
-                                    <option value="active">active</option>
-                                    <option value="oldest">le plus ancien</option>
-                                    <option value="votes" selected="selected">votes</option>
-                                </select>
-                            </div>
-                        </div><!-- end subheader-actions -->
                     </div><!-- end subheader -->
                     @foreach($reponses as $item)
                     <div class="answer-wrap d-flex">

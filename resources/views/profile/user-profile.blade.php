@@ -25,18 +25,6 @@
                             <small class="meta d-block lh-20 pb-2">
                                 <span><i class="la la-map-marker mr-1"></i>{{$user_items->location}} <i class="la la-calendar-week mr-1"></i>membre depuis le {{$user_items->created_at->format('j F Y, H:i')}}</span>
                             </small>
-                            <div class="stats fs-14 fw-medium d-flex align-items-center lh-18">
-                                <span class="text-black pr-2" title="Reputation">
-                                    {{$user_items->email}} |
-                                    @php
-                                    if($user_items->email_verified_at == NULL){
-                                    echo'<span class="badge badge-warning">Non vérifié</span>';
-                                    }else{
-                                    echo'<span class="badge badge-success">Vérifié</span>';
-                                    }
-                                    @endphp
-                                </span>
-                            </div>
                         </div>
                     </div><!-- end media -->
                 </div><!-- end hero-content -->
@@ -276,83 +264,20 @@
                             </div><!-- end user-panel -->
                             <div class="user-panel mb-40px">
                                 <div class="bg-gray p-3 rounded-rounded">
-                                    <h3 class="fs-17">Tags <span>(4,654)</span></h3>
+                                    <h3 class="fs-17">Tags <span>({{$tags_items_count}})</span></h3>
                                 </div>
                                 <div class="summary-panel">
                                     <div class="vertical-list">
+                                        @foreach($tags_items as $item)
                                         <div class="item tags d-flex align-items-center">
-                                            <span class="tag-stat mr-2 fs-14">244k</span>
+                                            <span class="tag-stat mr-2 fs-14">{{$item->questions_count}}</span>
                                             <div class="flex-grow-1">
-                                                <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">c#</a>
+                                                <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">{{$item->title}}</a>
                                             </div>
-                                            <span class="item-multiplier fs-14">
-                                                <span>×</span>
-                                                <span>19616</span>
-                                            </span>
                                         </div><!-- item -->
-                                        <div class="item tags d-flex align-items-center">
-                                            <span class="tag-stat mr-2 fs-14">146k</span>
-                                            <div class="flex-grow-1">
-                                                <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">java</a>
-                                            </div>
-                                            <span class="item-multiplier fs-14">
-                                                <span>×</span>
-                                                <span>10512</span>
-                                            </span>
-                                        </div><!-- item -->
-                                        <div class="item tags d-flex align-items-center">
-                                            <span class="tag-stat mr-2 fs-14">89k</span>
-                                            <div class="flex-grow-1">
-                                                <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">.net</a>
-                                            </div>
-                                            <span class="item-multiplier fs-14">
-                                                <span>×</span>
-                                                <span>5569</span>
-                                            </span>
-                                        </div><!-- item -->
-                                        <div class="item tags d-flex align-items-center">
-                                            <span class="tag-stat mr-2 fs-14">34k</span>
-                                            <div class="flex-grow-1">
-                                                <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">linq</a>
-                                            </div>
-                                            <span class="item-multiplier fs-14">
-                                                <span>×</span>
-                                                <span>2982</span>
-                                            </span>
-                                        </div><!-- item -->
-                                        <div class="item tags d-flex align-items-center">
-                                            <span class="tag-stat mr-2 fs-14">23k</span>
-                                            <div class="flex-grow-1">
-                                                <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">string</a>
-                                            </div>
-                                            <span class="item-multiplier fs-14">
-                                                <span>×</span>
-                                                <span>999</span>
-                                            </span>
-                                        </div><!-- item -->
-                                        <div class="pager pt-30px">
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination generic-pagination generic--pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                            <p class="fs-13 pt-2">Showing 1-5 of (4,654) results</p>
-                                        </div>
+                                        @endforeach
+
+                                        {{ $tags_items->links() }}
                                     </div>
                                 </div><!-- end summary-panel -->
                             </div><!-- end user-panel -->

@@ -82,7 +82,7 @@
                         <div class="media-body">
                             <h5 class="fw-semi-bold pb-2">
                                 @php
-                                if($reponse < 30){ echo'40+'; }else{ echo'70+'; } @endphp </h5>
+                                if($reponse < 20){ echo'30+'; }else{ echo'70+'; } @endphp </h5>
                                     <p class="lh-20">Les membres ont obtenu de l'aide sur la plateforme</p>
                         </div>
                     </div>

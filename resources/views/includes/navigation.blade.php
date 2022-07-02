@@ -26,7 +26,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#">Questions <i class="la la-angle-down fs-11"></i></a>
+                                    <a href="#">Forum <i class="la la-angle-down fs-11"></i></a>
                                     <ul class="dropdown-menu-item">
                                         <li><a href="{{ route('questions') }}">Voir les questions</a></li>
                                         <li><a href="{{route('askQuestion')}}">Poser une question</a></li>
@@ -43,7 +43,7 @@
                         </nav><!-- end main-menu -->
                         <form method="get" action="{{route('searchQuestion')}}" class="mr-4">
                             <div class="form-group mb-0">
-                                <input class="form-control form--control form--control-bg-gray" type="text" name="search" placeholder="Entrer votre recherche...">
+                                <input class="form-control form--control form--control-bg-gray" type="text" name="search" placeholder="Rechercher une question ici...">
                                 <button class="form-btn" type="submit"><i class="la la-search"></i></button>
                             </div>
                         </form>

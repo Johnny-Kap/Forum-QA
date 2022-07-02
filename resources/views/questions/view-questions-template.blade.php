@@ -85,19 +85,55 @@
                     <div class="tab-content pt-40px" id="myTabContent">
                         <div class="tab-pane fade show active" id="questions" role="tabpanel" aria-labelledby="questions-tab">
                             <div class="filters d-flex align-items-center justify-content-between pb-4">
-                                <h3 class="fs-17 fw-medium">Toutes les Questions</h3>
-                                <div class="filter-option-box w-20">
-                                    <select class="select-container">
-                                        <option value="newest" selected="selected">Newest </option>
-                                        <option value="featured">Bountied (390)</option>
-                                        <option value="frequent">Frequent </option>
-                                        <option value="votes">Votes </option>
-                                        <option value="active">Active </option>
-                                        <option value="unanswered">Unanswered </option>
-                                        <option value="Votes">Votes </option>
-                                    </select>
-                                </div><!-- end filter-option-box -->
+                                <h3 class="fs-17 fw-medium">Toutes les Questions de {{$centreItems->label}} ({{$questions_items_count}})</h3>
+                                <div class="filter-option-box">
+                                    <a class="btn theme-btn theme-btn-outline theme-btn-outline-gray" data-toggle="collapse" href="#collapseSearchAdvanced" role="button" aria-expanded="false" aria-controls="collapseSearchAdvanced">
+                                        <i class="la la-gear mr-1"></i> Filtre
+                                    </a>
+                                </div>
                             </div><!-- end filters -->
+                            <div class="collapse pt-3" id="collapseSearchAdvanced">
+                                <div class="card card-item mb-0">
+                                    <form method="get" action="{{route('filterQuestion')}}" class="search-advanced card-body pb-1">
+                                        <div class="search-advanced-item mb-10px row align-items-center">
+                                            <div class="col-lg-6">
+                                                <h4 class="fs-16">Filtre</h4>
+                                            </div><!-- end col-lg-6 -->
+                                            <div class="col-lg-6">
+                                                <div class="search-filter-btn-box text-right">
+                                                    <button type="submit" class="btn theme-btn theme-btn-sm">Filtrer <i class="la la-search ml-1"></i></button>
+                                                </div>
+                                            </div><!-- end col-lg-6 -->
+                                        </div><!-- end search-advanced-item -->
+                                        <div class="search-advanced-item mb-10px">
+                                            <h4 class="fs-14 pb-2 text-gray text-uppercase">Filtrer par Réponses ou Tags</h4>
+                                            <div class="divider"><span></span></div>
+                                            <div class="row pt-3">
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Réponses</label>
+                                                    <div class="form-group">
+                                                        <select name="reponses" class="select-container">
+                                                            <option value="0">Aucunes</option>
+                                                            <option value="1">Questions répondues</option>
+                                                            <option value="2">Questions pas répondues</option>
+                                                        </select>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                                <div class="input-box col-lg-6">
+                                                    <label class="fs-13 text-black lh-20">Tags</label>
+                                                    <div class="form-group">
+                                                        <select name="tags" class="select-container">
+                                                            @foreach($tags as $item)
+                                                            <option value="{{$item->id}}">{{$item->title}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div><!-- end col-lg-6 -->
+                                            </div><!-- end row -->
+                                        </div><!-- end search-advanced-item -->
+                                    </form>
+                                </div><!-- end card -->
+                            </div><!-- end collapse -->
                             <div class="question-main-bar">
                                 <div class="questions-snippet">
                                     @foreach($questions as $item)

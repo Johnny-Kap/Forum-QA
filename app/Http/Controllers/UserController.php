@@ -20,10 +20,11 @@ class UserController extends Controller
 
         $ids = Auth::user()->id;
 
-        // $tags_id_questions = Question::where('user_id', $ids)->pluck('tags_id');
-       
-        // $tags_items = Tags::join('questions', $ids , '=' , 'questions.user_id')->get();
-        // dd($tags_id_questions);
+        $tags_id_questions = Question::where('user_id', $ids)->pluck('tags_id');
+
+        $tags_items = Tags::whereIn('id', $tags_id_questions)->withCount('questions')->simplePaginate(5);
+
+        $tags_items_count = Tags::whereIn('id', $tags_id_questions)->count();
 
         $questions_tend = Question::take(3)->get();
 
@@ -47,7 +48,7 @@ class UserController extends Controller
 
         $questions_fav = Favori::where('user_id', $ids)->simplePaginate(5);
 
-        return view('profile.profile', compact('questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav'));
+        return view('profile.profile', compact('questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
     }
 
 
@@ -58,6 +59,12 @@ class UserController extends Controller
 
         $ids = $user_items->id;
 
+        $tags_id_questions = Question::where('user_id', $ids)->pluck('tags_id');
+
+        $tags_items = Tags::whereIn('id', $tags_id_questions)->withCount('questions')->simplePaginate(5);
+
+        $tags_items_count = Tags::whereIn('id', $tags_id_questions)->count();
+
         $questions_tend = Question::take(3)->get();
 
         $questions_counts = Question::count();
@@ -80,7 +87,7 @@ class UserController extends Controller
 
         $questions_fav = Favori::where('user_id', $ids)->simplePaginate(5);
 
-        return view('profile.user-profile', compact('user_items', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav'));
+        return view('profile.user-profile', compact('user_items', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
     }
 
 

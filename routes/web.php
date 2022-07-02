@@ -49,6 +49,9 @@ Route::post('questions/add', [App\Http\Controllers\QuestionController::class, 's
 Route::get('/search/questions', [App\Http\Controllers\QuestionController::class, 'searchQuestion'])->name('searchQuestion');
 Route::get('/search/user', [App\Http\Controllers\QuestionController::class, 'searchUser'])->name('searchUser');
 
+//Filter
+Route::get('/filter/questions', [App\Http\Controllers\QuestionController::class, 'filterQuestion'])->name('filterQuestion');
+
 //Favoris
 Route::post('questions/add/favori/{id}', [App\Http\Controllers\FavoriController::class, 'store'])->name('storeFav');
 Route::post('questions/add/favori/supp/{id}', [App\Http\Controllers\FavoriController::class, 'delete'])->name('deleteFav');

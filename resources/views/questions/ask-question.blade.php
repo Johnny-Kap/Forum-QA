@@ -168,7 +168,7 @@
                                 </div>
                             </div>
                         </div><!-- end input-box -->
-                        <div class="input-box">
+                        <!-- <div class="input-box">
                             <label class="fs-14 text-black fw-medium">Image</label>
                             <div class="form-group">
                                 <div class="file-upload-wrap file-upload-layout-2">
@@ -176,7 +176,7 @@
                                     <span class="file-upload-text d-flex align-items-center justify-content-center"><i class="la la-cloud-upload mr-2 fs-24"></i>Déposez les fichiers ici ou cliquez pour télécharger.</span>
                                 </div>
                             </div>
-                        </div><!-- end input-box -->
+                        </div> -->
                         <div class="input-box pt-2">
                             <div class="btn-box">
                                 <button type="submit" class="btn theme-btn">Publiez votre question</button>
