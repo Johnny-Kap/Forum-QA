@@ -158,7 +158,7 @@ class QuestionController extends Controller
 
         $questionIds = $questionDetails->id;
 
-        $reponses = Reponse::where('question_id', $questionIds)->withCount('votes')->get();
+        $reponses = Reponse::where('question_id', $questionIds)->withSum('votes', 'vote')->get();
 
         $reponses_counts_this = Reponse::where('question_id', $questionIds)->count();
 

@@ -291,14 +291,40 @@
                                             <div class="flex-grow-1">
                                                 <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">{{$item->title}}</a>
                                             </div>
-                                            <span class="item-multiplier fs-14">
-                                                <span>×</span>
-                                                <span>19616</span>
-                                            </span>
                                         </div><!-- item -->
                                         @endforeach
-                                        
+
                                         {{ $tags_items->links() }}
+                                    </div>
+                                </div><!-- end summary-panel -->
+                            </div><!-- end user-panel -->
+                            <div class="user-panel mb-40px">
+                                <div class="bg-gray p-3 rounded-rounded d-flex align-items-center justify-content-between">
+                                    <h3 class="fs-17">Mes commentaires <span>({{ $comments_count }})</span></h3>
+                                </div>
+                                <div class="summary-panel">
+                                    <div class="vertical-list">
+                                        @foreach($comments as $item)
+                                        <div class="item post p-0">
+                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                                                <div class="media-body">
+                                                    <h5 class="fs-15"><a href="#">{{$item->contenu}}</a></h5>
+                                                    <div class="filter-option-box flex-grow-1 d-flex align-items-center justify-content-end lh-1" style="position: relative; bottom: 20px;">
+                                                        <form action="{{ route('deleteCom', ['id' => $item->id]) }}" method="post">
+                                                            @csrf <button type="submit" style="border: 0; background-color:transparent;">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                                                </svg>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end media -->
+                                        </div><!-- end item -->
+                                        @endforeach
+
+                                        {{ $comments->links() }}
                                     </div>
                                 </div><!-- end summary-panel -->
                             </div><!-- end user-panel -->

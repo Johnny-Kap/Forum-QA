@@ -17,6 +17,18 @@ class CommentController extends Controller
         //
     }
 
+    public function delete($id){
+
+        $comment_items = Comment::find($id);
+
+        $comment_id = $comment_items->id;
+        
+        $delete = Comment::where('id', $comment_id)->delete();
+
+        return back()->with('success', 'Commentaire supprimmé avec succès!');
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

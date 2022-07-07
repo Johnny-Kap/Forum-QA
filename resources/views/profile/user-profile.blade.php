@@ -281,6 +281,26 @@
                                     </div>
                                 </div><!-- end summary-panel -->
                             </div><!-- end user-panel -->
+                            <div class="user-panel mb-40px">
+                                <div class="bg-gray p-3 rounded-rounded d-flex align-items-center justify-content-between">
+                                    <h3 class="fs-17">Mes commentaires <span>({{ $comments_count }})</span></h3>
+                                </div>
+                                <div class="summary-panel">
+                                    <div class="vertical-list">
+                                        @foreach($comments as $item)
+                                        <div class="item post p-0">
+                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                                                <div class="media-body">
+                                                    <h5 class="fs-15"><a href="#">{{$item->contenu}}</a></h5>
+                                                </div>
+                                            </div><!-- end media -->
+                                        </div><!-- end item -->
+                                        @endforeach
+
+                                        {{ $comments->links() }}
+                                    </div>
+                                </div><!-- end summary-panel -->
+                            </div><!-- end user-panel -->
                         </div><!-- end user-panel-main-bar -->
                     </div><!-- end tab-pane -->
                     <div class="tab-pane fade" id="user-favoris" role="tabpanel" aria-labelledby="user-favoris-tab">

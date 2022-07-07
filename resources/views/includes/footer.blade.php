@@ -10,12 +10,13 @@
         <div class="row">
             <div class="col-lg-3 responsive-column-half">
                 <div class="footer-item">
-                    <h3 class="fs-18 fw-bold pb-2 text-white">compagnie</h3>
+                    <h3 class="fs-18 fw-bold pb-2 text-white">Pages</h3>
                     <ul class="generic-list-item generic-list-item-hover-underline pt-3 generic-list-item-white">
-                        <li><a href="about.html">A propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="careers.html">Carrières</a></li>
-                        <li><a href="advertising.html">Publicité</a></li>
+                        <li><a href="{{url('/')}}">Accueil</a></li>
+                        <li><a href="{{route('about')}}">A propos</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
+                        <!-- <li><a href="careers.html">Carrières</a></li>
+                        <li><a href="advertising.html">Publicité</a></li> -->
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->
@@ -25,7 +26,7 @@
                     <ul class="generic-list-item generic-list-item-hover-underline pt-3 generic-list-item-white">
                         <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
                         <li><a href="terms-and-conditions.html">Conditions d'utilisation</a></li>
-                        <li><a href="privacy-policy.html">Politique relative aux cookies</a></li>
+                        <li><a href="#">Politique relative aux cookies</a></li>
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->
@@ -33,8 +34,8 @@
                 <div class="footer-item">
                     <h3 class="fs-18 fw-bold pb-2 text-white">Aide</h3>
                     <ul class="generic-list-item generic-list-item-hover-underline pt-3 generic-list-item-white">
-                        <li><a href="faq.html">Base de connaissances</a></li>
-                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="#">Base de connaissances</a></li>
+                        <li><a href="{{route('contact')}}">Support</a></li>
                     </ul>
                 </div><!-- end footer-item -->
             </div><!-- end col-lg-3 -->

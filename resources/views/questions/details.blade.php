@@ -135,15 +135,15 @@
                                                 <div class="input-box">
                                                     <label class="fs-13 text-black lh-20">Site Internet</label>
                                                     <div class="form-group">
-                                                        <input class="form-control form--control form-control-sm fs-13" type="text" name="website" placeholder="Website link">
+                                                        <input class="form-control form--control form-control-sm fs-13" type="text" name="website" placeholder="Lien d'un site internet">
                                                     </div>
                                                 </div>
                                             </div><!-- end col-lg-12 -->
                                             <div class="col-lg-12">
                                                 <div class="input-box">
-                                                    <label class="fs-13 text-black lh-20">Message</label>
+                                                    <label class="fs-13 text-black lh-20">Message *</label>
                                                     <div class="form-group">
-                                                        <textarea class="form-control form--control form-control-sm fs-13" name="message" rows="5" placeholder="Your comment here..."></textarea>
+                                                        <textarea class="form-control form--control form-control-sm fs-13" name="message" rows="5" placeholder="Votre commentaire ici..." required></textarea>
                                                         <div class="d-flex flex-wrap align-items-center pt-2">
                                                             <div class="badge bg-gray border border-gray mr-3 fw-regular fs-13">
                                                                 [hyperliens nommés] (https://example.com)</div>
@@ -173,9 +173,9 @@
                     <div class="answer-wrap d-flex">
                         <div class="votes votes-styled w-auto">
                             <div id="vote2" class="upvotejs">
-                                <form action="{{ route('upvote', ['id' => $item->id]) }}" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="upvote upvote-on" data-toggle="tooltip" data-placement="right" title="This question is useful"></a></button></form>
-                                <span class="count">{{ $item->votes_count }}</span>
-                                <form action="{{ route('downvote', ['id' => $item->id]) }}" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="downvote" data-toggle="tooltip" data-placement="right" title="This question is not useful"></a></button></form>
+                                <form action="{{ route('upvote', ['id' => $item->id]) }}" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="upvote upvote-on" data-toggle="tooltip" data-placement="right" title="Cette réponse est utile"></a></button></form>
+                                <span class="count">{{ $item->votes_sum_vote }}</span>
+                                <form action="{{ route('downvote', ['id' => $item->id]) }}" method="post"> @csrf <button type="submit" style="border: 0; background-color:transparent;"><a class="downvote" data-toggle="tooltip" data-placement="right" title="Cette réponse est inutile"></a></button></form>
                                 <a class="star check star-on" data-toggle="tooltip" data-placement="right" title="The question owner accepted this answer"><span class="fa fa-star"></span><i class="fa fa-star"></i></a>
                             </div>
                         </div><!-- end votes -->
@@ -217,7 +217,7 @@
                                     <textarea class="form-control form--control form-control-sm fs-13 user-text-editor" name="contenu" rows="6" placeholder="Votre réponse ici...">Votre réponse ici...</textarea>
                                 </div>
                             </div>
-                            <div class="input-box">
+                            <!-- <div class="input-box">
                                 <label class="fs-14 text-black fw-medium">Image</label>
                                 <div class="form-group">
                                     <div class="file-upload-wrap file-upload-layout-2">
@@ -225,7 +225,7 @@
                                         <span class="file-upload-text d-flex align-items-center justify-content-center"><i class="la la-cloud-upload mr-2 fs-24"></i>Déposez les fichiers ici ou cliquez pour télécharger.</span>
                                     </div>
                                 </div>
-                            </div><!-- end input-box -->
+                            </div> -->
                             @guest
                             @if(Route::has('login'))
                             <a href="{{route('login')}}" class="btn theme-btn ">Connectez-vous <i class="la la-sign-in mr-1"></i></a> ou <a href="{{route('register')}}" class="btn theme-btn ">Inscrivez-vous <i class="la la-user mr-1"></i></a> <span>pour repondre à la question !</span>

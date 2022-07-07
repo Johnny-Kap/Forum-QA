@@ -60,7 +60,7 @@
                 <div class="col-lg-5">
                     <div class="contact-information-wrap pl-4 border-left border-left-gray h-100">
                         <h3 class="fs-20 pb-3 fw-bold">Coordonnées</h3><br>
-                        <div class="divider"><span></span></div>
+                        <div class="divider"><span></span></div><br>
                         <ul class="generic-list-item fs-15">
                             <li class="mb-3">
                                 <div class="icon-element icon-element-xs shadow-sm d-inline-block mr-2"><svg xmlns="http://www.w3.org/2000/svg" height="19px" viewBox="0 0 24 24" width="19px" fill="#3cb1c6">
