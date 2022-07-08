@@ -75,3 +75,4 @@ Route::get('/myprofile/edit', [App\Http\Controllers\UserController::class, 'Edit
 Route::post('/myprofile/edited', [App\Http\Controllers\UserController::class, 'Edited'])->name('EditedProfile');
 Route::post('/myprofile/photo-edited', [App\Http\Controllers\UserController::class, 'photoEdited'])->name('photoEdited');
 Route::post('/myprofile/password', [App\Http\Controllers\UserController::class, 'ResetPassword'])->name('password');
+Route::post('/myprofile/email', [App\Http\Controllers\UserController::class, 'resetEmail'])->name('resetEmail');

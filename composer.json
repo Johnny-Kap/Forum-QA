@@ -14,6 +14,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
         "orchid/platform": "^12.6",
+        "protonemedia/laravel-verify-new-email": "^1.6",
         "pusher/pusher-php-server": "^7.0",
         "pusher/pusher-push-notifications": "^1.1"
     },

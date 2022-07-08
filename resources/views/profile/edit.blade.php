@@ -237,13 +237,14 @@
                                 <div class="bg-gray p-3 rounded-rounded">
                                     <h3 class="fs-17">Paramètres Email</h3>
                                 </div>
-                                <form method="post" class="pt-20px">
+                                <form method="post" action="{{route('resetEmail')}}" class="pt-20px">
+                                    @csrf
                                     <div class="settings-item mb-30px border-bottom border-bottom-gray pb-30px">
                                         <label class="fs-13 text-black lh-20 fw-medium">Adresse Email</label>
                                         <div class="input-group">
-                                            <input class="form-control form--control" type="email" name="email" value="{{Auth::user()->email}}">
+                                            <input class="form-control form--control" type="email" name="email" value="{{Auth::user()->email}}" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
                                             <div class="input-group-append">
-                                                <button class="btn theme-btn" type="button">Sauvegarder</button>
+                                                <button class="btn theme-btn" type="submit">Sauvegarder</button>
                                             </div>
                                         </div>
                                     </div><!-- end settings-item -->

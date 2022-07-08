@@ -2,11 +2,17 @@
 
 namespace App\Models;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Orchid\Platform\Models\User as Authenticatable;
+use ProtoneMedia\LaravelVerifyNewEmail\MustVerifyNewEmail;
+use Illuminate\Auth\MustVerifyEmail as AuthMustVerifyEmail;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+
+    use MustVerifyNewEmail, Notifiable;
+
     /**
      * The attributes that are mass assignable.
      *

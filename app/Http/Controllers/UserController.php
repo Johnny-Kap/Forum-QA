@@ -53,7 +53,7 @@ class UserController extends Controller
 
         $questions_fav = Favori::where('user_id', $ids)->simplePaginate(5);
 
-        return view('profile.profile', compact('comments_count','comments', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
+        return view('profile.profile', compact('comments_count', 'comments', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
     }
 
 
@@ -96,7 +96,7 @@ class UserController extends Controller
 
         $questions_fav = Favori::where('user_id', $ids)->simplePaginate(5);
 
-        return view('profile.user-profile', compact('comments_count','comments', 'user_items', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
+        return view('profile.user-profile', compact('comments_count', 'comments', 'user_items', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
     }
 
 
@@ -192,6 +192,24 @@ class UserController extends Controller
         } else {
 
             return back()->with('error', 'Ancien mot de passe incorrecte.');
+        }
+    }
+
+    public function resetEmail(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'email',
+        ]);
+
+        if (Auth::user()->email != $request->email) {
+
+            Auth::user()->newEmail($request->email);
+
+            return back()->with('success', 'Email modifié avec succès! Vous recevrez un courriel de confirmation de votre email.');
+        } else {
+
+            return back()->with('error', 'Insérer un email différent de celui actuel.');
         }
     }
 }
