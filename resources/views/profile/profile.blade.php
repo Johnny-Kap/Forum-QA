@@ -57,6 +57,9 @@
                     <li class="nav-item">
                         <a class="nav-link" id="user-activity-tab" data-toggle="tab" href="#user-favoris" role="tab" aria-controls="user-favoris" aria-selected="false">Favoris</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="user-activity-tab" data-toggle="tab" href="#user-centre" role="tab" aria-controls="user-favoris" aria-selected="false">Mes centres d'interet</a>
+                    </li>
                 </ul>
             </div><!-- end col-lg-4 -->
         </div><!-- end row -->
@@ -359,6 +362,65 @@
                                         @endforeach
 
                                         {{ $questions_fav->links() }}
+                                    </div>
+                                </div><!-- end summary-panel -->
+                            </div><!-- end user-panel -->
+                        </div><!-- end user-panel-main-bar -->
+                    </div><!-- end tab-pane -->
+                    <div class="tab-pane fade" id="user-centre" role="tabpanel" aria-labelledby="user-favoris-tab">
+                        <div class="user-panel-main-bar">
+                            <div class="user-panel">
+                                <div class="bg-gray p-3 rounded-rounded">
+                                    <h3 class="fs-17">Choisir ses centres d'interet</h3>
+                                    <p class="fs-13">Sélectionne un centre d'interet de ton choix.</p>
+                                </div>
+                                <form method="post" action="{{route('centreSelect')}}" class="pt-20px">
+                                    @csrf
+                                    <div class="settings-item">
+                                        <div class="input-box">
+                                            <label class="fs-13 text-black lh-20 fw-medium">Centres d'interet</label>
+                                            <div class="form-group">
+                                                <select name="centre" class="custom-select custom--select">
+                                                    @foreach($centre_select as $item)
+                                                    <option selected="selected" value="{{$item->id}}">{{$item->label}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="submit-btn-box pt-3">
+                                            <button class="btn theme-btn" type="submit">Valider</button>
+                                        </div>
+                                    </div><!-- end settings-item -->
+                                </form>
+                            </div><!-- end user-panel -->
+                            <br>
+                            <div class="user-panel mb-40px">
+                                <div class="bg-gray p-3 rounded-rounded d-flex align-items-center justify-content-between">
+                                    <h3 class="fs-17">Mes centres d'interet <span>({{ $centre_selected_count }})</span></h3>
+                                </div>
+                                <div class="summary-panel">
+                                    <div class="vertical-list">
+                                        @foreach($centre_selected as $item)
+                                        <div class="item post p-0">
+                                            <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                                                <div class="media-body">
+                                                    <h5 class="fs-15"><a href="#">{{$item->centres->label}}</a></h5>
+                                                    <div class="filter-option-box flex-grow-1 d-flex align-items-center justify-content-end lh-1" style="position: relative; bottom: 20px;">
+                                                        <form action="{{ route('centreDelete', ['id' => $item->id]) }}" method="post">
+                                                            @csrf <button type="submit" style="border: 0; background-color:transparent;">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                                                </svg>
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end media -->
+                                        </div><!-- end item -->
+                                        @endforeach
+
+                                        {{ $centre_selected->links() }}
                                     </div>
                                 </div><!-- end summary-panel -->
                             </div><!-- end user-panel -->

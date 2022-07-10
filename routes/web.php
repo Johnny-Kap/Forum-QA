@@ -69,10 +69,12 @@ Route::post('questions/vote/upvote/{id}', [App\Http\Controllers\VoteController::
 Route::post('questions/vote/downvote/{id}', [App\Http\Controllers\VoteController::class, 'downVote'])->name('downvote');
 
 //User profile routes
-Route::get('/myprofile', [App\Http\Controllers\UserController::class, 'MyProfile'])->name('MyProfile');
+Route::get('/myprofile', [App\Http\Controllers\UserController::class, 'MyProfile'])->name('MyProfile')->middleware('auth');
 Route::get('/profile/{id}', [App\Http\Controllers\UserController::class, 'userProfile'])->name('userProfile');
-Route::get('/myprofile/edit', [App\Http\Controllers\UserController::class, 'Edit'])->name('EditProfile');
+Route::get('/myprofile/edit', [App\Http\Controllers\UserController::class, 'Edit'])->name('EditProfile')->middleware('auth');
 Route::post('/myprofile/edited', [App\Http\Controllers\UserController::class, 'Edited'])->name('EditedProfile');
 Route::post('/myprofile/photo-edited', [App\Http\Controllers\UserController::class, 'photoEdited'])->name('photoEdited');
 Route::post('/myprofile/password', [App\Http\Controllers\UserController::class, 'ResetPassword'])->name('password');
 Route::post('/myprofile/email', [App\Http\Controllers\UserController::class, 'resetEmail'])->name('resetEmail');
+Route::post('/myprofile/centre/add', [App\Http\Controllers\CentreUserController::class, 'store'])->name('centreSelect');
+Route::post('/myprofile/centre/supp/{id}', [App\Http\Controllers\CentreUserController::class, 'delete'])->name('centreDelete');

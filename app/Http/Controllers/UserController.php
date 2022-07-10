@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Centre;
+use App\Models\CentreUser;
 use App\Models\Comment;
 use App\Models\Favori;
 use App\Models\User;
@@ -39,6 +41,12 @@ class UserController extends Controller
 
         $users_counts = User::count();
 
+        $centre_select = Centre::all();
+
+        $centre_selected = CentreUser::where('user_id', $ids)->simplePaginate(5);
+
+        $centre_selected_count = CentreUser::where('user_id', $ids)->count();
+
         $reponses_users = Reponse::where('user_id', $ids)->count();
 
         $questions_users = Question::where('user_id', $ids)->count();
@@ -53,7 +61,7 @@ class UserController extends Controller
 
         $questions_fav = Favori::where('user_id', $ids)->simplePaginate(5);
 
-        return view('profile.profile', compact('comments_count', 'comments', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
+        return view('profile.profile', compact('centre_selected_count', 'centre_selected', 'centre_select', 'comments_count', 'comments', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
     }
 
 
