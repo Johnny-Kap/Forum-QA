@@ -78,3 +78,6 @@ Route::post('/myprofile/password', [App\Http\Controllers\UserController::class, 
 Route::post('/myprofile/email', [App\Http\Controllers\UserController::class, 'resetEmail'])->name('resetEmail');
 Route::post('/myprofile/centre/add', [App\Http\Controllers\CentreUserController::class, 'store'])->name('centreSelect');
 Route::post('/myprofile/centre/supp/{id}', [App\Http\Controllers\CentreUserController::class, 'delete'])->name('centreDelete');
+
+//Notifications
+Route::get('/notifications', [App\Http\Controllers\UserController::class, 'ShowNotif'])->name('ShowNotif')->middleware('auth');

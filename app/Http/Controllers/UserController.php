@@ -107,6 +107,18 @@ class UserController extends Controller
         return view('profile.user-profile', compact('comments_count', 'comments', 'user_items', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
     }
 
+    public function ShowNotif(){
+
+        $ids = Auth::user()->id;
+
+        $centre_users = CentreUser::where('user_id', $ids)->pluck('centre_id');
+
+        $questions = Question::whereIn('centre_id', $centre_users)->with('users')->simplePaginate(10);
+
+        return view('profile.notifications', compact('questions'));
+
+    }
+
 
     public function Edit()
     {
