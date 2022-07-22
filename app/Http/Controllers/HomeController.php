@@ -51,6 +51,16 @@ class HomeController extends Controller
         return view('about');
     }
 
+    public function termsConditions(){
+
+        return view('terms-conditions');
+    }
+
+    public function privacyPolicy(){
+
+        return view('privacy-policy');
+    }
+
     public function chat()
     {
         return view('chat');

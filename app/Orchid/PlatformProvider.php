@@ -52,6 +52,19 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('pencil')
                 ->route('platform.centre.interet'),
 
+            Menu::make('Questions')
+                ->title('Statistiques')
+                ->icon('bar-chart')
+                ->route('platform.tags'),
+
+            Menu::make('Reponses')
+                ->icon('bar-chart')
+                ->route('platform.centre.interet'),
+
+            Menu::make('Votes')
+                ->icon('bar-chart')
+                ->route('platform.centre.interet'),
+
             Menu::make('Basic Elements')
                 ->title('Form controls')
                 ->icon('note')

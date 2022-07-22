@@ -24,8 +24,8 @@
                 <div class="footer-item">
                     <h3 class="fs-18 fw-bold pb-2 text-white">Trucs juridiques</h3>
                     <ul class="generic-list-item generic-list-item-hover-underline pt-3 generic-list-item-white">
-                        <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
-                        <li><a href="terms-and-conditions.html">Conditions d'utilisation</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="{{route('termsConditions')}}">Conditions d'utilisation</a></li>
                         <li><a href="#">Politique relative aux cookies</a></li>
                     </ul>
                 </div><!-- end footer-item -->

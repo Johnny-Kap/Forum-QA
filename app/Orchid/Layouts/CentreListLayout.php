@@ -25,7 +25,6 @@ class CentreListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('user_id', 'Utilisateur'),
             TD::make('label', 'Titre'),
             TD::make('created_at', 'Date de création'),
         ];
