@@ -88,7 +88,7 @@
                         <div class="form-group">
                             <button id="send-message-btn" class="btn theme-btn w-100" type="submit">S'inscrire <i class="la la-arrow-right icon ml-1"></i></button>
                         </div><!-- end form-group -->
-                        <p class="fs-13 lh-18 pb-3">En cliquant sur "S'inscrire", vous acceptez nos <a href="{{route('termsConditions')}}" class="text-color hover-underline">conditions générales</a>, <a href="#" class="text-color hover-underline">politique de confidentialité</a></p>
+                        <p class="fs-13 lh-18 pb-3">En cliquant sur "S'inscrire", vous acceptez nos <a href="{{route('termsConditions')}}" class="text-color hover-underline">conditions d'utilisation</a>, <a href="#" class="text-color hover-underline">politique de confidentialité</a></p>
                     </div><!-- end form-action-wrapper -->
                 </div><!-- end col-lg-5 -->
             </div><!-- end row -->
