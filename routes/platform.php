@@ -12,6 +12,8 @@ use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
 use App\Orchid\Screens\Examples\ExampleScreen;
 use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\PlatformScreen;
+use App\Orchid\Screens\QuestionListScreen;
+use App\Orchid\Screens\ReponseListScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\TagsListScreen;
@@ -19,6 +21,7 @@ use App\Orchid\Screens\TagsScreen;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
+use App\Orchid\Screens\VoteListScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 
@@ -119,5 +122,8 @@ Route::screen('tags-page', TagsScreen::class)->name('platform.tags');
 Route::screen('tags-list', TagsListScreen::class)->name('platform.tags.list');
 Route::screen('centre-interet-page', CentreInteretScreen::class)->name('platform.centre.interet');
 Route::screen('centre-interet-list', CentreInteretListScreen::class)->name('platform.centre.interet.list');
+Route::screen('question-list', QuestionListScreen::class)->name('platform.question.list');
+Route::screen('reponse-list', ReponseListScreen::class)->name('platform.reponse.list');
+Route::screen('vote-list', VoteListScreen::class)->name('platform.vote.list');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');
