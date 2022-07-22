@@ -3,8 +3,9 @@
 namespace App\Orchid\Screens;
 
 use App\Models\Question;
-use App\Orchid\Layouts\QuestionListLayout;
 use Orchid\Screen\Screen;
+use Orchid\Support\Facades\Layout;
+use App\Orchid\Layouts\QuestionListLayout;
 
 class QuestionListScreen extends Screen
 {
@@ -15,8 +16,23 @@ class QuestionListScreen extends Screen
      */
     public function query(): iterable
     {
+
+        $questions = Question::paginate(10);
+
+        $questions_count = Question::count();
+
+        $questions_on = Question::has('reponses')->count();
+
+        $questions_off = Question::doesntHave('reponses')->count();
+
         return [
-            'questions' => Question::paginate()
+            'questions' => $questions,
+
+            'metrics' => [
+                'sales'    => ['value' => number_format($questions_off)],
+                'visitors' => ['value' => number_format($questions_on)],
+                'total'    => number_format($questions_count),
+            ],
         ];
     }
 
@@ -48,6 +64,11 @@ class QuestionListScreen extends Screen
     public function layout(): iterable
     {
         return [
+            Layout::metrics([
+                'Nombre de questions sans réponses'    => 'metrics.sales',
+                'Nombre de questions avec réponses' => 'metrics.visitors',
+                'Total de questions' => 'metrics.total',
+            ]),
             QuestionListLayout::class
         ];
     }

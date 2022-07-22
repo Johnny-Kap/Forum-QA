@@ -5,7 +5,7 @@ namespace App\Orchid\Layouts;
 use Orchid\Screen\Layouts\Table;
 use Orchid\Screen\TD;
 
-class CentreListLayout extends Table
+class MessageListLayout extends Table
 {
     /**
      * Data source.
@@ -15,7 +15,7 @@ class CentreListLayout extends Table
      *
      * @var string
      */
-    protected $target = 'centres';
+    protected $target = 'messages';
 
     /**
      * Get the table cells to be displayed.
@@ -25,11 +25,11 @@ class CentreListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('user', 'Utilisateur')->render(function($centres){
-                return $centres->users->name;
+            TD::make('users', 'Utilisateur')->render(function($messages){
+                return $messages->user->name;
             }),
-            TD::make('label', 'Titre'),
-            TD::make('created_at', 'Date de création'),
+            TD::make('message', 'Message'),
+            TD::make('created_at', 'Date d\'envoi')->sort(),
         ];
     }
 }

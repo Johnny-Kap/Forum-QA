@@ -11,6 +11,7 @@ use App\Orchid\Screens\Examples\ExampleFieldsScreen;
 use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
 use App\Orchid\Screens\Examples\ExampleScreen;
 use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
+use App\Orchid\Screens\MessageListScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\QuestionListScreen;
 use App\Orchid\Screens\ReponseListScreen;
@@ -125,5 +126,6 @@ Route::screen('centre-interet-list', CentreInteretListScreen::class)->name('plat
 Route::screen('question-list', QuestionListScreen::class)->name('platform.question.list');
 Route::screen('reponse-list', ReponseListScreen::class)->name('platform.reponse.list');
 Route::screen('vote-list', VoteListScreen::class)->name('platform.vote.list');
+Route::screen('message-list', MessageListScreen::class)->name('platform.message.list');
 
 //Route::screen('idea', Idea::class, 'platform.screens.idea');

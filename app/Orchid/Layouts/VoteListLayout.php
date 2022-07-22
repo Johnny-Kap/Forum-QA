@@ -15,7 +15,7 @@ class VoteListLayout extends Table
      *
      * @var string
      */
-    protected $target = '';
+    protected $target = 'votes';
 
     /**
      * Get the table cells to be displayed.
@@ -24,6 +24,21 @@ class VoteListLayout extends Table
      */
     protected function columns(): iterable
     {
-        return [];
+        return [
+            TD::make('user', 'Utilisateur')->render(function($votes){
+                return $votes->users->name;
+            }),
+            TD::make('reponse', 'Réponse')->render(function($votes){
+                return $votes->reponses->contenu;
+            }),
+            TD::make('vote', 'Vote')->render(function($votes){
+                if($votes->vote == 1){
+                    return $votes = 'Positif';
+                }else{
+                    return $votes = 'Négatif';
+                }
+            }),
+            TD::make('created_at', 'Date de création')->sort(),
+        ];
     }
 }

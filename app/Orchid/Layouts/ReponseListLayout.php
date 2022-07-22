@@ -25,6 +25,12 @@ class ReponseListLayout extends Table
     protected function columns(): iterable
     {
         return [
+            TD::make('user', 'Utilisateur')->render(function($reponses){
+                return $reponses->users->name;
+            }),
+            TD::make('question', 'Question')->render(function($reponses){
+                return $reponses->questions->titre;
+            }),
             TD::make('contenu', 'Contenu'),
             TD::make('created_at', 'Date de création'),
         ];

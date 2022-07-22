@@ -3,8 +3,9 @@
 namespace App\Orchid\Screens;
 
 use App\Models\Reponse;
-use App\Orchid\Layouts\ReponseListLayout;
 use Orchid\Screen\Screen;
+use Orchid\Support\Facades\Layout;
+use App\Orchid\Layouts\ReponseListLayout;
 
 class ReponseListScreen extends Screen
 {
@@ -15,8 +16,23 @@ class ReponseListScreen extends Screen
      */
     public function query(): iterable
     {
+
+        $reponses  = Reponse::paginate();
+
+        $reponses_count = Reponse::count();
+
+        $reponses_on = Reponse::has('votes')->count();
+
+        $reponses_off = Reponse::doesntHave('votes')->count();
+
         return [
-            'reponses' => Reponse::paginate()
+            'reponses' => $reponses,
+
+            'metrics' => [
+                'sales'    => ['value' => number_format( $reponses_off)],
+                'visitors' => ['value' => number_format($reponses_on)],
+                'total'    => number_format($reponses_count),
+            ],
         ];
     }
 
@@ -48,6 +64,11 @@ class ReponseListScreen extends Screen
     public function layout(): iterable
     {
         return [
+            Layout::metrics([
+                'Nombre de réponses sans votes'    => 'metrics.sales',
+                'Nombre de réponses avec votes' => 'metrics.visitors',
+                'Total de réponses' => 'metrics.total',
+            ]),
             ReponseListLayout::class
         ];
     }

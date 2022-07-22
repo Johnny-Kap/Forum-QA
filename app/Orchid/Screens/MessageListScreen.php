@@ -2,11 +2,12 @@
 
 namespace App\Orchid\Screens;
 
-use App\Models\Centre;
-use App\Orchid\Layouts\CentreListLayout;
+use App\Models\Message;
 use Orchid\Screen\Screen;
+use Orchid\Support\Facades\Layout;
+use App\Orchid\Layouts\MessageListLayout;
 
-class CentreInteretListScreen extends Screen
+class MessageListScreen extends Screen
 {
     /**
      * Query data.
@@ -16,10 +17,16 @@ class CentreInteretListScreen extends Screen
     public function query(): iterable
     {
 
-        $centres = Centre::paginate();
+        $messages = Message::paginate();
+
+        $messages_count = Message::count();
 
         return [
-            'centres' => $centres
+            'messages' => $messages,
+
+            'metrics' => [
+                'total'    => number_format($messages_count),
+            ],
         ];
     }
 
@@ -30,7 +37,7 @@ class CentreInteretListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'Liste des centre interet';
+        return 'Tous les messages';
     }
 
     /**
@@ -51,7 +58,10 @@ class CentreInteretListScreen extends Screen
     public function layout(): iterable
     {
         return [
-            CentreListLayout::class
+            Layout::metrics([
+                'Total de questions' => 'metrics.total',
+            ]),
+            MessageListLayout::class
         ];
     }
 }

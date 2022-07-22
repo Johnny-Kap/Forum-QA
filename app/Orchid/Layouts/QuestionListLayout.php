@@ -25,10 +25,18 @@ class QuestionListLayout extends Table
     protected function columns(): iterable
     {
         return [
-            TD::make('users', 'Utilisateur'),
+            TD::make('users', 'Utilisateur')->render(function($questions){
+                return $questions->users->name;
+            }),
+            TD::make('centre', 'Centre d\'interet')->render(function($questions){
+                return $questions->centres->label;
+            }),
+            TD::make('tag', 'Tags')->render(function($questions){
+                return $questions->tags->title;
+            }),
             TD::make('titre', 'Titre'),
             TD::make('contenu', 'Contenu'),
-            TD::make('created_at', 'Date de création'),
+            TD::make('created_at', 'Date de création')->sort(),
         ];
     }
 }

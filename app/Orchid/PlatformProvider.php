@@ -65,6 +65,10 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bar-chart')
                 ->route('platform.vote.list'),
 
+            Menu::make('Message')
+                ->icon('bar-chart')
+                ->route('platform.message.list'),
+
             Menu::make('Basic Elements')
                 ->title('Form controls')
                 ->icon('note')

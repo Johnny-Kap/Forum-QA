@@ -2,7 +2,10 @@
 
 namespace App\Orchid\Screens;
 
+use App\Models\Vote;
 use Orchid\Screen\Screen;
+use Orchid\Support\Facades\Layout;
+use App\Orchid\Layouts\VoteListLayout;
 
 class VoteListScreen extends Screen
 {
@@ -13,7 +16,24 @@ class VoteListScreen extends Screen
      */
     public function query(): iterable
     {
-        return [];
+
+        $votes = Vote::paginate();
+
+        $votes_count = Vote::count();
+
+        $votes_pos = Vote::where('vote', 1)->count();
+
+        $votes_neg = Vote::where('vote', -1)->count();
+
+        return [
+            'votes' => $votes,
+
+            'metrics' => [
+                'sales'    => ['value' => number_format($votes_pos)],
+                'visitors' => ['value' => number_format($votes_neg)],
+                'total'    => number_format($votes_count),
+            ],
+        ];
     }
 
     /**
@@ -23,7 +43,7 @@ class VoteListScreen extends Screen
      */
     public function name(): ?string
     {
-        return 'VoteListScreen';
+        return 'Tous les votes';
     }
 
     /**
@@ -43,6 +63,13 @@ class VoteListScreen extends Screen
      */
     public function layout(): iterable
     {
-        return [];
+        return [
+            Layout::metrics([
+                'Nombre de votes positifs'    => 'metrics.sales',
+                'Nombre de votes négatifs' => 'metrics.visitors',
+                'Total de votes' => 'metrics.total',
+            ]),
+            VoteListLayout::class,
+        ];
     }
 }
