@@ -59,7 +59,7 @@ class MessageListScreen extends Screen
     {
         return [
             Layout::metrics([
-                'Total de questions' => 'metrics.total',
+                'Total de messages' => 'metrics.total',
             ]),
             MessageListLayout::class
         ];

@@ -3,8 +3,9 @@
 namespace App\Orchid\Screens;
 
 use App\Models\Tags;
-use App\Orchid\Layouts\TagsListLayout;
 use Orchid\Screen\Screen;
+use Orchid\Screen\Actions\Link;
+use App\Orchid\Layouts\TagsListLayout;
 
 class TagsListScreen extends Screen
 {
@@ -37,7 +38,11 @@ class TagsListScreen extends Screen
      */
     public function commandBar(): iterable
     {
-        return [];
+        return [
+            Link::make('Ajouter')
+                ->icon('plus')
+                ->route('platform.tags')
+        ];
     }
 
     /**

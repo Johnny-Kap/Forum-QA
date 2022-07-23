@@ -3,8 +3,9 @@
 namespace App\Orchid\Screens;
 
 use App\Models\Centre;
-use App\Orchid\Layouts\CentreListLayout;
 use Orchid\Screen\Screen;
+use Orchid\Screen\Actions\Link;
+use App\Orchid\Layouts\CentreListLayout;
 
 class CentreInteretListScreen extends Screen
 {
@@ -40,7 +41,11 @@ class CentreInteretListScreen extends Screen
      */
     public function commandBar(): iterable
     {
-        return [];
+        return [
+            Link::make('Ajouter')
+                ->icon('plus')
+                ->route('platform.centre.interet')
+        ];
     }
 
     /**
