@@ -115,7 +115,7 @@
                     <a href="{{ url('/') }}">Accueil </a>
                 </li>
                 <li>
-                    <a href="#">Questions</a>
+                    <a href="#">Forum</a>
                     <ul class="sub-menu">
                         <li><a href="{{ route('questions') }}">Voir les questions</a></li>
                         <li><a href="{{route('askQuestion')}}">Poser une question</a></li>
