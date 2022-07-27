@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('centre_id')->constrained();
-            $table->foreignId('tags_id')->constrained();
+            $table->foreignId('tags_id')->index();
             $table->string('titre');
             $table->text('contenu');
             $table->string('image')->nullable();
