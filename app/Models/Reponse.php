@@ -10,6 +10,8 @@ class Reponse extends Model
 {
     use HasFactory, AsSource;
 
+    public $keyType = 'string';
+
     public function users(){
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
