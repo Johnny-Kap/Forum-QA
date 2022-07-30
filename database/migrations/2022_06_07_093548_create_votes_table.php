@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('reponse_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->string('vote');
+            $table->bigInteger('vote');
             $table->timestamps();
         });
     }
