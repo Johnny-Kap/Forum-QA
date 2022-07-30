@@ -29,7 +29,7 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware(['auth'])->name('home');
 Route::get('/contact', [App\Http\Controllers\HomeController::class, 'showContact'])->name('contact');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'showAbout'])->name('about');
 Route::get('/condition-utilisation', [App\Http\Controllers\HomeController::class, 'termsConditions'])->name('termsConditions');
