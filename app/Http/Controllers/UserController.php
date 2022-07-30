@@ -107,7 +107,8 @@ class UserController extends Controller
         return view('profile.user-profile', compact('comments_count', 'comments', 'user_items', 'questions_tend', 'questions_counts', 'reponses_counts', 'users_counts', 'reponses_users', 'questions_users', 'votes_users', 'reponses_items', 'questions_items', 'fav_count', 'questions_fav', 'tags_items', 'tags_items_count'));
     }
 
-    public function ShowNotif(){
+    public function ShowNotif()
+    {
 
         $ids = Auth::user()->id;
 
@@ -116,7 +117,6 @@ class UserController extends Controller
         $questions = Question::whereIn('centre_id', $centre_users)->with('users')->simplePaginate(10);
 
         return view('profile.notifications', compact('questions'));
-
     }
 
 
@@ -137,18 +137,24 @@ class UserController extends Controller
     public function photoEdited(Request $request)
     {
 
-        $filename = time() . '.' . $request->file->extension();
+        if ($request->hasFile('file')) {
 
-        $path = $request->file('file')->storeAs('avatars', $filename, 'public');
+            $filename = time() . '.' . $request->file->extension();
 
-        $ids = Auth::user()->id;
+            $path = $request->file('file')->storeAs('avatars', $filename, 'public');
 
-        $affected = User::where('id', $ids)
-            ->update([
-                'image' => $path,
-            ]);
+            $ids = Auth::user()->id;
 
-        return back()->with('success', 'Photo de profil ajouté avec succès!');
+            $affected = User::where('id', $ids)
+                ->update([
+                    'image' => $path,
+                ]);
+
+            return back()->with('success', 'Photo de profil ajouté avec succès!');
+        } else {
+
+            return back()->with('error', 'Veuillez selectionner une photo de profil!');
+        }
     }
 
 
