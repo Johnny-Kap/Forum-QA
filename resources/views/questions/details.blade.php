@@ -194,7 +194,7 @@
                                         </div>
                                         <small class="meta d-block text-right">
                                             <span class="text-black d-block lh-18">a répondu le</span>
-                                            <span class="d-block lh-18 fs-12">{{$item->created_at->format('j F Y, h:i')}}</span>
+                                            <span class="d-block lh-18 fs-12">{{$item->created_at->format('j F Y, H:i')}}</span>
                                         </small>
                                     </div>
                                 </div><!-- end media -->
@@ -278,7 +278,7 @@
                                     <div class="media-body">
                                         <h5><a href="question-details.html">{{$item->titre}}</a></h5>
                                         <small class="meta">
-                                            <span class="pr-1">{{$item->created_at->format('j F Y, h:i')}}</span>
+                                            <span class="pr-1">{{$item->created_at->format('j F Y, H:i')}}</span>
                                             <span class="pr-1">. par</span>
                                             <a href="#" class="author">{{$item->users->name}}</a>
                                         </small>
