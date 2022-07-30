@@ -96,7 +96,7 @@
                                         </div>
                                         <a href="#" class="meta d-block text-right fs-13 text-color">
                                             <span class="d-block lh-18">édité le</span>
-                                            <span class="d-block lh-18 fs-12">{{$questionDetails->created_at->format('j F Y, h:i')}}</span>
+                                            <span class="d-block lh-18 fs-12">{{$questionDetails->created_at->format('j F Y, H:i')}}</span>
                                         </a>
                                     </div>
                                 </div><!-- end media -->
@@ -114,7 +114,7 @@
                                             <span class="comment-separated">-</span>
                                             <a href="{{ route('userProfile', [ 'id' => $item->user_id ]) }}" class="comment-user owner" title="224,110 reputation">{{$item->users->name}}</a>
                                             <span class="comment-separated">-</span>
-                                            <a href="#" class="comment-date">{{$item->created_at->format('j F Y, h:i')}}</a>
+                                            <a href="#" class="comment-date">{{$item->created_at->format('j F Y, H:i')}}</a>
                                         </div>
                                     </li>
                                     @endforeach
