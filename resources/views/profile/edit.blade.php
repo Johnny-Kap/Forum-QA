@@ -72,7 +72,12 @@
                                     <div class="row pt-4 align-items-center">
                                         <div class="col-lg-6">
                                             <div class="edit-profile-photo d-flex flex-wrap align-items-center">
-                                                <img src="{{ Storage::url(Auth::user()->image) }}" alt="user avatar" class="profile-img mr-4">
+                                                @if(Auth::user()->image == NULL)
+                                                <img src="\admins\images\no-profile-pic-icon-0.jpg" alt="avatar" class="profile-img mr-4">
+                                                @else
+                                                <img src="{{ Storage::url(Auth::user()->image) }}" alt="avatar" class="profile-img mr-4">
+                                                @endif
+                                               
                                                 <div>
                                                     <div class="file-upload-wrap file--upload-wrap">
                                                         <form method="post" action="{{route('photoEdited')}}" enctype="multipart/form-data">

@@ -217,7 +217,12 @@
                                         <div class="col-lg-6">
                                             <div class="media media-card p-3">
                                                 <a href="#" class="media-img d-inline-block">
+                                                    @if($item->image == NULL)
+                                                    <img src="\admins\images\no-profile-pic-icon-0.jpg" alt="company logo">
+
+                                                    @else
                                                     <img src="{{ Storage::url($item->image) }}" alt="company logo">
+                                                    @endif
                                                 </a>
                                                 <div class="media-body">
                                                     <h5 class="fs-16 fw-medium"><a href="{{ route('userProfile', [ 'id' => $item->id ]) }}">{{$item->name}}</a></h5>

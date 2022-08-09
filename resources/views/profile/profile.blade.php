@@ -18,7 +18,11 @@
                 <div class="hero-content">
                     <div class="media media-card align-items-center shadow-none p-0 mb-0 rounded-0 bg-transparent">
                         <div class="media-img media--img">
+                            @if(Auth::user()->image == NULL)
+                            <img src="\admins\images\no-profile-pic-icon-0.jpg" alt="avatar">
+                            @else
                             <img src="{{ Storage::url(Auth::user()->image) }}" alt="avatar">
+                            @endif
                         </div>
                         <div class="media-body">
                             <h5>{{Auth::user()->name}}</h5>

@@ -88,7 +88,11 @@
                             <div class="question-post-user-action">
                                 <div class="media media-card user-media align-items-center">
                                     <a href="{{ route('userProfile', [ 'id' => $questionDetails->user_id ]) }}" class="media-img d-block">
+                                        @if($questionDetails->users->image == NULL)
+                                        <img src="\admins\images\no-profile-pic-icon-0.jpg" alt="company logo">
+                                        @else
                                         <img src="{{ Storage::url($questionDetails->users->image) }}" alt="avatar">
+                                        @endif
                                     </a>
                                     <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                                         <div>
@@ -186,7 +190,11 @@
                             <div class="question-post-user-action">
                                 <div class="media media-card user-media align-items-center">
                                     <a href="user-profile.html" class="media-img d-block">
+                                        @if($item->users->image == NULL)
+                                        <img src="\admins\images\no-profile-pic-icon-0.jpg" alt="company logo">
+                                        @else
                                         <img src="{{ Storage::url($item->users->image) }}" alt="avatar">
+                                        @endif
                                     </a>
                                     <div class="media-body d-flex align-items-center justify-content-between">
                                         <div>

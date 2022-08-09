@@ -73,7 +73,14 @@
                             </ul>
                         </div>
                         <div class="media-img media-img-xs flex-shrink-0 rounded-full mr-2">
+
+                            @if(Auth::user()->image == NULL)
+                            <img src="\admins\images\no-profile-pic-icon-0.jpg" alt="" class="rounded-full" style="width: 30px; height: 30px;">
+
+                            @else
                             <img src="{{ Storage::url(Auth::user()->image) }}" alt="" class="rounded-full" style="width: 30px; height: 30px;">
+                            @endif
+
                         </div>
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item dropdown">
